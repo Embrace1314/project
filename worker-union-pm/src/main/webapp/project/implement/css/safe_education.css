@@ -1,0 +1,256 @@
+/*上传安全教育文件按钮*/
+.btn_upload{
+    position: absolute;
+    left: 31px;
+    top: 97px;
+    width: 121px;
+    height: 121px;
+    background: url("/worker-union-pm/common/image/img_upload_objective_protocol.png");
+}
+.btn_upload:hover{
+    background: url("/worker-union-pm/common/image/img_upload_objective_protocol_focus.png");
+}
+.btn_upload:active{
+    background: url("/worker-union-pm/common/image/img_upload_objective_protocol_focus.png");
+}
+.btn_upload>div{
+    position: absolute;
+    top: 83px;
+    left: -4px;
+    width: 127px;
+    height: 38px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 38px;
+    text-align: center;
+}
+/*删除安全教育文件文件*/
+.div_delete_file{
+    position: absolute;
+    left: 31px;
+    top: 97px;
+    width: 121px;
+    height: 121px;
+}
+.btn_download_protocol{
+    position: absolute;
+    width: 121px;
+    height: 121px;
+    background: url("/worker-union-pm/common/image/img_upload_objective_protocol.png");
+}
+.btn_download_protocol>div{
+    position: absolute;
+    top: 83px;
+    left: -4px;
+    width: 127px;
+    height: 38px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 38px;
+    text-align: center;
+}
+.btn_delete_file{
+    position: absolute;
+    left: 80px;
+    width: 42px;
+    height: 43px;
+    background: url("/worker-union-pm/common/image/img_delete_file.png");
+}
+.btn_delete_file:hover{
+    background: url("/worker-union-pm/common/image/img_delete_file_focus.png");
+}
+.btn_delete_file:active{
+    background: url("/worker-union-pm/common/image/img_delete_file_focus.png");
+}
+
+/*安全教育文件上传列表*/
+.div_safe_file_list{
+    position: absolute;
+    left: 171px;
+    top: 89px;
+    width: 969px;
+    _height: 60px;
+    min-height: 60px;
+    max-height: 120px;
+    border: #8E8B8B 10px solid;
+    border-radius: 5px;
+}
+/*设置表格样式*/
+.div_safe_file_list>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置单元格样式*/
+.div_safe_file_list>table td{
+    height: 58px;
+    _height: 58px;
+    min-height: 58px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_safe_file_list>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_safe_file_list>table tr td.list_last_col{
+    border-right: 0;
+}
+
+/*查看更多文件*/
+.btn_more{
+    position: absolute;
+    left: 901px;
+    top: 36px;
+    width: 211px;
+    height: 54px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 54px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_more_operation_manage.png");
+}
+.btn_more:hover{
+    background: url("/worker-union-pm/common/image/img_btn_more_operation_manage_focus.png");
+}
+.btn_more:active{
+    background: url("/worker-union-pm/common/image/img_btn_more_operation_manage_focus.png");
+}
+
+/*安全教育文件选择列表*/
+.div_file_list{
+    position: absolute;
+    left: 40px;
+    top: 252px;
+    width: 1120px;
+    _height: 90px;
+    min-height: 90px;
+    max-height: 390px;
+    padding-top: 23px;
+    padding-bottom: 25px;
+    background-color: #8E8B8B;
+    border-radius: 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.div_line_info{
+    position: relative;
+    left: 28px;
+    margin-top: 15px;
+    width: 1082px;
+    height: 50px;
+}
+.div_col_1{
+    position: absolute;
+    width: 442px;
+    height: 50px;
+}
+.div_choose_symbol{
+    position: absolute;
+    top: 6px;
+    width: 38px;
+    height: 38px;
+    background: url("/worker-union-pm/common/image/img_choose_symbol_pm.png") no-repeat;
+}
+
+.div_file_name_wrap{
+    display:table;
+    position: absolute;
+    left: 52px;
+    width: 390px;
+    height: 50px;
+}
+.div_file_name_content{
+    display:table-cell;
+    vertical-align: middle;
+    width: 390px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.div_col_2{
+    position: absolute;
+    left: 640px;
+    width: 442px;
+    height: 50px;
+}
+
+/*上传取消按钮*/
+.div_upload_cancel_btn{
+    position: absolute;
+    left: 401px;
+    top: 708px;
+    width: 472px;
+    height: 46px;
+}
+/*确定上传按钮*/
+.btn_confirm_upload{
+    position: absolute;
+    width: 154px;
+    height: 46px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 46px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_save_labor_info_detail.png") no-repeat;
+}
+.btn_confirm_upload:hover{
+    background: url("/worker-union-pm/common/image/img_btn_save_focus_labor_info_detail.png") no-repeat;
+}
+.btn_confirm_upload:active{
+    background: url("/worker-union-pm/common/image/img_btn_save_focus_labor_info_detail.png") no-repeat;
+}
+/*取消按钮*/
+.btn_cancel{
+    position: absolute;
+    left: 244px;
+    width: 154px;
+    height: 46px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 46px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_cancel_labor_info_detail.png") no-repeat;
+}
+.btn_cancel:hover{
+    background: url("/worker-union-pm/common/image/img_btn_cancel_focus_labor_info_detail.png") no-repeat;
+}
+.btn_cancel:active{
+    background: url("/worker-union-pm/common/image/img_btn_cancel_focus_labor_info_detail.png") no-repeat;
+}
+
+/*返回*/
+.btn_back {
+    position: absolute;
+    top: 790px;
+    left: 1087px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover {
+    background: url("/worker-union-pm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active {
+    background: url("/worker-union-pm/common/image/img_btn_back_focus.png") no-repeat;
+}

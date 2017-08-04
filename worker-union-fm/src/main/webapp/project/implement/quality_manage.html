@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>质量管理</title>
+    <link href="/worker-union-fm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/worker-union-fm/common/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/css/title.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/css/page.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/css/nav_bar_side.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/loading/loading.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/project/implement/css/quality_manage.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--标题背景-->
+<div class="title_bg"></div>
+<!--页面容器-->
+<div class="container">
+    <iframe id="loading" class="loading" src="/worker-union-fm/common/loading/loading.html" style="display: none;"></iframe>
+    <!--标题-->
+    <div id="txtTitle" class="title">质量管理</div>
+    <!--用户名及退出系统-->
+    <div class="div_user_name">
+        <div id="txtUserName" class="txt_user_name"></div>
+        <div class="div_divider_name_logout">|</div>
+        <button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+    </div>
+    <!--Home键-->
+    <button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+    <!--质量管理信息表格-->
+    <div class="div_info_list">
+        <table id="tableQuality">
+            <tr>
+                <th width="138px">序号</th>
+                <th width="228px">检查日期</th>
+                <th width="119px">检查人</th>
+                <th width="120px">整改状态</th>
+                <th width="145px">检查评定</th>
+                <th width="168px" class="list_last_col">评定日期</th>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_last_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    <!--翻页按钮-->
+    <div class="div_page_btn">
+        <!--上一页-->
+        <button class="btn_page_up" type="button" onclick="btnPrevPage()">上一页</button>
+        <!--页码显示-->
+        <div class="txt_page_number">
+            <div id="pagination" class="current_page">1</div>
+            <div class="oblique_line">/</div>
+            <div id="totalPage" class="total_page"></div>
+        </div>
+        <!--下一页-->
+        <button class="btn_page_down" type="button" onclick="btnNextPage()">下一页</button>
+    </div>
+    <div class="div_btn">
+        <!--添加按钮-->
+        <button class="btn_add" type="button" onclick="gotoLocalHtml('/project/implement/quality_record_add.html?project.id='+getUrlParam('project.id'))">添加</button>
+        <!--修改按钮-->
+        <button class="btn_modify" type="button" onclick="btnModifyQualityCheckItem()">修改</button>
+        <!--删除按钮-->
+        <button class="btn_delete" type="button"  onclick="btnDeleteQualityCheckItem()">删除</button>
+    </div>
+    <!--虚线分割线-->
+    <div class="div_dashed"></div>
+    <!--右侧导航按钮-->
+    <div class="nav_bar_side">
+        <ul class="nav_bar_menu" style="display: block">
+            <li><a href="javascript:void(0)">项目立项</a>
+                <ul>
+                    <li><a id="navBidInfo" class="nav_bar_submenu">中标信息</a></li>
+                    <li><a id="navCostAnalysis" class="nav_bar_submenu">成本分析</a></li>
+                    <li><a id="navObjectiveManage" class="nav_bar_submenu">目标管理</a></li>
+                    <li><a id="navBuildReport" class="nav_bar_submenu">项目报建</a></li>
+                </ul></li>
+            <li><a href="javascript:void(0)">项目准备</a>
+                <ul>
+                    <li><a id="navTeamBuild" class="nav_bar_submenu">团队搭建</a></li>
+                    <li><a id="navPlanDeepen" class="nav_bar_submenu">方案深化</a></li>
+                    <li><a id="navCostDeepen" class="nav_bar_submenu">成本深化</a></li>
+                    <li><a id="navCapitalPlan" class="nav_bar_submenu">资金计划</a></li>
+                </ul></li>
+            <li><a href="javascript:void(0)">项目实施</a>
+                <ul style="display: block">
+                    <li><a id="navOperationManage" class="nav_bar_submenu">经营管理</a></li>
+                    <li><a id="navProductionManage" class="nav_bar_submenu">生产管理</a></li>
+                    <li><a id="navTechnicalManage" class="nav_bar_submenu">技术管理</a></li>
+                    <li><a id="navSecurityManage" class="nav_bar_submenu">安全管理</a></li>
+                    <li><a id="navQualityManage" class="nav_bar_submenu_select">质量管理</a></li>
+                    <li><a id="navResourceImplement" class="nav_bar_submenu">资源落实</a></li>
+                    <li><a id="navSettlementManage" class="nav_bar_submenu">结算管理</a></li>
+                    <li><a id="navStoreManage" class="nav_bar_submenu">仓库管理</a></li>
+                </ul></li>
+            <li><a href="javascript:void(0)">项目竣工</a>
+                <ul>
+                    <li><a id="navCompleteCheck" class="nav_bar_submenu">竣工验收</a></li>
+                    <li><a id="navProjectDisintegrate" class="nav_bar_submenu">项目部解体</a></li>
+                    <li><a id="navProjectSummary" class="nav_bar_submenu">项目总结</a></li>
+                    <li><a id="navInternalSettlement" class="nav_bar_submenu">内部结算</a></li>
+                    <li><a id="navCompleteSettlement" class="nav_bar_submenu">竣工结算</a></li>
+                </ul></li>
+        </ul>
+    </div>
+    <!--返回按钮-->
+    <button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+
+</div>
+<script type="text/javascript" src="/worker-union-fm/common/js/util.js"></script>
+<script type="text/javascript" src="/worker-union-fm/common/js/nav_bar.js"></script>
+<script type="text/javascript" src="/worker-union-fm/common/js/nav_bar_side.js"></script>
+<script type="text/javascript" src="/worker-union-fm/project/implement/js/quality_manage.js"></script>
+</body>
+</html>

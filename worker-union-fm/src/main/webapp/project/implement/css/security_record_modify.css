@@ -1,0 +1,314 @@
+/*安全检查记录标题*/
+.title_record_info{
+    position: absolute;
+    left: 42px;
+    top: 89px;
+    width: 93px;
+    height: 811px;
+    font-family: PingFang SC;
+    font-size: 36px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+    background-color: #99CC00;
+    z-index: 1;
+}
+.title_record_info>div{
+    margin-top: 285px;
+    font-family: PingFang SC;
+    font-size: 36px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+}
+/*安全检查记录信息编辑框*/
+.div_record_info{
+    position: absolute;
+    top: 112px;
+    left: 43px;
+    width: 1115px;
+    height: 764px;
+    background-color: #8E8B8B;
+    border-radius: 5px;
+}
+.div_line_info_date{
+    position: absolute;
+    left: 103px;
+    top: 28px;
+    width: 988px;
+    height: 50px;
+}
+/*日期*/
+.div_col_1{
+    position: absolute;
+    width: 416px;
+    height: 50px;
+}
+.type_line_info{
+    position: absolute;
+    width: 151px;
+    height: 50px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 50px;
+    text-align: right;
+}
+.txt_line_short{
+    position: absolute;
+    left: 153px;
+    width: 263px;
+    height: 50px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 5px;
+}
+.txt_disable{
+    background-color: #CCCCCC;
+}
+/*检查人*/
+.div_col_2{
+    position: absolute;
+    left: 571px;
+    width: 416px;
+    height: 50px;
+}
+/*检查记录*/
+.div_line_check_record{
+    position: relative;
+    left: 103px;
+    margin-top: 108px;
+    width: 988px;
+    height: 110px;
+}
+.txt_line_long{
+    position: absolute;
+    left: 153px;
+    width: 830px;
+    height: 105px;
+    padding-left: 5px;
+    padding-top: 5px;
+    resize: none;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: left;
+    border-radius: 5px;
+}
+.txt_feed_back{
+    position: absolute;
+    left: 153px;
+    width: 830px;
+    height: 105px;
+    padding-left: 5px;
+    padding-top: 5px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: left;
+    border-radius: 5px;
+    overflow: auto;
+}
+/*整改意见*/
+.div_line_long{
+    position: relative;
+    left: 103px;
+    margin-top: 10px;
+    width: 988px;
+    height: 110px;
+}
+/*检查评定*/
+.div_line_inspect_judge{
+    position: relative;
+    left: 103px;
+    margin-top: 10px;
+    width: 988px;
+    height: 50px;
+}
+/*整改操作*/
+.div_reform_operate{
+    position: relative;
+    left: 103px;
+    margin-top: 10px;
+    width: 988px;
+    height: 67px;
+}
+.bg_reform_operate{
+    position: absolute;
+    left: 153px;
+    width: 746px;
+    height: 47px;
+    padding-top: 20px;
+    padding-left: 89px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+}
+/*整改操作单选框*/
+.rbtn_reform{
+    position: relative;
+    margin-left: 165px;
+    width: 100px;
+    height: 24px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: left;
+}
+
+.div_btn{
+    position: absolute;
+    left: 420px;
+    top: 910px;
+    width: 474px;
+    height: 46px;
+}
+/*保存按钮*/
+.btn_save{
+    position: absolute;
+    width: 154px;
+    height: 46px;
+    font-family: PingFang SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_save_cost_detail.png");
+}
+.btn_save:hover{
+    background: url("/worker-union-fm/common/image/img_btn_save_cost_detail_focus.png");
+}
+.btn_save:active{
+    background: url("/worker-union-fm/common/image/img_btn_save_cost_detail_focus.png");
+}
+/*取消按钮*/
+.btn_cancel{
+    position: absolute;
+    left: 318px;
+    width: 154px;
+    height: 46px;
+    font-family: PingFang SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_cancel_cost_detail.png");
+}
+.btn_cancel:hover{
+    background: url("/worker-union-fm/common/image/img_btn_cancel_cost_detail_focus.png");
+}
+.btn_cancel:active{
+    background: url("/worker-union-fm/common/image/img_btn_cancel_cost_detail_focus.png");
+}
+/*返回*/
+.btn_back {
+    position: absolute;
+    top: 956px;
+    left: 1077px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}
+
+.txt_attachment{
+    position: absolute;
+    left: 153px;
+    width: 825px;
+    _height: 110px;
+    padding-left: 10px;
+    min-height: 110px;
+    max-height: 112px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+}
+/*添加文件按钮*/
+.btn_picture_add{
+    position: relative;
+    display: inline-block;
+    vertical-align:top;
+    margin-top: 10px;
+    margin-left: 5px;
+    left: 10px;
+    width: 119px;
+    height: 82px;
+    background: url("/worker-union-fm/common/image/img_btn_picture_add.png") no-repeat;
+}
+.btn_picture_add:hover{
+    background: url("/worker-union-fm/common/image/img_btn_picture_add_focus.png") no-repeat;
+}
+.btn_picture_add:active{
+    background: url("/worker-union-fm/common/image/img_btn_picture_add_focus.png") no-repeat;
+}
+/*添加图片后显示缩略图*/
+.img_picture_display{
+    position: relative;
+    display: inline-block;
+    vertical-align:top;
+    margin-top: 10px;
+    margin-left: 15px;
+    width: 119px;
+    height: 82px;
+    background: url("/worker-union-fm/common/image/img_picture_display.png");
+}
+.btn_download_attachment{
+    position: absolute;
+    width: 119px;
+    height: 82px;
+    background: url("/worker-union-fm/common/image/img_picture_display.png");
+}
+/*文件名*/
+.txt_file_name{
+    position: absolute;
+    top: 55px;
+    width: 119px;
+    height: 20px;
+    font-family: PingFang SC;
+    font-size: 13px;
+    color: #333333;
+    padding-top: 7px;
+    text-align: center;
+    background-color: #FFFFFF;
+    text-decoration: underline;
+}
+.txt_file_name_record {
+    position: absolute;
+    top: 55px;
+    width: 119px;
+    height: 20px;
+    font-family: PingFang SC;
+    font-size: 13px;
+    color: #333333;
+    padding-top: 7px;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*删除按钮*/
+.btn_picture_delete{
+    position: absolute;
+    left: 81px;
+    width: 38px;
+    height: 23px;
+    background: url("/worker-union-fm/common/image/img_btn_picture_delete.png");
+}
+.btn_picture_delete:hover{
+    background: url("/worker-union-fm/common/image/img_btn_picture_delete_focus.png");
+}
+.btn_picture_delete:active{
+    background: url("/worker-union-fm/common/image/img_btn_picture_delete_focus.png");
+}

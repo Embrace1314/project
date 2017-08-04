@@ -1,0 +1,92 @@
+/*资源信息表格*/
+.div_info_list{
+    position: absolute;
+    left: 9px;
+    top: 92px;
+    width: 958px;
+    _height: 46px;
+    min-height: 46px;
+    border: #8E8B8B 11px solid;
+    border-radius: 5px;
+}
+/*设置表格样式*/
+.div_info_list>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置表头样式*/
+.div_info_list>table th{
+    height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+    font-weight: normal;
+}
+.div_info_list>table tr th.list_last_col{
+    border-right: 0;
+}
+/*设置单元格样式*/
+.div_info_list>table td{
+    height: 44px;
+    _height: 44px;
+    min-height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_info_list>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_info_list>table tr td.list_last_col{
+    border-right: 0;
+}
+
+/*设置行选中样式*/
+.list_tr_selected{
+    background-color: #0066FF;
+    color: #FFFFFF;
+}
+
+/*虚线分割线*/
+.div_dashed{
+    position: absolute;
+    left: 995px;
+    top: 70px;
+    width: 2px;
+    height: 745px;
+    border-right: 1px dashed #CCCCCC;
+}
+/*右侧导航键*/
+.nav_bar_side{
+    position: absolute;
+    top: 79px;
+    left: 1010px;
+    width: 178px;
+    height: 730px;
+}
+/*返回*/
+.btn_back {
+    position: absolute;
+    top: 925px;
+    left: 1086px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}

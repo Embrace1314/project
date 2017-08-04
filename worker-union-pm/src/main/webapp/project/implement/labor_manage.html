@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>劳务管理-劳务结算</title>
+    <link href="/worker-union-pm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/worker-union-pm/common/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/css/title.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/css/page.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/css/nav_bar_side.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/project/implement/css/labor_manage.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--标题背景-->
+<div class="title_bg"></div>
+<!--页面容器-->
+<div class="container">
+    <!--标题-->
+    <div class="title">XX项目-劳务管理</div>
+    <!--用户名及退出系统-->
+    <div class="div_user_name">
+        <div id="txtUserName" class="txt_user_name"></div>
+        <div class="div_divider_name_logout">|</div>
+        <button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+    </div>
+    <!--Home键-->
+    <button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+    <!--文件按钮-->
+    <div class="div_btn_file">
+        <!--劳务登记-->
+        <button class="btn_upload_file" type="button">
+            <div>劳务登记</div>
+        </button>
+        <!--上传入场承诺书-->
+        <button class="btn_upload_file" type="button">
+            <div>上传入场承诺书</div>
+        </button>
+        <!--下载删除入场承诺书按钮，默认不可见-->
+        <div class="div_delete_file" style="display: none">
+            <button class="btn_download_protocol" type="button">
+                <div>下载入场承诺书</div>
+            </button>
+            <button class="btn_delete_file"></button>
+        </div>
+        <!--劳务结算-->
+        <button class="btn_upload_file" type="button">
+            <div style="color: #666666">劳务结算</div>
+        </button>
+        <!--上传退场确认书-->
+        <button class="btn_upload_file" type="button">
+            <div>上传退场确认书</div>
+        </button>
+        <!--下载删除退场确认书按钮，默认不可见-->
+        <div class="div_delete_file" style="display: none">
+            <button class="btn_download_protocol" type="button">
+                <div>下载退场确认书</div>
+            </button>
+            <button class="btn_delete_file"></button>
+        </div>
+        <!--安全教育-->
+        <button class="btn_upload_file" type="button">
+            <div>安全教育</div>
+        </button>
+    </div>
+    <!--信息列表-->
+    <div class="div_info_list">
+        <table>
+            <tr>
+                <td width="110px" class="list_td_disabled">工种</td>
+                <td width="95px" class="list_td_disabled">姓名</td>
+                <td width="74px" class="list_td_disabled">年龄</td>
+                <td width="233px" class="list_td_disabled">身份证</td>
+                <td width="152px" class="list_td_disabled">联系方式</td>
+                <td width="94px">结算单价</td>
+                <td width="92px">结算时长</td>
+                <td width="94px" class="list_last_col">结算金额</td>
+            </tr>
+            <tr>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td><div contenteditable="true"></div></td>
+                <td><div contenteditable="true"></div></td>
+                <td class="list_last_col"><div contenteditable="true"></div></td>
+            </tr>
+            <tr>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td><div contenteditable="true"></div></td>
+                <td><div contenteditable="true"></div></td>
+                <td class="list_last_col"><div contenteditable="true"></div></td>
+            </tr>
+            <tr>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td><div contenteditable="true"></div></td>
+                <td><div contenteditable="true"></div></td>
+                <td class="list_last_col"><div contenteditable="true"></div></td>
+            </tr>
+            <tr>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td><div contenteditable="true"></div></td>
+                <td><div contenteditable="true"></div></td>
+                <td class="list_last_col"><div contenteditable="true"></div></td>
+            </tr>
+            <tr>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td><div contenteditable="true"></div></td>
+                <td><div contenteditable="true"></div></td>
+                <td class="list_last_col"><div contenteditable="true"></div></td>
+            </tr>
+            <tr>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td><div contenteditable="true"></div></td>
+                <td><div contenteditable="true"></div></td>
+                <td class="list_last_col"><div contenteditable="true"></div></td>
+            </tr>
+            <tr>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td><div contenteditable="true"></div></td>
+                <td><div contenteditable="true"></div></td>
+                <td class="list_last_col"><div contenteditable="true"></div></td>
+            </tr>
+            <tr>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td><div contenteditable="true"></div></td>
+                <td><div contenteditable="true"></div></td>
+                <td class="list_last_col"><div contenteditable="true"></div></td>
+            </tr>
+            <tr>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td><div contenteditable="true"></div></td>
+                <td><div contenteditable="true"></div></td>
+                <td class="list_last_col"><div contenteditable="true"></div></td>
+            </tr>
+            <tr>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td><div contenteditable="true"></div></td>
+                <td><div contenteditable="true"></div></td>
+                <td class="list_last_col"><div contenteditable="true"></div></td>
+            </tr>
+            <tr class="list_last_row">
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td class="list_td_disabled">&nbsp;</td>
+                <td><div contenteditable="true"></div></td>
+                <td><div contenteditable="true"></div></td>
+                <td class="list_last_col"><div contenteditable="true"></div></td>
+            </tr>
+        </table>
+    </div>
+    <!--翻页按钮-->
+    <div class="div_page_btn">
+        <!--上一页-->
+        <button class="btn_page_up" type="button">上一页</button>
+        <!--页码显示-->
+        <div class="txt_page_number">
+            <div id="pagination" class="current_page">1</div>
+            <div class="oblique_line">/</div>
+            <div id="totalPage" class="total_page">12</div>
+        </div>
+        <!--下一页-->
+        <button class="btn_page_down" type="button">下一页</button>
+    </div>
+    <!--保存按钮-->
+    <button class="btn_save" type="button">保存</button>
+    <!--虚线分割线-->
+    <div class="div_dashed"></div>
+    <!--右侧导航按钮-->
+    <div class="nav_bar_side">
+        <ul class="nav_bar_menu" style="display: block">
+            <li><a href="javascript:void(0)">项目立项</a>
+                <ul>
+                    <li><a id="navBidInfo" class="nav_bar_submenu">中标信息</a></li>
+                    <li><a id="navCostAnalysis" class="nav_bar_submenu">成本分析</a></li>
+                    <li><a id="navObjectiveManage" class="nav_bar_submenu">目标管理</a></li>
+                    <li><a id="navBuildReport" class="nav_bar_submenu">项目报建</a></li>
+                </ul></li>
+            <li><a href="javascript:void(0)">项目准备</a>
+                <ul>
+                    <li><a id="navTeamBuild" class="nav_bar_submenu">团队搭建</a></li>
+                    <li><a id="navPlanDeepen" class="nav_bar_submenu">方案深化</a></li>
+                    <li><a id="navCostDeepen" class="nav_bar_submenu">成本深化</a></li>
+                    <li><a id="navCapitalPlan" class="nav_bar_submenu">资金计划</a></li>
+                </ul></li>
+            <li><a href="javascript:void(0)">项目实施</a>
+                <ul style="display: block">
+                    <li><a id="navOperationManage" class="nav_bar_submenu">经营管理</a></li>
+                    <li><a id="navProductionManage" class="nav_bar_submenu">生产管理</a></li>
+                    <li><a id="navTechnicalManage" class="nav_bar_submenu">技术管理</a></li>
+                    <li><a id="navSecurityManage" class="nav_bar_submenu">安全管理</a></li>
+                    <li><a id="navQualityManage" class="nav_bar_submenu">质量管理</a></li>
+                    <li><a id="navResourceImplement" class="nav_bar_submenu">资源落实</a></li>
+                    <li><a id="navSettlementManage" class="nav_bar_submenu">结算管理</a></li>
+                    <li><a id="navLaborManage" class="nav_bar_submenu_select">劳务管理</a></li>
+                    <li><a id="navStoreManage" class="nav_bar_submenu">仓库管理</a></li>
+                </ul></li>
+            <li><a href="javascript:void(0)">项目竣工</a>
+                <ul>
+                    <li><a id="navCompleteCheck" class="nav_bar_submenu">竣工验收</a></li>
+                    <li class="nav_bar_submenu_disable">项目部解体</li>
+                    <li><a id="navProjectSummary" class="nav_bar_submenu">项目总结</a></li>
+                    <li><a id="navInternalSettlement" class="nav_bar_submenu">内部结算</a></li>
+                    <li><a id="navCompleteSettlement" class="nav_bar_submenu">竣工结算</a></li>
+                </ul></li>
+        </ul>
+    </div>
+    <!--返回按钮-->
+    <button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+</div>
+<script type="text/javascript" src="/worker-union-pm/common/js/util.js"></script>
+<script type="text/javascript" src="/worker-union-pm/common/js/nav_bar.js"></script>
+<script type="text/javascript" src="/worker-union-pm/common/js/nav_bar_side.js"></script>
+
+</body>
+</html>

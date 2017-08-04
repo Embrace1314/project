@@ -1,0 +1,196 @@
+/*资源落实详细条目标题*/
+.title_detail{
+    position: absolute;
+    left: 179px;
+    top: 110px;
+    width: 93px;
+    height: 601px;
+    background-color: #99CC00;
+    z-index: 1;
+}
+.title_detail>div{
+    margin-top: 140px;
+    font-family: PingFang SC;
+    font-size: 36px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+}
+/*条目信息*/
+.div_detail{
+    position: absolute;
+    top: 137px;
+    left: 180px;
+    width: 840px;
+    height: 546px;
+    padding-top: 8px;
+    background-color: #8E8B8B;
+    border-radius: 5px;
+}
+/*一行成本详细条目信息*/
+.div_line_detail{
+    position: relative;
+    margin-top: 24px;
+    left: 92px;
+    width: 688px;
+    height: 40px;
+}
+.type_detail{
+    position: absolute;
+    width: 198px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: right;
+}
+.txt_detail{
+    position: absolute;
+    left: 208px;
+    width: 480px;
+    height: 30px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    padding-top: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+.txt_detail_edit{
+    position: absolute;
+    left: 208px;
+    width: 480px;
+    height: 40px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+.txt_disable{
+    background-color: #CCCCCC;
+}
+/*计量单位编辑框*/
+.txt_measure_unit{
+    position: absolute;
+    left: 210px;
+    width: 165px;
+    height: 40px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+/*单价*/
+.type_price{
+    position: absolute;
+    left: 383px;
+    width: 122px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: right;
+}
+/*单价编辑框*/
+.txt_price{
+    position: absolute;
+    left: 522px;
+    width: 166px;
+    height: 40px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+/*合同库选择下拉框*/
+.btn_select {
+    display: inline-block;
+    position: absolute;
+    left: 208px;
+    width: 480px;
+    height: 40px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 40px;
+    text-align: center;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border: none;
+}
+select option {
+    height: 40px;
+}
+.div_btn{
+    position: absolute;
+    left: 398px;
+    top: 715px;
+    width: 474px;
+    height: 46px;
+}
+/*保存按钮*/
+.btn_save{
+    position: absolute;
+    width: 154px;
+    height: 46px;
+    font-family: PingFang SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_save_cost_detail.png");
+}
+.btn_save:hover{
+    background: url("/worker-union-pm/common/image/img_btn_save_cost_detail_focus.png");
+}
+.btn_save:active{
+    background: url("/worker-union-pm/common/image/img_btn_save_cost_detail_focus.png");
+}
+/*取消按钮*/
+.btn_cancel{
+    position: absolute;
+    left: 318px;
+    width: 154px;
+    height: 46px;
+    font-family: PingFang SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_cancel_cost_detail.png");
+}
+.btn_cancel:hover{
+    background: url("/worker-union-pm/common/image/img_btn_cancel_cost_detail_focus.png");
+}
+.btn_cancel:active{
+    background: url("/worker-union-pm/common/image/img_btn_cancel_cost_detail_focus.png");
+}
+/*返回*/
+.btn_back {
+    position: absolute;
+    top: 787px;
+    left: 1081px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover {
+    background: url("/worker-union-pm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active {
+    background: url("/worker-union-pm/common/image/img_btn_back_focus.png") no-repeat;
+}

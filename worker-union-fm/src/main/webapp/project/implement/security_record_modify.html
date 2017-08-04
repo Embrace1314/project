@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>安全记录修改详情</title>
+<link href="/worker-union-fm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+<link href="/worker-union-fm/common/css/global.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/css/title.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/loading/loading.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/project/implement/css/security_record_modify.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<!--标题背景-->
+	<div class="title_bg"></div>
+	<!--页面容器-->
+	<div class="container">
+		<iframe id="loading" class="loading" src="/worker-union-fm/common/loading/loading.html" style="display: none;"></iframe>
+		<!--标题-->
+		<div id="txtTitle" class="title">安全检查记录详情</div>
+		<!--用户名及退出系统-->
+		<div class="div_user_name">
+			<div id="txtUserName" class="txt_user_name"></div>
+			<div class="div_divider_name_logout">|</div>
+			<button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+		</div>
+		<!--Home键-->
+		<button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+		<!--安全检查记录标题-->
+		<div class="title_record_info">
+			<div>
+				安<br />全<br />检<br />查<br />记<br />录
+			</div>
+		</div>
+		<!--安全检查记录信息编辑框-->
+		<div class="div_record_info">
+			<div class="div_line_info_date">
+				<!--日期-->
+				<div class="div_col_1">
+					<div class="type_line_info">日期：</div>
+					<input id="txtInspectDate" class="txt_line_short" type="text">
+				</div>
+				<!--检查人-->
+				<div class="div_col_2">
+					<div class="type_line_info">检查人：</div>
+					<div id="txtInspector" class="txt_line_short txt_disable"></div>
+				</div>
+			</div>
+			<!--检查记录-->
+			<div class="div_line_check_record">
+				<div class="type_line_info">检查记录：</div>
+				<textarea id="txtInspectRecord" class="txt_line_long" type="text"></textarea>
+			</div>
+			<!--整改意见-->
+			<div class="div_line_long">
+				<div class="type_line_info">整改意见：</div>
+				<textarea id="txtRectifyOpinion" class="txt_line_long" type="text"></textarea>
+			</div>
+			<!--项目部反馈-->
+			<div class="div_line_long">
+				<div class="type_line_info">项目部反馈：</div>
+				<div id="txtProjectFeedback" class="txt_feed_back txt_disable" type="text"></div>
+			</div>
+			<!--上传附件-->
+			<div class="div_line_long">
+				<div class="type_line_info">上传附件：</div>
+				<div id="txtAttachment" class="txt_attachment">
+					<!--添加文件按钮-->
+					<button id="btnUpload" class="btn_picture_add" ></button>
+				</div>
+			</div>
+			<div class="div_line_inspect_judge">
+				<!--检查评定-->
+				<div class="div_col_1">
+					<div class="type_line_info">检查评定：</div>
+					<input id="txtEvaluate" class="txt_line_short" type="text">
+				</div>
+				<!--评定日期-->
+				<div class="div_col_2">
+					<div class="type_line_info">评定日期：</div>
+					<input id="txtEvaluateDate" class="txt_line_short" type="text">
+				</div>
+			</div>
+			<!--整改操作-->
+			<div class="div_reform_operate">
+				<div class="type_line_info">整改操作：</div>
+				<div class="bg_reform_operate">
+					<!--整改通过和重新整改单选框-->
+					<label class="rbtn_reform"><input type="radio" name="raRectifyStatus" value="PASS" />整改通过</label> <label
+						class="rbtn_reform"><input type="radio" name="raRectifyStatus" value="RECTIFY" />重新整改</label>
+				</div>
+			</div>
+		</div>
+		<div class="div_btn">
+			<!--保存按钮-->
+			<button class="btn_save" type="button" onclick="btnSave()">保存</button>
+			<!--取消按钮-->
+			<button class="btn_cancel" type="button" onclick="gotoBack()">取消</button>
+		</div>
+		<!--返回按钮-->
+		<button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+
+	</div>
+
+	<script type="text/javascript" src="/worker-union-fm/common/plupload/plupload.full.min.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/common/js/util.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/common/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/common/js/datepicker_cn.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/project/implement/js/security_record_modify.js"></script>
+</body>
+</html>

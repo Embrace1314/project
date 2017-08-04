@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- TODOPROJECT -->
+	<!-- 服务器系统入口 -->
+	<package name="projectApplication" namespace="/project_application" extends="default">
+
+		<!-- 获取项目报建附件列表 -->
+		<action name="listProjectApplicationAttachment" class="top.warmheart.workerunion.fm.server.action.ProjectApplicationAction"
+			method="listAttachment">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+
+		<!-- 获取项目报建人员信息 -->
+		<action name="listProjectApplicationStaff" class="top.warmheart.workerunion.fm.server.action.ProjectApplicationAction"
+			method="listStaff">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 增加项目报建成员 -->
+		<action name="addStaffToProjectApplication" class="top.warmheart.workerunion.fm.server.action.ProjectApplicationAction"
+			method="addProjectStaff">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 删除项目报建成员 -->
+		<action name="removeStaffFromProjectApplication" class="top.warmheart.workerunion.fm.server.action.ProjectApplicationAction"
+			method="removeProjectStaff">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+
+		<!-- 删除合同备案表凭证 -->
+		<action name="removeContractRecordAttachment" class="top.warmheart.workerunion.fm.server.action.ProjectApplicationAction"
+			method="removeContractRecordAttachment">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 删除质检通知书凭证 -->
+		<action name="removeQualityInspectNoticeAttachmentn" class="top.warmheart.workerunion.fm.server.action.ProjectApplicationAction"
+			method="removeQualityInspectNoticeAttachmentn">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 删除安监登记表凭证 -->
+		<action name="removeSafetySupervisionFormAttachment" class="top.warmheart.workerunion.fm.server.action.ProjectApplicationAction"
+			method="removeSafetySupervisionFormAttachment">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 删除施工许可证凭证 -->
+		<action name="removeConstructionPermitAttachment" class="top.warmheart.workerunion.fm.server.action.ProjectApplicationAction"
+			method="removeConstructionPermitAttachment">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+	</package>
+</struts>

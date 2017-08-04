@@ -1,0 +1,338 @@
+.div_info{
+    position: absolute;
+    left: 16px;
+    top: 91px;
+    width: 991px;
+    height: 40px;
+}
+/*姓名*/
+.div_name{
+    position: absolute;
+    width: 220px;
+    height: 40px;
+}
+.type_info{
+    position: absolute;
+    width: 73px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: right;
+}
+.txt_name{
+    position: absolute;
+    left: 76px;
+    width: 140px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+/*工号*/
+.div_number{
+    position: absolute;
+    left: 233px;
+    width: 260px;
+    height: 40px;
+}
+.txt_number{
+    position: absolute;
+    left: 70px;
+    width: 186px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+/*部门*/
+.div_section{
+    position: absolute;
+    left: 520px;
+    width: 194px;
+    height: 40px;
+}
+.txt_section{
+    position: absolute;
+    left: 70px;
+    width: 120px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+/*项目*/
+.div_project{
+    position: absolute;
+    left: 739px;
+    width: 252px;
+    height: 40px;
+}
+.txt_project{
+    position: absolute;
+    left: 70px;
+    width: 178px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+.div_info_other{
+    position: absolute;
+    left: 11px;
+    top: 153px;
+    width: 996px;
+    height: 40px;
+}
+/*身份证号码*/
+.div_ID_card{
+    position: absolute;
+    width: 498px;
+    height: 40px;
+}
+.type_info_other{
+    position: absolute;
+    width: 136px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: right;
+}
+.txt_ID_card{
+    position: absolute;
+    left: 138px;
+    width: 356px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+/*入职时间*/
+.div_time{
+    position: absolute;
+    left: 502px;
+    width: 494px;
+    height: 40px;
+}
+/*起始时间*/
+.txt_time_start{
+    position: absolute;
+    left: 136px;
+    width: 157px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+.line{
+    position: absolute;
+    left: 297px;
+    width: 40px;
+    height: 40px;
+    font-family: Arial;
+    font-size: 13px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+}
+/*截止时间*/
+.txt_time_end{
+    position: absolute;
+    left: 333px;
+    width: 157px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+/*查询按钮*/
+.btn_search{
+    position: absolute;
+    left: 1036px;
+    top: 102px;
+    width: 138px;
+    height: 80px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+    background-color: #009DD9;
+    border-radius: 5px;
+}
+.btn_search:hover{
+    background-color: #007EAE;
+}
+.btn_search:active{
+    background-color: #007EAE;
+}
+
+/*表格*/
+.div_list_content{
+    position: relative;
+    left: 6px;
+    top: 214px;
+    width: 1170px;
+    _height: 46px;
+    min-height: 46px;
+    border: 10px solid #8E8B8B;
+    border-radius: 5px;
+}
+.div_list_content>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置表头样式*/
+.div_list_content>table th{
+    height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+    font-weight: normal;
+}
+.div_list_content>table tr th.list_last_col{
+    border-right:none;
+}
+/*设置单元格样式*/
+.div_list_content>table td{
+    height: 44px;
+    _height: 44px;
+    min-height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_list_content>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_list_content>table tr td.list_last_col{
+    border-right:none;
+}
+/*设置行选中样式*/
+.list_tr_selected{
+    background-color: #0066FF;
+    color: #FFFFFF;
+}
+/*翻页按钮*/
+.div_page_btn{
+    position: relative;
+    left: 16px;
+    top: 225px;
+    width: 375px;
+    height: 31px;
+}
+
+.div_btn{
+    position: relative;
+    left: 704px;
+    top: 194px;
+    width: 488px;
+    height: 46px;
+}
+/*添加按钮*/
+.btn_add{
+    position: absolute;
+    width: 154px;
+    height: 46px;
+    font-family: Heiti SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_add.png");
+}
+.btn_add:hover{
+    background: url("/worker-union-fm/common/image/img_btn_add_focus.png");
+}
+.btn_add:active{
+    background: url("/worker-union-fm/common/image/img_btn_add_focus.png");
+}
+/*删除按钮*/
+.btn_delete{
+    position: absolute;
+    left: 166px;
+    width: 154px;
+    height: 46px;
+    font-family: Heiti SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_delete.png");
+}
+.btn_delete:hover{
+    background: url("/worker-union-fm/common/image/img_btn_delete_focus.png");
+}
+.btn_delete:active{
+    background: url("/worker-union-fm/common/image/img_btn_delete_focus.png");
+}
+/*修改按钮*/
+.btn_modify{
+    position: absolute;
+    left: 333px;
+    width: 154px;
+    height: 46px;
+    font-family: Heiti SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_modify.png");
+}
+.btn_modify:hover{
+    background: url("/worker-union-fm/common/image/img_btn_modify_focus.png");
+}
+.btn_modify:active{
+    background: url("/worker-union-fm/common/image/img_btn_modify_focus.png");
+}
+
+/*返回*/
+.btn_back {
+    position: relative;
+    top: 250px;
+    left: 1092px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}

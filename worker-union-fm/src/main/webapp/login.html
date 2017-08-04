@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>WorkerUnion</title>
+    <link href="/worker-union-fm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/worker-union-fm/common/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/login.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/loading/loading.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+    <iframe id="loading" class="loading" src="/worker-union-fm/common/loading/loading.html" style="display: none;"></iframe>
+    <!--公司图标-->
+    <div class="img_company_logo"><div>百明建设</div></div>
+    <div class="txt_company_aim">—路走来，我们举手无悔，不曾犹豫，只是为了告诉世界，有一种建设，叫百明。</div>
+    <!--系统通道选择框-->
+    <div class="div_system_channel">
+        <label for="rbtnFM" class="checked"><input name="rbtn" id="rbtnFM" value="FM" type="radio">职能主线</label>
+        <label for="rbtnPM"><input name="rbtn" id="rbtnPM" value="PM" type="radio">项目主线</label>
+    </div>
+    <!--用户名输入框-->
+    <input id="userName" class="edtxt_user_name" type="text" placeholder="请输入用户名"/>
+    <!--密码输入框-->
+    <input id="password" class="edtxt_password" type="password" placeholder="请输入密码" />
+    <!--登录按钮-->
+    <button class="btn_login" type="button" onclick="btnlogin()">登&nbsp;&nbsp;录</button>
+
+</div>
+
+<script type="text/javascript" src="/worker-union-fm/common/js/util.js"></script>
+<script type="text/javascript" src="/worker-union-fm/login.js"></script>
+</body>
+</html>

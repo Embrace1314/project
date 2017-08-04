@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>仓库管理</title>
+    <link href="/worker-union-pm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/worker-union-pm/common/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/css/title.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/css/page.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/css/nav_bar_side.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/project/implement/css/store_manage.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/project/implement/css/store_manage_dialog.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/loading/loading.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--标题背景-->
+<div class="title_bg"></div>
+<!--页面容器-->
+<div class="container">
+    <iframe id="loading" class="loading" src="/worker-union-pm/common/loading/loading.html" style="display: none;"></iframe>
+    <!--标题-->
+    <div id="txtTitle" class="title">仓库管理</div>
+    <!--用户名及退出系统-->
+    <div class="div_user_name">
+        <div id="txtUserName" class="txt_user_name"></div>
+        <div class="div_divider_name_logout">|</div>
+        <button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+    </div>
+    <!--Home键-->
+    <button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+    <!--材料编码-->
+    <div class="div_material_number">
+        <div class="type_material_number">材料编码：</div>
+        <input id="txtMaterialNum" class="txt_material_number" type="text">
+    </div>
+    <!--材料名称-->
+    <div class="div_material_name">
+        <div class="type_material_number">材料名称：</div>
+        <input id="txtMaterialName" class="txt_material_number" type="text">
+    </div>
+    <!--查询按钮-->
+    <button class="btn_search" type="button" onclick="btnSearchMaterial()">查询</button>
+    <!--出入库按钮-->
+    <div class="div_store_btn">
+        <!--入库按钮-->
+        <button class="btn_in_clickable" type="button" onclick="btnToInDialog()">入库</button>
+        <!--入库按钮-->
+        <button class="btn_in_clickable" type="button" onclick="btnToUseDialog()">出库</button>
+        <!--入库按钮-->
+        <button class="btn_in_clickable" type="button" onclick="btnToTransferDialog()">转库</button>
+    </div>
+    <!--材料信息表格-->
+    <div class="div_list_content">
+        <table id="tableMaterial">
+            <tr>
+                <th width="289px">材料编码</th>
+                <th width="234px">材料品种</th>
+                <th width="190px">规格、型号</th>
+                <th width="130px">计量单位</th>
+                <th width="114px" class="list_last_col">库存数量</th>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td></td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td></td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_last_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    <!--翻页按钮-->
+    <div class="div_page_btn">
+        <!--上一页-->
+        <button class="btn_page_up" type="button" onclick="btnPrevPage()">上一页</button>
+        <!--页码显示-->
+        <div class="txt_page_number">
+            <div id="txtPagination" class="current_page">1</div>
+            <div class="oblique_line">/</div>
+            <div id="txtTotalPage" class="total_page">1</div>
+        </div>
+        <!--下一页-->
+        <button class="btn_page_down" type="button" onclick="btnNextPage()">下一页</button>
+    </div>
+
+    <!--出入库查询编辑框-->
+    <div class="div_btn_search_order">
+        <!--出入库人-->
+        <div class="div_person">
+            <div class="type_info_order">出入库人：</div>
+            <input id="txtStaffName" class="txt_person" type="text">
+        </div>
+        <!--出入库时间-->
+        <div class="div_time">
+            <div class="type_info_order">出入库时间：</div>
+            <input id="txtOrderDate" class="txt_time" type="text">
+        </div>
+        <!--出入库批次-->
+        <div class="div_order">
+            <div class="type_info_order">出入库批次：</div>
+            <input id="txtBatchNo" class="txt_order" type="text">
+        </div>
+        <!--查询按钮-->
+        <button class="btn_search_store" type="button" onclick="btnSearchMaterialOrder()">查询</button>
+    </div>
+
+    <!--材料出入库信息表格-->
+    <div class="div_store_list">
+        <table id="tableMaterialOrder">
+            <tr>
+                <th width="115px">操作</th>
+                <th width="145px">批次</th>
+                <th width="203px">材料编码</th>
+                <th width="185px">材料品种</th>
+                <th width="122px">单价(元)</th>
+                <th width="137px">出入库时间</th>
+                <th width="119px">出入库数量</th>
+                <th width="118px" class="list_last_col">出入库人</th>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_last_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    <!--翻页按钮-->
+    <div class="div_page_btn_store">
+        <!--上一页-->
+        <button class="btn_page_up" type="button" onclick="btnPrevPageOrder()">上一页</button>
+        <!--页码显示-->
+        <div class="txt_page_number">
+            <div id="txtPaginationOrder" class="current_page">1</div>
+            <div class="oblique_line">/</div>
+            <div id="txtTotalPageOrder" class="total_page">1</div>
+        </div>
+        <!--下一页-->
+        <button class="btn_page_down" type="button" onclick="btnNextPageOrder()">下一页</button>
+    </div>
+
+    <!--虚线分割线-->
+    <div class="div_dashed"></div>
+    <!--右侧导航按钮-->
+    <div class="nav_bar_side">
+        <ul class="nav_bar_menu" style="display: block">
+            <li><a href="javascript:void(0)">项目立项</a>
+                <ul>
+                    <li><a id="navBidInfo" class="nav_bar_submenu">中标信息</a></li>
+                    <li><a id="navCostAnalysis" class="nav_bar_submenu">成本分析</a></li>
+                    <li><a id="navObjectiveManage" class="nav_bar_submenu">目标管理</a></li>
+                    <li><a id="navBuildReport" class="nav_bar_submenu">项目报建</a></li>
+                </ul></li>
+            <li><a href="javascript:void(0)">项目准备</a>
+                <ul>
+                    <li><a id="navTeamBuild" class="nav_bar_submenu">团队搭建</a></li>
+                    <li><a id="navPlanDeepen" class="nav_bar_submenu">方案深化</a></li>
+                    <li><a id="navCostDeepen" class="nav_bar_submenu">成本深化</a></li>
+                    <li><a id="navCapitalPlan" class="nav_bar_submenu">资金计划</a></li>
+                </ul></li>
+            <li><a href="javascript:void(0)">项目实施</a>
+                <ul style="display: block">
+                    <li><a id="navOperationManage" class="nav_bar_submenu">经营管理</a></li>
+                    <li><a id="navProductionManage" class="nav_bar_submenu">生产管理</a></li>
+                    <li><a id="navTechnicalManage" class="nav_bar_submenu">技术管理</a></li>
+                    <li><a id="navSecurityManage" class="nav_bar_submenu">安全管理</a></li>
+                    <li><a id="navQualityManage" class="nav_bar_submenu">质量管理</a></li>
+                    <li><a id="navResourceImplement" class="nav_bar_submenu">资源落实</a></li>
+                    <li><a id="navSettlementManage" class="nav_bar_submenu">结算管理</a></li>
+                    <li><a id="navStoreManage" class="nav_bar_submenu_select">仓库管理</a></li>
+                </ul></li>
+            <li><a href="javascript:void(0)">项目竣工</a>
+                <ul>
+                    <li><a id="navCompleteCheck" class="nav_bar_submenu">竣工验收</a></li>
+                    <li class="nav_bar_submenu_disable">项目部解体</li>
+                    <li><a id="navProjectSummary" class="nav_bar_submenu">项目总结</a></li>
+                    <li><a id="navInternalSettlement" class="nav_bar_submenu">内部结算</a></li>
+                    <li><a id="navCompleteSettlement" class="nav_bar_submenu">竣工结算</a></li>
+                </ul></li>
+        </ul>
+    </div>
+    <!--返回按钮-->
+    <button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+
+</div>
+
+<!--材料入库弹窗，默认不可见-->
+<div id="dialogIn" class="div_mask" style="display: none">
+    <img src="/worker-union-pm/common/image/img_mask.png" width="100%" height="100%"/>
+    <!--弹窗页面容器-->
+    <div class="dialog_container">
+        <!--标题-->
+        <div class="title_material_dialog">
+            <div>材<br/>料<br/>入<br/>库</div>
+        </div>
+        <!--入库信息-->
+        <div class="div_info_material">
+            <div class="div_line_info_material">
+                <!--批次号-->
+                <div class="div_col_1_material">
+                    <div class="type_info_material">批次号：</div>
+                    <input id="txtBatchNoDialogIn" class="txt_col_1_material" type="text">
+                </div>
+                <!--入库人-->
+                <div class="div_col_2_material">
+                    <div class="type_info_material">入库人：</div>
+                    <div id="txtNameDialogIn" class="txt_col_2_material"></div>
+                </div>
+                <!--入库时间-->
+                <div class="div_col_3_material">
+                    <div class="type_info_material">入库时间：</div>
+                    <div id="txtDateDialogIn" class="txt_col_3_material"></div>
+                </div>
+            </div>
+            <!--材料信息-->
+            <div class="div_info_list_material">
+                    <table id="tableMaterialDialogIn">
+                        <tr>
+                            <th width="212px">材料编码</th>
+                            <th width="221px">材料名称</th>
+                            <th width="201px">规格、型号</th>
+                            <th width="92px">计量单位</th>
+                            <th width="99px">单价(元)</th>
+                            <th width="128px">入库数量</th>
+                            <th width="94px" class="list_last_col_title">操作</th>
+                        </tr>
+                    </table>
+            </div>
+            <!--材料信息编辑框-->
+            <div class="div_material_info_material">
+                <!--材料编码-->
+                <div class="line_material_info_material">
+                    <div class="type_material_info_material">材料编码：</div>
+                    <input id="txtMaterialNumDialogIn" class="txt_material_info_material" type="text" onchange="MaterialChangeIn()">
+                </div>
+                <!--查询按钮-->
+                <button class="btn_search_material" type="button" onclick="btnSearchDialogIn()">查询</button>
+                <!--材料名称-->
+                <div class="line_material_info_material">
+                    <div class="type_material_info_material">材料名称：</div>
+                    <div id="txtMaterialNameDialogIn" class="txt_material_info_material txt_disable"></div>
+                </div>
+                <!--规格型号-->
+                <div class="line_material_info_material">
+                    <div class="type_material_info_material">规格型号：</div>
+                    <div id="txtModelDialogIn" class="txt_material_info_material txt_disable"></div>
+                </div>
+                <!--计量单位-->
+                <div class="line_material_info_material">
+                    <div class="type_material_info_material">计量单位：</div>
+                    <div id="txtUnitDialogIn" class="txt_material_info_material txt_disable"></div>
+                </div>
+                <!--单价-->
+                <div class="line_material_info_material">
+                    <div class="type_material_info_material">单价(元)：</div>
+                    <input id="txtPriceDialogIn" class="txt_material_info_material" type="number">
+                </div>
+                <!--入库数量-->
+                <div class="line_material_info_material">
+                    <div class="type_material_info_material">入库数量：</div>
+                    <input id="txtAmountDialogIn" class="txt_material_info_material" type="number">
+                </div>
+                <!--添加材料按钮-->
+                <button class="btn_add_material_dialog" type="button" onclick="btnAddMaterialDialogIn()">添加材料</button>
+            </div>
+
+            <div class="div_btn_material">
+                <!--全部入库按钮-->
+                <button class="btn_all_material" type="button" onclick="btnToAddAllMaterial()">全部入库</button>
+                <!--取消按钮-->
+                <button class="btn_cancel_material" type="button" onclick="closeDialogIn()">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--材料转库弹窗，默认不可见-->
+<div id="dialogTransfer" class="div_mask" style="display: none">
+    <img src="/worker-union-pm/common/image/img_mask.png" width="100%" height="100%"/>
+    <!--弹窗页面容器-->
+    <div class="dialog_container">
+        <!--标题-->
+        <div class="title_material_dialog">
+            <div>材<br/>料<br/>转<br/>库</div>
+        </div>
+        <!--转库信息-->
+        <div class="div_info_material">
+            <div class="div_line_info_material">
+                <!--材料接收方-->
+                <div class="div_col_1_material">
+                    <div class="type_info_material">材料接收方：</div>
+                    <select id="txtReceiverDialogTransfer" class="txt_select_receiver">
+                        <option value="">总部</option>
+                    </select>
+                </div>
+                <!--转库人-->
+                <div class="div_col_2_material">
+                    <div class="type_info_material">转库人：</div>
+                    <div id="txtNameDialogTransfer" class="txt_col_2_material"></div>
+                </div>
+                <!--转库时间-->
+                <div class="div_col_3_material">
+                    <div class="type_info_material">转库时间：</div>
+                    <div id="txtDateDialogTransfer" class="txt_col_3_material"></div>
+                </div>
+            </div>
+            <!--材料信息-->
+            <div class="div_info_list_material">
+                <table id="tableMaterialDialogTransfer">
+                    <tr>
+                        <th width="212px">材料编码</th>
+                        <th width="221px">材料名称</th>
+                        <th width="201px">规格、型号</th>
+                        <th width="92px">计量单位</th>
+                        <th width="99px">单价(元)</th>
+                        <th width="128px">转库数量</th>
+                        <th width="94px" class="list_last_col_title">操作</th>
+                    </tr>
+                </table>
+            </div>
+            <!--材料信息编辑框-->
+            <div class="div_material_info_material">
+                <!--材料编码-->
+                <div class="line_material_info_material">
+                    <div class="type_material_info_material">材料编码：</div>
+                    <input id="txtMaterialNumDialogTransfer" class="txt_material_info_material" type="text" onchange="MaterialChangeTransfer()">
+                </div>
+                <!--查询按钮-->
+                <button class="btn_search_material" type="button" onclick="btnSearchDialogTransfer()">查询</button>
+                <!--材料名称-->
+                <div class="line_material_info_material">
+                    <div class="type_material_info_material">材料名称：</div>
+                    <div id="txtMaterialNameDialogTransfer" class="txt_material_info_material txt_disable"></div>
+                </div>
+                <!--规格型号-->
+                <div class="line_material_info_material">
+                    <div class="type_material_info_material">规格型号：</div>
+                    <div id="txtModelDialogTransfer" class="txt_material_info_material txt_disable"></div>
+                </div>
+                <!--计量单位-->
+                <div class="line_material_info_material">
+                    <div class="type_material_info_material">计量单位：</div>
+                    <div id="txtUnitDialogTransfer" class="txt_material_info_material txt_disable"></div>
+                </div>
+                <!--单价-->
+                <div class="line_material_info_material">
+                    <div class="type_material_info_material">单价(元)：</div>
+                    <input id="txtPriceDialogTransfer" class="txt_material_info_material" type="number">
+                </div>
+                <!--入库数量-->
+                <div class="line_material_info_material">
+                    <div class="type_material_info_material">转库数量：</div>
+                    <input id="txtAmountDialogTransfer" class="txt_material_info_material" type="number">
+                </div>
+                <!--添加材料按钮-->
+                <button class="btn_add_material_dialog" type="button" onclick="btnAddMaterialDialogTransfer()">添加材料</button>
+            </div>
+
+            <div class="div_btn_material">
+                <!--全部转库按钮-->
+                <button class="btn_all_material" type="button" onclick="btnToTransferAllMaterial()">全部转库</button>
+                <!--取消按钮-->
+                <button class="btn_cancel_material" type="button" onclick="closeDialogTransfer()">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--材料领用弹窗，默认不可见-->
+<div id="dialogUse" class="div_mask" style="display: none">
+    <img src="/worker-union-pm/common/image/img_mask.png" width="100%" height="100%"/>
+    <!--弹窗页面容器-->
+    <div class="dialog_container">
+        <!--标题-->
+        <div class="title_material_dialog">
+            <div>材<br/>料<br/>领<br/>用</div>
+        </div>
+        <!--领用信息-->
+        <div class="div_info_material_use">
+            <!--领用人-->
+            <div class="div_user_info_material_use">
+                <div class="type_info_material_use">领用人：</div>
+                <div id="txtNameDialogUse" class="txt_info_material_use txt_disable"></div>
+            </div>
+            <!--领用时间-->
+            <div class="div_time_material_use">
+                <div class="type_info_material_use">领用时间：</div>
+                <div id="txtDateDialogUse" class="txt_info_material_use txt_disable"></div>
+            </div>
+
+            <!--材料信息表格-->
+            <div class="div_info_list_material_use">
+                <table id="tableMaterialDialogUse">
+                    <tr>
+                        <th width="262px">材料编码</th>
+                        <th width="290px">材料名称</th>
+                        <th width="262px">规格、型号</th>
+                        <th width="143px">领用数量</th>
+                        <th width="94px" class="list_last_col_title">操作</th>
+                    </tr>
+                </table>
+            </div>
+            <!--材料信息编辑框-->
+            <div class="div_material_info_material_use">
+                <!--材料编码-->
+                <div class="line_material_info_material_use">
+                    <div class="type_material_info_material_use">材料编码：</div>
+                    <input id="txtMaterialNumDialogUse" class="txt_material_info_material_use" type="text" onchange="MaterialChangeUse()">
+                </div>
+                <!--查询按钮-->
+                <button class="btn_search_material_use" type="button" onclick="btnSearchDialogUse()">查询</button>
+                <!--材料名称-->
+                <div class="line_material_info_material_use">
+                    <div class="type_material_info_material_use">材料名称：</div>
+                    <div id="txtMaterialNameDialogUse" class="txt_material_info_material_use txt_disable"></div>
+                </div>
+                <!--规格型号-->
+                <div class="line_material_info_material_use">
+                    <div class="type_material_info_material_use">规格型号：</div>
+                    <div id="txtModelDialogUse" class="txt_material_info_material_use txt_disable"></div>
+                </div>
+                <!--领用数量-->
+                <div class="line_material_info_material_use">
+                    <div class="type_material_info_material_use">领用数量：</div>
+                    <input id="txtAmountDialogUse" class="txt_material_info_material_use" type="number">
+                </div>
+                <!--添加材料按钮-->
+                <button class="btn_add_material_material_use" type="button" onclick="btnAddMaterialDialogUse()">添加材料</button>
+            </div>
+
+            <div class="div_btn_material">
+                <!--全部领用按钮-->
+                <button class="btn_all_material" type="button" onclick="btnToUseAllMaterial()">全部领用</button>
+                <!--取消按钮-->
+                <button class="btn_cancel_material" type="button" onclick="closeDialogUse()">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/worker-union-pm/common/js/util.js"></script>
+<script type="text/javascript" src="/worker-union-pm/common/js/nav_bar.js"></script>
+<script type="text/javascript" src="/worker-union-pm/common/js/nav_bar_side.js"></script>
+<script type="text/javascript" src="/worker-union-pm/common/js/jquery-ui.min.js"></script>
+<script type ="text/javascript" src="/worker-union-pm/common/js/datepicker_cn.js"></script>
+<script type="text/javascript" src="/worker-union-pm/project/implement/js/store_manage.js"></script>
+</body>
+</html>

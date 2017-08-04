@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>竣工结算</title>
+    <link href="/worker-union-pm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/worker-union-pm/common/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/css/title.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/css/nav_bar_side.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/loading/loading.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/project/complete/complete_settlement.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--标题背景-->
+<div class="title_bg"></div>
+<!--页面容器-->
+<div class="container">
+    <iframe id="loading" class="loading" src="/worker-union-pm/common/loading/loading.html" style="display: none;"></iframe>
+    <!--标题-->
+    <div id="txtTitle" class="title">竣工结算</div>
+    <!--用户名及退出系统-->
+    <div class="div_user_name">
+        <div id="txtUserName" class="txt_user_name"></div>
+        <div class="div_divider_name_logout">|</div>
+        <button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+    </div>
+    <!--Home键-->
+    <button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+
+    <!--竣工结算信息表格-->
+    <div class="div_info_list">
+        <table id="tableComplete">
+            <tr>
+                <th width="68px">序号</th>
+                <th width="218px">单位工程名称</th>
+                <th width="129px">送审金额(元)</th>
+                <th width="129px">审定金额(元)</th>
+                <th width="126px">核减金额(元)</th>
+                <th width="128px">核增金额(元)</th>
+                <th width="117px" class="list_last_col">附件</th>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col"><a href="#" onclick="btnDownloadFile(this)"></a></td>
+            </tr>
+            <tr class="list_last_row">
+                <td hidden="true"></td>
+                <td>合计</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_col_color_yellow">&nbsp;</td>
+                <td class="list_col_color_yellow">&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+
+    <!--虚线分割线-->
+    <div class="div_dashed"></div>
+    <!--右侧导航按钮-->
+    <div class="nav_bar_side">
+        <ul class="nav_bar_menu" style="display: block">
+            <li><a href="javascript:void(0)">项目立项</a>
+                <ul>
+                    <li><a id="navBidInfo" class="nav_bar_submenu">中标信息</a></li>
+                    <li><a id="navCostAnalysis" class="nav_bar_submenu">成本分析</a></li>
+                    <li><a id="navObjectiveManage" class="nav_bar_submenu">目标管理</a></li>
+                    <li><a id="navBuildReport" class="nav_bar_submenu">项目报建</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)">项目准备</a>
+                <ul>
+                    <li><a id="navTeamBuild" class="nav_bar_submenu">团队搭建</a></li>
+                    <li><a id="navPlanDeepen" class="nav_bar_submenu">方案深化</a></li>
+                    <li><a id="navCostDeepen" class="nav_bar_submenu">成本深化</a></li>
+                    <li><a id="navCapitalPlan" class="nav_bar_submenu">资金计划</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)">项目实施</a>
+                <ul>
+                    <li><a id="navOperationManage" class="nav_bar_submenu">经营管理</a></li>
+                    <li><a id="navProductionManage" class="nav_bar_submenu">生产管理</a></li>
+                    <li><a id="navTechnicalManage" class="nav_bar_submenu">技术管理</a></li>
+                    <li><a id="navSecurityManage" class="nav_bar_submenu">安全管理</a></li>
+                    <li><a id="navQualityManage" class="nav_bar_submenu">质量管理</a></li>
+                    <li><a id="navResourceImplement" class="nav_bar_submenu">资源落实</a></li>
+                    <li><a id="navSettlementManage" class="nav_bar_submenu">结算管理</a></li>
+                    <li><a id="navStoreManage" class="nav_bar_submenu">仓库管理</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)">项目竣工</a>
+                <ul style="display: block">
+                    <li><a id="navCompleteCheck" class="nav_bar_submenu">竣工验收</a></li>
+                    <li class="nav_bar_submenu_disable">项目部解体</li>
+                    <li><a id="navProjectSummary" class="nav_bar_submenu">项目总结</a></li>
+                    <li><a id="navInternalSettlement" class="nav_bar_submenu">内部结算</a></li>
+                    <li><a id="navCompleteSettlement" class="nav_bar_submenu_select">竣工结算</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!--返回按钮-->
+    <button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+
+</div>
+<script type="text/javascript" src="/worker-union-pm/common/js/util.js"></script>
+<script type="text/javascript" src="/worker-union-pm/common/js/nav_bar.js"></script>
+<script type="text/javascript" src="/worker-union-pm/common/js/nav_bar_side.js"></script>
+<script type="text/javascript" src="/worker-union-pm/project/complete/complete_settlement.js"></script>
+</body>
+</html>

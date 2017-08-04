@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>材料类型信息详情</title>
+<link href="/worker-union-fm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+<link href="/worker-union-fm/common/css/global.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/css/title.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/loading/loading.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/material/material_type_info.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<!--标题背景-->
+	<div class="title_bg"></div>
+	<!--页面容器-->
+	<div class="container">
+		<iframe id="loading" class="loading" src="/worker-union-fm/common/loading/loading.html" style="display: none;"></iframe>
+		<!--标题-->
+		<div class="title">材料类型详情</div>
+		<!--用户名及退出系统-->
+		<div class="div_user_name">
+			<div id="txtUserName" class="txt_user_name"></div>
+			<div class="div_divider_name_logout">|</div>
+			<button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+		</div>
+		<!--Home键-->
+		<button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+		<!--材料类型信息标题-->
+		<div class="title_info">
+			<div>
+				材<br />料<br />类<br />型<br />信<br />息
+			</div>
+		</div>
+		<!--材料信息编辑框-->
+		<div class="div_info">
+			<!--材料名称-->
+			<div class="div_line_info">
+				<div class="type_info">材料名称：</div>
+				<div id="txtName" class="txt_info"></div>
+			</div>
+			<!--材料编码-->
+			<div class="div_line_info">
+				<div class="type_info">材料编码：</div>
+				<div id="txtNum" class="txt_info"></div>
+			</div>
+			<div class="div_line_info">
+				<!--规格型号-->
+				<div class="div_specification">
+					<div class="type_info">规格型号：</div>
+					<div id="txtModel" class="txt_specification"></div>
+				</div>
+				<!--计量单位-->
+				<div class="div_unit">
+					<div class="type_unit">计量单位：</div>
+					<div id="txtUnit" class="txt_unit"></div>
+				</div>
+			</div>
+			<!--附件资料-->
+			<div class="div_annex">
+				<div class="type_info">附件资料：</div>
+				<!--分包商信息附件添加框-->
+				<div class="div_add_attachment">
+					<!--最后的添加文件按钮div-->
+					<button id="btnUpload" class="btn_picture_add"></button>
+				</div>
+			</div>
+		</div>
+
+		<!--返回按钮-->
+		<button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+
+	</div>
+	<script type="text/javascript" src="/worker-union-fm/common/plupload/plupload.full.min.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/common/js/util.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/common/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/common/js/datepicker_cn.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/material/material_type_info.js"></script>
+</body>
+</html>

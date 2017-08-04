@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- TODOPROJECT -->
+	<!-- 服务器系统入口 -->
+	<package name="costAnalysisDeepen" namespace="/cost_analysis_deepen" extends="default">
+
+		<!-- 获取成本分析深化表 -->
+		<action name="getCostAnalysisDeepenUniqueAttachment" class="top.warmheart.workerunion.fm.server.action.CostAnalysisDeepenAction"
+			method="getUniqueAttachment">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+
+		<!-- 获取成本深化详情 -->
+		<action name="acquireCostAnalysisDeepenDetail" class="top.warmheart.workerunion.fm.server.action.CostAnalysisDeepenAction"
+			method="acquireDetail">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取成本深化项列表 -->
+		<action name="listCostAnalysisItemDeepen" class="top.warmheart.workerunion.fm.server.action.CostAnalysisDeepenAction"
+			method="listItem">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+
+		<!-- 获取成本深化项 -->
+		<action name="getCostAnalysisItemDeepenById" class="top.warmheart.workerunion.fm.server.action.CostAnalysisDeepenAction"
+			method="getItemById">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+	</package>
+</struts>

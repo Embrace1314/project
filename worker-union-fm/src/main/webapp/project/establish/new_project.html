@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新项目创建</title>
+    <link href="/worker-union-fm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/worker-union-fm/common/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/css/title.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/loading/loading.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/project/establish/new_project.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--标题背景-->
+<div class="title_bg"></div>
+<!--页面容器-->
+<div class="container">
+    <iframe id="loading" class="loading" src="/worker-union-fm/common/loading/loading.html"
+            style="display: none;"></iframe>
+    <!--标题-->
+    <div class="title">项目立项</div>
+    <!--用户名及退出系统-->
+    <div class="div_user_name">
+        <div id="txtUserName" class="txt_user_name"></div>
+        <div class="div_divider_name_logout">|</div>
+        <button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+    </div>
+    <!--Home键-->
+    <button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+    <!--立项年份显示-->
+    <div id="thisYear" class="project_year"></div>
+
+    <!--日历-->
+    <div class="div_calendar" >
+        <div class="calendar_bar"></div>
+        <!--日历显示-->
+        <div class="calendar_display" style="display: none">
+            <!--选中年份显示-->
+            <div class="div_calendar_year">
+                <div class="calendar_year_choosen">2017</div>
+                <div class="calendar_year_symbol">年</div>
+            </div>
+        </div>
+    </div>
+    <!--选择立项年份按钮-->
+    <button class="choose_project_year" type="button" style="display: none;">选择立项年份</button>
+    <form id="formAddProject">
+        <!--项目信息-->
+        <div class="div_project_info">
+            <!--项目编号-->
+            <div class="line_project_info">
+                <div class="type_project_info">*项目编号：</div>
+                <div>
+                    <input id="num" class="txt_project_info" type="text" name="project.num" value="">
+                </div>
+            </div>
+            <!--项目名称-->
+            <div class="line_project_info">
+                <div class="type_project_info">*项目名称：</div>
+                <div>
+                    <input id="name" class="txt_project_info" type="text" name="project.name" value="">
+                </div>
+            </div>
+            <!--建设单位-->
+            <div class="line_project_info">
+                <div class="type_project_info">*建设单位：</div>
+                <div>
+                    <input id="constructerName" class="txt_project_info" type="text" name="project.constructerName"
+                           value="">
+                </div>
+            </div>
+            <!--设计单位-->
+            <div class="line_project_info">
+                <div class="type_project_info">*设计单位：</div>
+                <div>
+                    <input id="designerName" class="txt_project_info" type="text" name="project.designerName"
+                           value="">
+                </div>
+            </div>
+            <!--监理单位-->
+            <div class="line_project_info">
+                <div class="type_project_info">*监理单位：</div>
+                <div>
+                    <input id="superviserName" class="txt_project_info" type="text" name="project.superviserName"
+                           value="">
+                </div>
+            </div>
+            <!--工程地点-->
+            <div class="line_project_info">
+                <div class="type_project_info">*工程地点：</div>
+                <div>
+                    <input id="address" class="txt_project_info" type="text" name="project.address" value="">
+                </div>
+            </div>
+            <!--工程类型-->
+            <div class="line_project_info">
+                <div class="type_project_info">*工程类型：</div>
+                <div>
+                    <input id="type" class="txt_project_info" type="text" name="project.type" value="">
+                </div>
+            </div>
+            <!--规模-->
+            <div class="line_project_info">
+                <div class="type_project_info">*规模：</div>
+                <div>
+                    <input id="scale" class="txt_project_info" type="text" name="project.scale" value="">
+                </div>
+            </div>
+            <!--中标价-->
+            <div class="line_project_info">
+                <div class="type_project_info">*中标价(元)：</div>
+                <div>
+                    <input id="bidPrice" class="txt_project_info" type="number" name="project.bidPrice"
+                           value="">
+                </div>
+            </div>
+            <!--中标工期-->
+            <div class="line_project_info">
+                <div class="type_project_info">*中标工期(天)：</div>
+                <div>
+                    <input id="bidDuration" class="txt_project_info" type="number" name="project.bidDuration"
+                           value="">
+                </div>
+            </div>
+            <!--上传中标通知书-->
+            <div class="line_project_info">
+                <!--上传成功与否标志，成功class="img_upload_mark_success"-->
+                <div id="imgUploadMark" class="img_upload_mark"></div>
+                <!--上传按钮-->
+                <button id="btnSelectFile" class="btn_upload" type="button">上传中标通知书</button>
+            </div>
+        </div>
+    </form>
+    <!--确定取消按钮-->
+    <div class="div_btn">
+        <button class="btn_confirm" type="button" onclick="btnCreate()">确定创建</button>
+        <button class="btn_cancel" type="button" onclick="gotoBack()">取消创建</button>
+    </div>
+    <!--虚线分割线-->
+    <div class="div_dashed"></div>
+    <!--右侧导航按钮-->
+    <div class="nav_btn_side">
+        <!--创建新项目按钮-->
+        <button class="btn_new_project" type="button" onclick="reload()">
+            &nbsp;&nbsp;&nbsp;创建新项目
+        </button>
+        <!--进行中项目按钮-->
+        <button class="btn_ongoing_project" type="button"
+                onclick="gotoLocalHtml('/project/project_manage.html?status=GOING')">
+            &nbsp;&nbsp;&nbsp;进行中项目
+        </button>
+        <!--已归档项目按钮-->
+        <button class="btn_archived_project" type="button"
+                onclick="gotoLocalHtml('/project/project_manage.html?status=ARCHIVED')">
+            &nbsp;&nbsp;&nbsp;已归档项目
+        </button>
+        <!--所有项目按钮-->
+        <button class="btn_all_project" type="button" onclick="gotoLocalHtml('/project/project_manage.html?status=')">
+            &nbsp;&nbsp;&nbsp;所有项目
+        </button>
+    </div>
+    <!--返回按钮-->
+    <button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+</div>
+
+<script type="text/javascript" src="/worker-union-fm/common/plupload/plupload.full.min.js"></script>
+<script type="text/javascript" src="/worker-union-fm/common/js/util.js"></script>
+<script type="text/javascript" src="/worker-union-fm/common/js/base64.js"></script>
+<script type="text/javascript" src="/worker-union-fm/common/js/json2.js"></script>
+<script type="text/javascript" src="/worker-union-fm/project/establish/new_project.js"></script>
+</body>
+</html>

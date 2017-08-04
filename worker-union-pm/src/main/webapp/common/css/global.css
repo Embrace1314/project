@@ -1,0 +1,18 @@
+/*页面容器*/
+.container{
+    position: relative;
+    margin: 0 auto;
+    text-align:left;
+    width: 1200px;
+}
+/*按钮效果*/
+button,input,textarea{
+    border: none;
+}
+button{
+    cursor: pointer;
+}
+a:link{  color: #666666; text-decoration: underline }
+a:visited{  color: #666666; text-decoration: underline }
+a:hover{  color: #CD8500; text-decoration: underline}
+a{cursor: pointer}

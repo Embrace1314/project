@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-4.1.xsd
+						http://www.springframework.org/schema/tx
+						http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+
+	<!-- TODOPROJECT -->
+	<!-- 设置Component的扫描路径 -->
+	<context:component-scan base-package="top.warmheart.workerunion.server" />
+	<!-- 设置预读配置文件 -->
+	<context:property-placeholder location="classpath:*-config.properties" />
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<!-- 队列中的最小等待数 -->
+		<property name="minIdle" value="${jdbc.minIdle}"></property>
+		<!-- 队列中的最大等待数 -->
+		<property name="maxIdle" value="${jdbc.maxIdle}"></property>
+		<!-- 最长等待时间，单位毫秒 -->
+		<property name="maxWait" value="${jdbc.maxWait}"></property>
+		<!-- 最大活跃数 -->
+		<property name="maxActive" value="${jdbc.maxActive}"></property>
+		<!-- 初始连接数 -->
+		<property name="initialSize" value="${jdbc.initialSize}"></property>
+
+		<!-- 每隔timeBetweenEvictionRunsMillis(ms)时间启动 空闲连接回收器线程 检查numTestsPerEvictionRun个连接，关闭存活时间超过minEvictableIdleTimeMillis(ms)的空闲连接，使空闲连接保持minIdle -->
+		<property name="testWhileIdle" value="true"></property>
+		<property name="testOnBorrow" value="false"></property>
+		<property name="testOnReturn" value="false"></property>
+		<property name="validationQuery" value="SELECT 1"></property>
+
+		<property name="timeBetweenEvictionRunsMillis" value="${jdbc.timeBetweenEvictionRunsMillis}"></property>
+		<property name="numTestsPerEvictionRun" value="${jdbc.numTestsPerEvictionRun}"></property>
+		<property name="minEvictableIdleTimeMillis" value="${jdbc.minEvictableIdleTimeMillis}"></property>
+		<!-- 删除不活动的没有返回的连接，通常用于连接泄露的情况 -->
+		<property name="removeAbandoned" value="true"></property>
+		<property name="logAbandoned" value="true"></property>
+		<property name="removeAbandonedTimeout" value="${jdbc.removeAbandonedTimeout}"></property>
+		<!-- 注意：修改MySQL数据库的wait_timeout参数=86400s，防止数据库单方面关闭空闲的数据连接，导致数据库连接池的空闲数据连接无效 -->
+	</bean>
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" scope="singleton">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="configLocation" value="classpath:/${mybatis.config.xml}" />
+	</bean>
+	
+	<!-- 事务支持 -->
+	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<!-- 事务注解支持 -->
+	<tx:annotation-driven transaction-manager="txManager"/>
+	
+	<!-- 使用HessianServiceExporter 将普通bean导出成Hessian服务 -->
+	<bean name="/StaffService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="staffServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.StaffService" />
+	</bean>
+	<bean name="/RegionalCodeService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="regionalCodeServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.RegionalCodeService" />
+	</bean>
+	<bean name="/ProjectService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="projectServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.ProjectService" />
+	</bean>
+	<bean name="/AttachmentService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="attachmentServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.AttachmentService" />
+	</bean>
+	<bean name="/CostAnalysisItemService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="costAnalysisItemServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.CostAnalysisItemService" />
+	</bean>
+	<bean name="/CostAnalysisItemDeepenService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="costAnalysisItemDeepenServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.CostAnalysisItemDeepenService" />
+	</bean>
+	<bean name="/FundPlanItemService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="fundPlanItemServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.FundPlanItemService" />
+	</bean>
+	<bean name="/PurchaseItemService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="purchaseItemServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.PurchaseItemService" />
+	</bean>
+	<bean name="/ProjectTeamService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="projectTeamServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.ProjectTeamService" />
+	</bean>
+	<bean name="/ProjectApplicationService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="projectApplicationServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.ProjectApplicationService" />
+	</bean>
+	<bean name="/TeamRoleService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="teamRoleServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.TeamRoleService" />
+	</bean>
+	<bean name="/PermissionService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="permissionServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.PermissionService" />
+	</bean>
+	<bean name="/TargetService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="targetServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.TargetService" />
+	</bean>
+	<bean name="/BusinessCapacityItemService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="businessCapacityItemServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.BusinessCapacityItemService" />
+	</bean>
+	<bean name="/ProductCapacityItemService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="productCapacityItemServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.ProductCapacityItemService" />
+	</bean>
+	<bean name="/SafetyCheckItemService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="safetyCheckItemServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.SafetyCheckItemService" />
+	</bean>
+	<bean name="/QualityCheckItemService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="qualityCheckItemServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.QualityCheckItemService" />
+	</bean>
+	<bean name="/ResourceImplementItemService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="resourceImplementItemServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.ResourceImplementItemService" />
+	</bean>
+	<bean name="/SubcontractorService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="subcontractorServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.SubcontractorService" />
+	</bean>
+	<bean name="/ContractService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="contractServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.ContractService" />
+	</bean>
+	<bean name="/SettlementItemService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="settlementItemServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.SettlementItemService" />
+	</bean>
+	<bean name="/InternalSettlementService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="internalSettlementServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.InternalSettlementService" />
+	</bean>
+	<bean name="/FinalSettlementItemService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="finalSettlementItemServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.FinalSettlementItemService" />
+	</bean>
+	<bean name="/MaterialService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="materialServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.MaterialService" />
+	</bean>
+	<bean name="/MaterialOrderService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="materialOrderServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.MaterialOrderService" />
+	</bean>
+	<bean name="/MaterialHeadquartersService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="materialHeadquartersServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.MaterialHeadquartersService" />
+	</bean>
+	<bean name="/MaterialHeadquartersOrderService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="materialHeadquartersOrderServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.MaterialHeadquartersOrderService" />
+	</bean>
+	<bean name="/MaterialTypeService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="materialTypeServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.MaterialTypeService" />
+	</bean>
+	<bean name="/MaterialTransferService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="materialTransferServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.MaterialTransferService" />
+	</bean>
+	<bean name="/CertificateService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="certificateServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.CertificateService" />
+	</bean>
+	<bean name="/SupplierService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="supplierServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.SupplierService" />
+	</bean>
+	<bean name="/RoleService" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+		<property name="service" ref="roleServiceImpl" />
+		<property name="serviceInterface" value="top.warmheart.workerunion.server.service.RoleService" />
+	</bean>
+</beans>

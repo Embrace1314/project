@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- TODOPROJECT -->
+	<!-- 服务器系统入口 -->
+	<package name="sts" namespace="/sts" extends="default">
+
+		<!-- 获取下载中标通知书凭证 -->
+		<action name="acquireLetterOfAcceptanceDownToken" class="top.warmheart.workerunion.pm.server.action.StsAction"
+			method="acquireLetterOfAcceptanceDownToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取下载目标协议书凭证 -->
+		<action name="acquireAgreementOfTargetDownToken" class="top.warmheart.workerunion.pm.server.action.StsAction"
+			method="acquireAgreementOfTargetDownToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取下载成本分析表凭证 -->
+		<action name="acquireCostAnalysisDownToken" class="top.warmheart.workerunion.pm.server.action.StsAction"
+			method="acquireCostAnalysisDownToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+
+		<!-- 获取下载合同备案表凭证 -->
+		<action name="acquireContractRecordDownToken" class="top.warmheart.workerunion.pm.server.action.StsAction"
+			method="acquireContractRecordDownToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+
+		<!-- 获取下载质检通知书凭证 -->
+		<action name="acquireQualityInspectNoticeDownToken" class="top.warmheart.workerunion.pm.server.action.StsAction"
+			method="acquireQualityInspectNoticeDownToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+
+		<!-- 获取下载安监登记表凭证 -->
+		<action name="acquireSafetySupervisionFormDownToken" class="top.warmheart.workerunion.pm.server.action.StsAction"
+			method="acquireSafetySupervisionFormDownToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+
+		<!-- 获取下载施工许可证凭证 -->
+		<action name="acquireConstructionPermitDownToken" class="top.warmheart.workerunion.pm.server.action.StsAction"
+			method="acquireConstructionPermitDownToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取上传方案深化表凭证 -->
+		<action name="acquireSchemeDeepenUpToken" class="top.warmheart.workerunion.pm.server.action.StsAction" method="acquireSchemeDeepenUpToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取下载方案深化表凭证 -->
+		<action name="acquireSchemeDeepenDownToken" class="top.warmheart.workerunion.pm.server.action.StsAction"
+			method="acquireSchemeDeepenDownToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取上传成本深化表凭证 -->
+		<action name="acquireCostDeepenUpToken" class="top.warmheart.workerunion.pm.server.action.StsAction" method="acquireCostDeepenUpToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取下载成本深化表凭证 -->
+		<action name="acquireCostDeepenDownToken" class="top.warmheart.workerunion.pm.server.action.StsAction" method="acquireCostDeepenDownToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取下载经营管理产值文件凭证 -->
+		<action name="acquireBusinessCapacityFileDownToken" class="top.warmheart.workerunion.pm.server.action.StsAction" method="acquireBusinessCapacityFileDownToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取上传经营管理产值文件凭证 -->
+		<action name="acquireBusinessCapacityFileUpToken" class="top.warmheart.workerunion.pm.server.action.StsAction" method="acquireBusinessCapacityFileUpToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取下载生产产值文件凭证 -->
+		<action name="acquireProductCapacityFileDownToken" class="top.warmheart.workerunion.pm.server.action.StsAction" method="acquireProductCapacityFileDownToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取上传生产产值文件凭证 -->
+		<action name="acquireProductCapacityFileUpToken" class="top.warmheart.workerunion.pm.server.action.StsAction" method="acquireProductCapacityFileUpToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取上传技术方案凭证 -->
+		<action name="acquireTechnicalProposalUpToken" class="top.warmheart.workerunion.pm.server.action.StsAction" method="acquireTechnicalProposalUpToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取下载技术方案凭证 -->
+		<action name="acquireTechnicalProposalDownToken" class="top.warmheart.workerunion.pm.server.action.StsAction"
+			method="acquireTechnicalProposalDownToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取上传安全记录附件凭证 -->
+		<action name="acquireSafetyCheckItemAttachmentUpToken" class="top.warmheart.workerunion.pm.server.action.StsAction" method="acquireSafetyCheckItemAttachmentUpToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取下载安全记录附件凭证 -->
+		<action name="acquireSafetyCheckItemAttachmentDownToken" class="top.warmheart.workerunion.pm.server.action.StsAction"
+			method="acquireSafetyCheckItemAttachmentDownToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取上传质量记录附件凭证 -->
+		<action name="acquireQualityCheckItemAttachmentUpToken" class="top.warmheart.workerunion.pm.server.action.StsAction" method="acquireQualityCheckItemAttachmentUpToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取下载质量记录附件凭证 -->
+		<action name="acquireQualityCheckItemAttachmentDownToken" class="top.warmheart.workerunion.pm.server.action.StsAction"
+			method="acquireQualityCheckItemAttachmentDownToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取上传结算文件凭证 -->
+		<action name="acquireSettlementUpToken" class="top.warmheart.workerunion.pm.server.action.StsAction" method="acquireSettlementUpToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取下载结算文件凭证 -->
+		<action name="acquireSettlementDownToken" class="top.warmheart.workerunion.pm.server.action.StsAction"
+			method="acquireSettlementDownToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取上传竣工资料凭证 -->
+		<action name="acquireCompletionDataUpToken" class="top.warmheart.workerunion.pm.server.action.StsAction" method="acquireCompletionDataUpToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取下载竣工资料凭证 -->
+		<action name="acquireCompletionDataDownToken" class="top.warmheart.workerunion.pm.server.action.StsAction"
+			method="acquireCompletionDataDownToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取上传总结报告凭证 -->
+		<action name="acquireFinalReportUpToken" class="top.warmheart.workerunion.pm.server.action.StsAction" method="acquireFinalReportUpToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取下载总结报告凭证 -->
+		<action name="acquireFinalReportDownToken" class="top.warmheart.workerunion.pm.server.action.StsAction"
+			method="acquireFinalReportDownToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取下载内部结算文件凭证 -->
+		<action name="acquireInternalSettlementDownToken" class="top.warmheart.workerunion.pm.server.action.StsAction"
+			method="acquireInternalSettlementDownToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取下载决算条目附件凭证 -->
+		<action name="acquireFinalSettlementAttachmentDownToken" class="top.warmheart.workerunion.pm.server.action.StsAction"
+			method="acquireFinalSettlementAttachmentDownToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取上传团队搭建附件 -->
+		<action name="acquireProjectTeamAttachmentUpToken" class="top.warmheart.workerunion.pm.server.action.StsAction" method="acquireProjectTeamAttachmentUpToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取下载团队搭建附件 -->
+		<action name="acquireProjectTeamAttachmentDownToken" class="top.warmheart.workerunion.pm.server.action.StsAction"
+			method="acquireProjectTeamAttachmentDownToken">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+	</package>
+</struts>

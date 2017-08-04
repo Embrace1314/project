@@ -1,0 +1,209 @@
+/*内部结算文件表格*/
+.div_file_list{
+    position: absolute;
+    left: 20px;
+    top: 89px;
+    width: 938px;
+    _height: 46px;
+    min-height: 46px;
+    max-height: 125px;
+    border: #8E8B8B 10px solid;
+    border-radius: 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+/*设置表格样式*/
+.div_file_list>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置单元格样式*/
+.div_file_list>table td{
+    height: 58px;
+    _height: 58px;
+    min-height: 58px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_file_list>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_file_list>table tr td.list_last_col{
+    border-right: 0;
+}
+
+/*查看更多文件按钮*/
+.btn_more{
+    position: absolute;
+    left: 752px;
+    top: 36px;
+    width: 211px;
+    height: 54px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 54px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_more_operation_manage.png");
+}
+.btn_more:hover{
+    background: url("/worker-union-pm/common/image/img_btn_more_operation_manage_focus.png");
+}
+.btn_more:active{
+    background: url("/worker-union-pm/common/image/img_btn_more_operation_manage_focus.png");
+}
+/*结算评估标题*/
+.title_settlement{
+    position: absolute;
+    left: 20px;
+    top: 290px;
+    width: 960px;
+    height: 49px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 49px;
+    text-align: center;
+    background-color: #856C5B;
+}
+/*结算评估表格*/
+.div_info_list{
+    position: absolute;
+    left: 20px;
+    top: 349px;
+    width: 938px;
+    height: 379px;
+    padding: 11px;
+    background-color: #8E8B8B;
+    border-radius: 5px;
+}
+.div_table{
+    position: absolute;
+    width: 938px;
+    _height: 230px;
+    min-height: 230px;
+    max-height: 235px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+/*设置表格样式*/
+.div_table>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置单元格样式*/
+.div_table>table td{
+    height: 44px;
+    _height: 44px;
+    min-height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_table>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_table>table tr td.list_last_col{
+    border-right: 0;
+}
+/*表格不能编辑样式*/
+.list_edit_disable{
+    background-color: #E4E4E4;
+}
+/*设置行选中样式*/
+.list_tr_selected{
+    background-color: #0066FF;
+    color: #FFFFFF;
+}
+/*内部结算金额*/
+.div_internal_money{
+    position: absolute;
+    left: 140px;
+    top: 269px;
+    width: 661px;
+    height: 46px;
+}
+.type_money{
+    position: absolute;
+    width: 190px;
+    height: 46px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 46px;
+    text-align: right;
+}
+.txt_money{
+    position: absolute;
+    left: 190px;
+    width: 469px;
+    height: 44px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 46px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #E4E4E4;
+}
+/*额外奖励金额*/
+.div_extra_money{
+    position: absolute;
+    left: 140px;
+    top: 325px;
+    width: 661px;
+    height: 46px;
+}
+
+/*虚线分割线*/
+.div_dashed{
+    position: absolute;
+    left: 995px;
+    top: 70px;
+    width: 2px;
+    height: 640px;
+    border-right: 1px dashed #CCCCCC;
+}
+/*右侧导航键*/
+.nav_bar_side{
+    position: absolute;
+    top: 79px;
+    left: 1012px;
+    width: 178px;
+    height: 730px;
+}
+/*返回*/
+.btn_back {
+    position: absolute;
+    top: 781px;
+    left: 1081px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover {
+    background: url("/worker-union-pm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active {
+    background: url("/worker-union-pm/common/image/img_btn_back_focus.png") no-repeat;
+}

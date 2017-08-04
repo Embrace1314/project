@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>转库审核</title>
+<link href="/worker-union-fm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+<link href="/worker-union-fm/common/css/global.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/css/title.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/loading/loading.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/storage/transfer_audit.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<!--标题背景-->
+	<div class="title_bg"></div>
+	<!--页面容器-->
+	<div class="container">
+		<iframe id="loading" class="loading" src="/worker-union-fm/common/loading/loading.html" style="display: none;"></iframe>
+		<!--标题-->
+		<div class="title">转库审核</div>
+		<!--用户名及退出系统-->
+		<div class="div_user_name">
+			<div id="txtUserName" class="txt_user_name"></div>
+			<div class="div_divider_name_logout">|</div>
+			<button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+		</div>
+		<!--Home键-->
+		<button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+
+		<!--材料信息-->
+		<div class="div_list_info">
+			<table id="tableMaterialTransferApplications">
+				<tr>
+					<td width="147px">转库申请编号</td>
+					<td width="248px">材料接收方</td>
+					<td width="248px">材料转出方</td>
+					<td width="117px">转库申请人</td>
+					<td width="132px">转库申请时间</td>
+					<td width="177px" class="list_last_col_title">操作</td>
+				</tr>
+				<tr>
+					<td hidden="true"></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td class="list_last_col_row">
+						<!--审核操作按钮-->
+						<div class="div_audit_btn">
+							<!--通过按钮-->
+							<button class="btn_pass" type="button">通过</button>
+							<div class="div_line"></div>
+							<!--驳回按钮-->
+							<button class="btn_rebut" type="button">驳回</button>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<!--转库审核历史记录按钮-->
+		<button class="btn_history" type="button" onclick="gotoLocalHtml('/storage/transfer_history.html')">转库审核历史记录</button>
+
+		<!--返回按钮-->
+		<button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+
+	</div>
+	<script type="text/javascript" src="/worker-union-fm/common/js/util.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/common/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/common/js/datepicker_cn.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/storage/transfer_audit.js"></script>
+
+</body>
+</html>

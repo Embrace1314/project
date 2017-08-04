@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- TODOPROJECT -->
+	<!-- 服务器系统入口 -->
+	<package name="resourceImplement" namespace="/resource_implement" extends="default">
+
+		<!-- 获取资源落实项列表 -->
+		<action name="listResourceImplementItem" class="top.warmheart.workerunion.pm.server.action.ResourceImplementAction"
+			method="listItem">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 简要获取资源落实项列表 -->
+		<action name="listSimpleResourceImplementItem" class="top.warmheart.workerunion.pm.server.action.ResourceImplementAction"
+			method="listSimpleItem">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取资源落实项 -->
+		<action name="getResourceImplementItemById" class="top.warmheart.workerunion.pm.server.action.ResourceImplementAction"
+			method="getItemById">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 增加资源落实项 -->
+		<action name="addResourceImplementItem" class="top.warmheart.workerunion.pm.server.action.ResourceImplementAction"
+			method="addItem">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 删除资源落实项 -->
+		<action name="removeResourceImplementItemById" class="top.warmheart.workerunion.pm.server.action.ResourceImplementAction"
+			method="removeItemById">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 修改资源落实项 -->
+		<action name="modifyResourceImplementItemById" class="top.warmheart.workerunion.pm.server.action.ResourceImplementAction"
+			method="modifyItemById">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+	</package>
+</struts>
+

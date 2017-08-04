@@ -1,0 +1,137 @@
+/*项目中标信息标题*/
+.title_project_bid_info{
+    position: absolute;
+    left: 40px;
+    top: 88px;
+    width: 920px;
+    height: 50px;
+    background-color: #856C5B;
+    border-radius: 5px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 50px;
+    text-align: center;
+}
+/*项目中标信息*/
+.div_project_info {
+    position: absolute;
+    left: 40px;
+    top: 146px;
+    width: 920px;
+    height: 667px;
+    padding-top: 3px;
+    background-color: #8E8B8B;
+    border-radius: 5px;
+}
+/*项目编号*/
+.line_project_info {
+    position: relative;
+    margin-top: 16px;
+    left: 132px;
+    width: 656px;
+    height: 40px;
+}
+.type_project_info {
+    position: absolute;
+    width: 159px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: right;
+}
+.txt_project_info {
+    position: absolute;
+    left: 175px;
+    width: 480px;
+    height: 30px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    padding-top: 10px;
+    text-align: center;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    overflow: auto;
+}
+/*下载中标通知书*/
+.div_line_download{
+    position: relative;
+    margin-top: 22px;
+    left: 240px;
+    width: 548px;
+    height: 40px;
+}
+/*下载标志显示*/
+.img_download_mark {
+    position: absolute;
+    width: 41px;
+    height: 41px;
+    background: url("/worker-union-pm/common/image/img_download_mark.png") no-repeat;
+}
+/*下载标志显示成功*/
+.img_download_mark_success {
+    position: absolute;
+    width: 41px;
+    height: 41px;
+    background: url("/worker-union-pm/common/image/img_download_mark_success.png") no-repeat;
+}
+/*下载按钮*/
+.btn_download {
+    position: absolute;
+    left: 68px;
+    width: 480px;
+    height: 40px;
+    font-family: Arial;
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_upload_project_approval.png") no-repeat;
+}
+.btn_download:hover {
+    background: url("/worker-union-pm/common/image/img_btn_upload_focus_project_approval.png") no-repeat;
+}
+.btn_download:active {
+    background: url("/worker-union-pm/common/image/img_btn_upload_focus_project_approval.png") no-repeat;
+}
+/*虚线分割线*/
+.div_dashed{
+    position: absolute;
+    left: 995px;
+    top: 70px;
+    width: 2px;
+    height: 500px;
+    border-right: 1px dashed #CCCCCC;
+}
+/*右侧导航键*/
+.nav_bar_side{
+    position: absolute;
+    top: 78px;
+    left: 1010px;
+    width: 178px;
+    height: 730px;
+}
+/*返回*/
+.btn_back {
+    position: absolute;
+    top: 885px;
+    left: 1086px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover {
+    background: url("/worker-union-pm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active {
+    background: url("/worker-union-pm/common/image/img_btn_back_focus.png") no-repeat;
+}

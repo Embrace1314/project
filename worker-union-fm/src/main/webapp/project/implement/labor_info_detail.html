@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>工人信息详情</title>
+    <link href="/worker-union-fm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/worker-union-fm/common/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/css/title.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/project/implement/css/labor_info_detail.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--标题背景-->
+<div class="title_bg"></div>
+<!--页面容器-->
+<div class="container">
+    <!--标题-->
+    <div class="title">XX项目-劳务信息详情</div>
+    <!--Home键-->
+    <button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+    <!--劳务信息标题-->
+    <div class="title_labor_info">
+        <div>劳<br/>务<br/>信<br/>息<br/>详<br/>情</div>
+    </div>
+    <!--劳务信息编辑框-->
+    <div class="div_labor_info">
+        <div class="div_line_info">
+            <!--姓名-->
+            <div class="div_col_1">
+                <div class="type_col_1">姓名：</div>
+                <input class="txt_col_1" type="text">
+            </div>
+            <!--工种-->
+            <div class="div_work_type">
+                <div class="type_work_type">工种：</div>
+                <input class="txt_work_type" type="text">
+            </div>
+            <!--是否为本企业合同用工-->
+            <div class="div_radio_btn">
+                <div class="type_radio_btn">本企业合同用工：</div>
+                <div class="txt_radio_btn">
+                    <input type="radio" name="rbtn" id="rbtnYes" value="Yes"><label for="rbtnYes" class="checked">是</label>
+                    <input type="radio" name="rbtn" id="rbtnNo" value="No"><label for="rbtnNo">否</label>
+                </div>
+            </div>
+        </div>
+        <div class="div_line_info">
+            <!--联系方式-->
+            <div class="div_col_1_long">
+                <div class="type_info">联系方式：</div>
+                <input class="txt_col_1_long" type="text">
+            </div>
+            <!--性别-->
+            <div class="div_col_2">
+                <div class="type_col_2">性别：</div>
+                <input class="txt_col_2" type="text">
+            </div>
+            <!--籍贯-->
+            <div class="div_col_3">
+                <div class="type_col_3">籍贯：</div>
+                <input class="txt_col_3" type="text">
+            </div>
+        </div>
+        <div class="div_line_info">
+            <!--身份证编号-->
+            <div class="div_col_1_long">
+                <div class="type_info">身份证编号：</div>
+                <input class="txt_col_1_long" type="text">
+            </div>
+            <!--年龄-->
+            <div class="div_col_2">
+                <div class="type_col_2">年龄：</div>
+                <input class="txt_col_2" type="text">
+            </div>
+            <!--班组长-->
+            <div class="div_col_3">
+                <div class="type_col_3">班组长：</div>
+                <input class="txt_col_3" type="text">
+            </div>
+        </div>
+        <!--个人证书-->
+        <div class="div_certificate">
+            <div class="type_info">个人证书：</div>
+            <textarea class="txt_certificate" type="text"></textarea>
+        </div>
+        <!--家庭住址-->
+        <div class="div_address">
+            <div class="type_info">家庭住址：</div>
+            <textarea class="txt_address" type="text"></textarea>
+        </div>
+        <!--技能评定-->
+        <div class="div_line_info_long">
+            <div class="type_info">技能评定：</div>
+            <textarea class="txt_info" type="text"></textarea>
+        </div>
+        <!--培训记录-->
+        <div class="div_line_info_long">
+            <div class="type_info">培训记录：</div>
+            <textarea class="txt_info" type="text"></textarea>
+        </div>
+        <!--项目经历-->
+        <div class="div_line_info_long">
+            <div class="type_info">项目经历：</div>
+            <textarea class="txt_info" type="text"></textarea>
+        </div>
+        <div class="div_line_info">
+            <!--紧急联系人-->
+            <div class="div_col_1">
+                <div class="type_info">紧急联系人：</div>
+                <input class="txt_col_1" type="text">
+            </div>
+            <!--紧急联系人联系方式-->
+            <div class="div_contact_phone">
+                <div class="type_contact_phone">紧急联系人联系方式：</div>
+                <input class="txt_contact_phone" type="text">
+            </div>
+        </div>
+    </div>
+    <!--保存取消按钮-->
+    <div class="div_btn">
+        <button class="btn_save" type="button">保存</button>
+        <button class="btn_cancel" type="button">取消</button>
+    </div>
+    <!--返回按钮-->
+    <button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+</div>
+<script src="/worker-union-fm/common/js/jquery.min.js"></script>
+<script src="/worker-union-fm/project/implement/js/labor_info_detail.js"></script>
+</body>
+</html>

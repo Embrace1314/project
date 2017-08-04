@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>转库材料详情</title>
+<link href="/worker-union-fm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+<link href="/worker-union-fm/common/css/global.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/css/title.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/loading/loading.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/storage/transfer_material_info.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<!--标题背景-->
+	<div class="title_bg"></div>
+	<!--页面容器-->
+	<div class="container">
+		<iframe id="loading" class="loading" src="/worker-union-fm/common/loading/loading.html" style="display: none;"></iframe>
+		<!--标题-->
+		<div class="title">转库材料详情</div>
+		<!--用户名及退出系统-->
+		<div class="div_user_name">
+			<div id="txtUserName" class="txt_user_name"></div>
+			<div class="div_divider_name_logout">|</div>
+			<button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+		</div>
+		<!--Home键-->
+		<button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+		<!--转库信息标题-->
+		<div class="title_info">
+			<div>
+				转<br />库<br />材<br />料<br />详<br />情
+			</div>
+		</div>
+		<!--转库信息编辑框-->
+		<div class="div_info">
+			<div class="div_line_info">
+				<!--材料接收方-->
+				<div class="div_col_1">
+					<div class="type_col_1">材料接收方：</div>
+					<div id="txtImportProjectName" class="txt_col_1"></div>
+				</div>
+				<!--材料转出方-->
+				<div class="div_col_2">
+					<div class="type_col_2">材料转出方：</div>
+					<div id="txtExportProjectName" class="txt_col_2"></div>
+				</div>
+			</div>
+			<div class="div_line_info_other">
+				<!--转库申请人-->
+				<div class="div_col_1">
+					<div class="type_col_1">转库申请人：</div>
+					<div id="txtStaffName" class="txt_col_1"></div>
+				</div>
+				<!--转库申请时间-->
+				<div class="div_col_2">
+					<div class="type_col_2">转库申请时间：</div>
+					<div id="txtCstCreate" class="txt_col_2"></div>
+				</div>
+			</div>
+
+			<!--审核状态-->
+			<div class="div_audit_status">
+				<div class="type_audit_status">审核状态：</div>
+				<div id="txtStatus" class="txt_audit_status"></div>
+			</div>
+		</div>
+		<!--转库信息-->
+		<div class="div_info_list">
+			<table id="tableMaterialTransferApplicationDetails" class="table_transfer">
+				<tr>
+					<th width="190px">材料编码</th>
+					<th width="264px">材料名称</th>
+					<th width="236px">规格、型号</th>
+					<th width="179px">转库数量</th>
+					<th width="177px" class="list_last_col">转库价格</th>
+				</tr>
+
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td class="list_last_col"></td>
+				</tr>
+
+			</table>
+		</div>
+
+		<!--返回按钮-->
+		<button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+
+	</div>
+	<script type="text/javascript" src="/worker-union-fm/common/js/util.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/common/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/common/js/datepicker_cn.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/storage/transfer_material_info.js"></script>
+</body>
+</html>

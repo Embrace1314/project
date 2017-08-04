@@ -1,0 +1,127 @@
+/*表头*/
+.div_list_title{
+    position: absolute;
+    left: 20px;
+    top: 80px;
+    width: 908px;
+    height: 47px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+    background-color: #8E8B8B;
+    z-index: 1;
+}
+.div_title{
+    position: absolute;
+    width: 940px;
+    height: 51px;
+}
+.list_title{
+    float: left;
+    height: 46px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 46px;
+    text-align: center;
+    border: 1px solid #666666;
+    background-color: #FFFFFF;
+}
+/*表格*/
+.div_list_content{
+    position: relative;
+    left: 20px;
+    top: 140px;
+    width: 908px;
+    _height: 46px;
+    min-height: 46px;
+    border: 10px solid #8E8B8B;
+}
+.div_list_content>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置单元格样式*/
+.div_list_content>table td{
+    height: 44px;
+    _height: 44px;
+    min-height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_list_content>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_list_content>table tr td.list_last_col_row{
+    color: #FFFFFF;
+    border-right:none;
+    background-color: #8E8B8B
+}
+
+.btn_attachment_detail{
+    position: relative;
+    left: 20px;
+    top: 120px;
+    width: 270px;
+    height: 40px;
+    font-family: Arial;
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    background: #169BD5;
+}
+.btn_attachment_detail:hover{
+    background: #127CAA;
+}
+.btn_attachment_detail:active{
+    background: #127CAA;
+}
+
+/*虚线分割线*/
+.div_dashed{
+    position: absolute;
+    left: 995px;
+    top: 60px;
+    width: 2px;
+    height: 558px;
+    border-right: 1px dashed #CCCCCC;
+}
+/*右侧导航键*/
+.nav_bar_side{
+    position: absolute;
+    top: 71px;
+    left: 1012px;
+    width: 178px;
+    height: 730px;
+}
+/*返回*/
+.btn_back {
+    position: relative;
+    top: 300px;
+    left: 800px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}

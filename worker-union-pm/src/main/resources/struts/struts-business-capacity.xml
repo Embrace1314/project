@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- TODOPROJECT -->
+	<!-- 服务器系统入口 -->
+	<package name="businessCapacity" namespace="/business_capacity" extends="default">
+
+		<!-- 获取最新的产值确认文件信息 -->
+		<action name="getLatestBusinessCapacityAttachment" class="top.warmheart.workerunion.pm.server.action.BusinessCapacityAction"
+			method="getLatestAttachment">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 删除产值确认文件 -->
+		<action name="removeBusinessCapacityAttachment" class="top.warmheart.workerunion.pm.server.action.BusinessCapacityAction"
+			method="removeAttachment">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 分页获取产值确认文件列表信息 -->
+		<action name="pageBusinessCapacityAttachment" class="top.warmheart.workerunion.pm.server.action.BusinessCapacityAction"
+			method="pageAttachment">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 分页获取经营产值项列表信息 -->
+		<action name="pageBusinessCapacityItem" class="top.warmheart.workerunion.pm.server.action.BusinessCapacityAction"
+			method="pageItem">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 添加某月经营产值 -->
+		<action name="addBusinessCapacityItem" class="top.warmheart.workerunion.pm.server.action.BusinessCapacityAction"
+			method="addItem">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 修改某月经营产值 -->
+		<action name="modifyBusinessCapacityItem" class="top.warmheart.workerunion.pm.server.action.BusinessCapacityAction"
+			method="modifyItem">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 删除某月经营产值 -->
+		<action name="removeBusinessCapacityItem" class="top.warmheart.workerunion.pm.server.action.BusinessCapacityAction"
+			method="removeItem">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+	</package>
+</struts>

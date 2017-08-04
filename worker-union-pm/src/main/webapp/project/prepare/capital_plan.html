@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>资金计划</title>
+    <link href="/worker-union-pm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/worker-union-pm/common/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/css/title.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/css/nav_bar_side.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/project/prepare/capital_plan.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/loading/loading.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--标题背景-->
+<div class="title_bg"></div>
+<!--页面容器-->
+<div class="container">
+    <iframe id="loading" class="loading" src="/worker-union-pm/common/loading/loading.html" style="display: none;"></iframe>
+    <!--标题-->
+    <div id="txtTitle" class="title">资金计划</div>
+    <!--用户名及退出系统-->
+    <div class="div_user_name">
+        <div id="txtUserName" class="txt_user_name"></div>
+        <div class="div_divider_name_logout">|</div>
+        <button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+    </div>
+    <!--Home键-->
+    <button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+    <!--资金需求总计-->
+    <div class="div_capital_demand">
+        <div class="type_capital_demand">资金量需求总计：¥</div>
+        <!--资金需求数目-->
+        <div id="txtMoneySum" class="txt_capital_demand"></div>
+    </div>
+
+    <!--资金计划详细信息-->
+    <div class="div_capital_detail_title">
+        <div class="capital_detail_title">资金计划详细</div>
+        <!--提交按钮-->
+        <div class="div_submit">提交</div>
+    </div>
+
+    <!--资金计划详细信息列表-->
+    <div class="div_plan_detail_list">
+        <table id="tableCapital">
+            <tr onclick="clearTableSelectStatus(this)">
+                <th width="213px">资源项目</th>
+                <th width="138px">需求说明</th>
+                <th width="139px">资金量(元)</th>
+                <th width="140px">预计采购时间</th>
+                <th width="136px">使用时间要求</th>
+                <th width="138px" class="list_last_col">关联成本项</th>
+            </tr>
+        </table>
+    </div>
+    <div class="div_btn">
+        <!--添加按钮-->
+        <button class="btn_add" type="button" onclick="btnToAddDialog()">添加</button>
+        <!--修改按钮-->
+        <button class="btn_modify" type="button" onclick="btnToModifyDialog()">修改</button>
+        <!--删除按钮-->
+        <button class="btn_delete" type="button" onclick="btnDeleteCapitalItem()">删除</button>
+    </div>
+
+    <!--虚线分割线-->
+    <div class="div_dashed"></div>
+    <!--右侧导航按钮-->
+    <div class="nav_bar_side">
+        <ul class="nav_bar_menu" style="display: block">
+            <li><a href="javascript:void(0)">项目立项</a>
+                <ul>
+                    <li><a id="navBidInfo" class="nav_bar_submenu">中标信息</a></li>
+                    <li><a id="navCostAnalysis" class="nav_bar_submenu">成本分析</a></li>
+                    <li><a id="navObjectiveManage" class="nav_bar_submenu">目标管理</a></li>
+                    <li><a id="navBuildReport" class="nav_bar_submenu">项目报建</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)">项目准备</a>
+                <ul style="display: block">
+                    <li><a id="navTeamBuild" class="nav_bar_submenu">团队搭建</a></li>
+                    <li><a id="navPlanDeepen" class="nav_bar_submenu">方案深化</a></li>
+                    <li><a id="navCostDeepen" class="nav_bar_submenu">成本深化</a></li>
+                    <li><a id="navCapitalPlan" class="nav_bar_submenu_select">资金计划</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)">项目实施</a>
+                <ul>
+                    <li><a id="navOperationManage" class="nav_bar_submenu">经营管理</a></li>
+                    <li><a id="navProductionManage" class="nav_bar_submenu">生产管理</a></li>
+                    <li><a id="navTechnicalManage" class="nav_bar_submenu">技术管理</a></li>
+                    <li><a id="navSecurityManage" class="nav_bar_submenu">安全管理</a></li>
+                    <li><a id="navQualityManage" class="nav_bar_submenu">质量管理</a></li>
+                    <li><a id="navResourceImplement" class="nav_bar_submenu">资源落实</a></li>
+                    <li><a id="navSettlementManage" class="nav_bar_submenu">结算管理</a></li>
+                    <li><a id="navStoreManage" class="nav_bar_submenu">仓库管理</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)">项目竣工</a>
+                <ul>
+                    <li><a id="navCompleteCheck" class="nav_bar_submenu">竣工验收</a></li>
+                    <li class="nav_bar_submenu_disable">项目部解体</li>
+                    <li><a id="navProjectSummary" class="nav_bar_submenu">项目总结</a></li>
+                    <li><a id="navInternalSettlement" class="nav_bar_submenu">内部结算</a></li>
+                    <li><a id="navCompleteSettlement" class="nav_bar_submenu">竣工结算</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!--返回按钮-->
+    <button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+
+</div>
+
+<!--资金计划详细修改弹窗，默认不可见-->
+<div id="dialogModify" class="div_mask_modify" style="display: none">
+    <div id="txtCapitalItemId" hidden="true"></div>
+    <img src="/worker-union-pm/common/image/img_mask.png" width="100%" height="100%"/>
+    <!--弹窗页面容器-->
+    <div class="dialog_container">
+        <!--标题-->
+        <div class="dialog_title_detail">
+            <div>资<br/>金<br/>计<br/>划<br/>详<br/>细<br/>条<br/>目</div>
+        </div>
+        <!--条目信息-->
+        <div class="div_detail">
+            <!--资源项目-->
+            <div class="div_line_detail">
+                <div class="type_detail">资源项目：</div>
+                <div id="txtTypeModify" class="txt_detail txt_disable"></div>
+            </div>
+            <!--需求说明-->
+            <div class="div_line_detail">
+                <div class="type_detail">需求说明：</div>
+                <input id="txtRequireModify" class="txt_detail" type="text">
+            </div>
+            <!--资金量-->
+            <div class="div_line_detail">
+                <div class="type_detail">资金量(元)：</div>
+                <input id="txtMoneyModify" class="txt_detail" type="number">
+            </div>
+            <!--预计采购时间-->
+            <div class="div_line_detail">
+                <div class="type_detail">预计采购时间：</div>
+                <input id="txtPurchaseDateModify" class="txt_detail" type="text">
+            </div>
+            <!--使用时间要求-->
+            <div class="div_line_detail">
+                <div class="type_detail">使用时间要求：</div>
+                <input id="txtUseDateModify" class="txt_detail" type="text">
+            </div>
+            <!--关联成本项-->
+            <div class="div_line_detail">
+                <div class="type_detail">关联成本项：</div>
+                <select id="txtCostTypeModify" class="btn_select">
+                    <option value="">请选择关联成本项</option>
+                </select>
+            </div>
+        </div>
+        <div class="div_btn_dialog">
+            <!--保存按钮-->
+            <button class="btn_save" type="button" onclick="btnModifyCapitalItem()">保存</button>
+            <!--取消按钮-->
+            <button class="btn_cancel" type="button" onclick="closeDialog()">取消</button>
+        </div>
+    </div>
+</div>
+
+
+<!--资金计划详细添加弹窗，默认不可见-->
+<div id="dialogAdd" class="div_mask_add" style="display: none">
+    <img src="/worker-union-pm/common/image/img_mask.png" width="100%" height="100%"/>
+    <!--弹窗页面容器-->
+    <div class="dialog_container">
+        <!--标题-->
+        <div class="dialog_title_detail">
+            <div>资<br/>金<br/>计<br/>划<br/>详<br/>细<br/>条<br/>目</div>
+        </div>
+        <!--条目信息-->
+        <div class="div_detail">
+            <!--资源项目-->
+            <div class="div_line_detail">
+                <div class="type_detail">资源项目：</div>
+                <select id="txtTypeAdd" class="btn_select">
+                    <option value="">请选择资源项目</option>
+                </select>
+            </div>
+            <!--需求说明-->
+            <div class="div_line_detail">
+                <div class="type_detail">需求说明：</div>
+                <input id="txtRequireAdd" class="txt_detail" type="text">
+            </div>
+            <!--资金量-->
+            <div class="div_line_detail">
+                <div class="type_detail">资金量(元)：</div>
+                <input id="txtMoneyAdd" class="txt_detail" type="number">
+            </div>
+            <!--预计采购时间-->
+            <div class="div_line_detail">
+                <div class="type_detail">预计采购时间：</div>
+                <input id="txtPurchaseDateAdd" class="txt_detail" type="text">
+            </div>
+            <!--使用时间要求-->
+            <div class="div_line_detail">
+                <div class="type_detail">使用时间要求：</div>
+                <input id="txtUseDateAdd" class="txt_detail" type="text">
+            </div>
+            <!--关联成本项-->
+            <div class="div_line_detail">
+                <div class="type_detail">关联成本项：</div>
+                <select id="txtCostTypeAdd" class="btn_select">
+                    <option value="">请选择关联成本项</option>
+                </select>
+            </div>
+        </div>
+        <div class="div_btn_dialog">
+            <!--保存按钮-->
+            <button class="btn_save" type="button" onclick="btnSaveCapitalItem()">保存</button>
+            <!--取消按钮-->
+            <button class="btn_cancel" type="button" onclick="closeDialog()">取消</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/worker-union-pm/common/js/util.js"></script>
+<script type="text/javascript" src="/worker-union-pm/common/js/nav_bar.js"></script>
+<script type="text/javascript" src="/worker-union-pm/common/js/nav_bar_side.js"></script>
+<script type="text/javascript" src="/worker-union-pm/common/js/jquery-ui.min.js"></script>
+<script type ="text/javascript" src="/worker-union-pm/common/js/datepicker_cn.js"></script>
+<script type="text/javascript" src="/worker-union-pm/project/prepare/capital_plan.js"></script>
+</body>
+</html>

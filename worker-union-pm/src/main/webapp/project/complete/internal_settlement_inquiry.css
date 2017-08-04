@@ -1,0 +1,115 @@
+/*信息列表*/
+.div_info_list{
+    position: relative;
+    left: 30px;
+    top: 90px;
+    width: 1100px;
+    _height: 58px;
+    min-height: 58px;
+    padding: 20px;
+    background-color: #8E8B8B;
+    border: #CCCCCC 1px solid;
+    border-radius: 5px;
+}
+/*设置表格样式*/
+.div_info_list>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #333333;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置表头样式*/
+.div_info_list>table th{
+    height: 58px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+    font-weight: normal;
+}
+.div_info_list>table tr th.list_last_col_title{
+    border-right: 0;
+}
+/*设置单元格样式*/
+.div_info_list>table td{
+    height: 58px;
+    _height: 58px;
+    min-height: 58px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_info_list>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_info_list>table tr td.list_last_col{
+    border-right: 1px solid;
+    background-color: #8E8B8B;
+    border-color: #CCCCCC;
+}
+/*设置最后一行最后一列单元格样式*/
+.div_info_list>table tr td.list_last_col_row{
+    border-bottom: #CCCCCC 1px solid;
+    border-right: #CCCCCC 1px solid;
+    background-color: #8E8B8B;
+}
+/*设置删除按钮样式*/
+.div_info_list>table .btn_delete{
+    width: 222px;
+    height: 45px;
+    font-family: Arial;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 45px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_delete_operation_manage.png") no-repeat;
+}
+.div_info_list>table .btn_delete:hover{
+    background: url("/worker-union-pm/common/image/img_btn_delete_operation_manage_focus.png") no-repeat;
+}
+.div_info_list>table .btn_delete:active{
+    background: url("/worker-union-pm/common/image/img_btn_delete_operation_manage_focus.png") no-repeat;
+}
+
+.btn_delete_disable{
+    width: 222px;
+    height: 45px;
+    font-family: Arial;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 45px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_delete_operation_manage_disable.png") no-repeat;
+}
+
+/*翻页按钮*/
+.div_page_btn{
+    position: relative;
+    left: 50px;
+    top: 110px;
+    width: 380px;
+    height: 31px;
+}
+/*返回*/
+.btn_back{
+    position: relative;
+    top: 155px;
+    left: 1082px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover{
+    background: url("/worker-union-pm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active{
+    background: url("/worker-union-pm/common/image/img_btn_back_focus.png") no-repeat;
+}

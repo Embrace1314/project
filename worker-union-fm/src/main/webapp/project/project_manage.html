@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>项目管理</title>
+    <link href="/worker-union-fm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/worker-union-fm/common/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/css/title.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/project/project_manage.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/loading/loading.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--标题背景-->
+<div class="title_bg"></div>
+<!--页面容器-->
+<div class="container">
+    <iframe id="loading" class="loading" src="/worker-union-fm/common/loading/loading.html" style="display: none;"></iframe>
+    <!--标题-->
+    <div class="title">项目管理</div>
+    <!--用户名及退出系统-->
+    <div class="div_user_name">
+        <div id="txtUserName" class="txt_user_name"></div>
+        <div class="div_divider_name_logout">|</div>
+        <button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+    </div>
+    <!--Home键-->
+    <button class="btn_home" onclick="gotoHtml(HTML_HOME)"></button>
+
+    <!--年份选择-->
+    <select id="selectYear" class="select_year" onchange="getPageProjects()"></select>
+
+    <!--日历-->
+    <div class="div_calendar" style="display: none">
+        <div class="calendar_bar"></div>
+        <!--日历显示-->
+        <div class="calendar_display">
+            <!--选中年份显示-->
+            <div class="div_calendar_year">
+                <div class="calendar_year_choosen">2017</div>
+                <div class="calendar_year_symbol">年</div>
+            </div>
+        </div>
+    </div>
+    <!--选择立项年份按钮-->
+    <button class="choose_project_year" style="display: none">选择立项年份</button>
+    <!--项目列表-->
+    <div id="projectList" class="project_list"></div>
+    <!--翻页按钮-->
+    <div class="div_page_btn">
+        <!--上一页-->
+        <button class="btn_page_up" type="button" onclick="prePage()">上一页</button>
+        <!--页码显示-->
+        <div class="txt_page_number">
+            <div id="pagination" class="current_page">1</div>
+            <div class="oblique_line">/</div>
+            <div id="totalPage" class="total_page">1</div>
+        </div>
+        <!--下一页-->
+        <button class="btn_page_down" type="button" onclick="nextPage()">下一页</button>
+    </div>
+    <!--虚线分割线-->
+    <div class="div_dashed"></div>
+    <!--右侧导航按钮-->
+    <div class="nav_btn_side">
+        <!--创建新项目按钮-->
+        <button id="btnAddProject" class="btn_new_project" type="button"
+                onclick="gotoLocalHtml('/project/establish/new_project.html')">
+            &nbsp;&nbsp;&nbsp;创建新项目
+        </button>
+        <!-- 保存当前的项目状态 -->
+        <input id="status" hidden="true" value="">
+        <!--进行中项目按钮-->
+        <button id="btnGoingProject" class="btn_ongoing_project" type="button" onclick="btnGoingProject()">
+            &nbsp;&nbsp;&nbsp;进行中项目
+        </button>
+        <!--已归档项目按钮-->
+        <button id="btnArchivedProject" class="btn_archived_project" type="button" onclick="btnArchivedProject()">
+            &nbsp;&nbsp;&nbsp;已归档项目
+        </button>
+        <!--所有项目按钮-->
+        <button id="btnAllProject" class="btn_all_project" type="button" onclick="btnAllProject()">
+            &nbsp;&nbsp;&nbsp;所有项目
+        </button>
+    </div>
+
+    <!--返回按钮-->
+    <button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+
+</div>
+<script type="text/javascript" src="/worker-union-fm/common/js/util.js"></script>
+<script type="text/javascript" src="/worker-union-fm/project/project_manage.js"></script>
+</body>
+</html>

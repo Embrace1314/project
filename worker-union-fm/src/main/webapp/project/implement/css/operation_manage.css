@@ -1,0 +1,216 @@
+/*产值确认文件表格*/
+.div_production_confirm{
+    position: absolute;
+    left: 30px;
+    top: 89px;
+    width: 916px;
+    _height: 120px;
+    min-height: 120px;
+    max-height: 125px;
+    border: #8E8B8B 10px solid;
+    border-radius: 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+/*设置表格样式*/
+.div_production_confirm>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置单元格样式*/
+.div_production_confirm>table td{
+    height: 59px;
+    _height: 59px;
+    min-height: 59px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_production_confirm>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_production_confirm>table tr td.list_last_col{
+    border-right: 0;
+}
+/*查看更多文件*/
+.btn_more{
+    position: absolute;
+    left: 752px;
+    top: 36px;
+    width: 211px;
+    height: 54px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 54px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_more_operation_manage.png");
+}
+.btn_more:hover{
+    background: url("/worker-union-fm/common/image/img_btn_more_operation_manage_focus.png");
+}
+.btn_more:active{
+    background: url("/worker-union-fm/common/image/img_btn_more_operation_manage_focus.png");
+}
+/*产值信息表格*/
+.div_production_info_list{
+    position: relative;
+    left: 30px;
+    top: 274px;
+    width: 915px;
+    _height: 596px;
+    min-height: 596px;
+    border: #8E8B8B 10px solid;
+    border-radius: 5px;
+}
+/*设置表格样式*/
+.div_production_info_list>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置单元格样式*/
+.div_production_info_list>table th{
+    height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+    font-weight: normal;
+}
+.div_production_info_list>table tr th.list_last_col{
+    border-right: 0;
+}
+/*设置单元格样式*/
+.div_production_info_list>table td{
+    height: 44px;
+    _height: 44px;
+    min-height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_production_info_list>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_production_info_list>table tr td.list_last_col{
+    border-right: 0;
+}
+/*设置行选中样式*/
+.list_tr_selected{
+    background-color: #0066FF;
+    color: #FFFFFF;
+}
+/*翻页按钮*/
+.div_page_btn{
+    position: relative;
+    left: 41px;
+    top: 285px;
+    width: 375px;
+    height: 31px;
+}
+
+/*当月核定产值*/
+.div_month_production{
+    position: relative;
+    left: 98px;
+    top: 375px;
+    width: 790px;
+    height: 240px;
+    background-color: #8E8B8B;
+    border-radius: 5px;
+}
+/*填写当月核定产值*/
+.type_month_production{
+    position: absolute;
+    left: 20px;
+    top: 70px;
+    width: 227px;
+    height: 40px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: right;
+}
+.txt_month_production{
+    position: absolute;
+    left: 260px;
+    top: 70px;
+    width: 480px;
+    height: 40px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+/*保存按钮*/
+.btn_save{
+    position: absolute;
+    left: 260px;
+    top: 155px;
+    width: 480px;
+    height: 41px;
+    font-family: Arial;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 41px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_save_operation_manage.png");
+}
+.btn_save:hover{
+    background: url("/worker-union-fm/common/image/img_btn_save_operation_manage_focus.png");
+}
+.btn_save:active{
+    background: url("/worker-union-fm/common/image/img_btn_save_operation_manage_focus.png");
+}
+/*虚线分割线*/
+.div_dashed{
+    position: absolute;
+    left: 995px;
+    top: 70px;
+    width: 2px;
+    height: 749px;
+    border-right: 1px dashed #CCCCCC;
+}
+/*右侧导航键*/
+.nav_bar_side{
+    position: absolute;
+    top: 79px;
+    left: 1010px;
+    width: 178px;
+    height: 730px;
+}
+/*返回*/
+.btn_back {
+    position: relative;
+    top: 480px;
+    left: 1076px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}

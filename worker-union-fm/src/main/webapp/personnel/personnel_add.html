@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>新增人员信息</title>
+<link href="/worker-union-fm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+<link href="/worker-union-fm/common/css/global.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/css/title.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/personnel/personnel_info.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/loading/loading.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/css/jquery-ui.min.css" rel="stylesheet">
+</head>
+<body>
+	<!--标题背景-->
+	<div class="title_bg"></div>
+	<!--页面容器-->
+	<div class="container">
+		<iframe id="loading" class="loading" src="/worker-union-fm/common/loading/loading.html" style="display: none;"></iframe>
+		<!--标题-->
+		<div class="title">新增人员信息</div>
+		<!--用户名及退出系统-->
+		<div class="div_user_name">
+			<div id="txtUserName" class="txt_user_name"></div>
+			<div class="div_divider_name_logout">|</div>
+			<button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+		</div>
+		<!--Home键-->
+		<button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+		<!--人员信息标题-->
+		<div class="title_personnel_info">
+			<div>
+				人<br />员<br />信<br />息
+			</div>
+		</div>
+		<!--人员信息编辑框-->
+		<div class="div_info">
+			<div class="div_line_info">
+				<!--姓名-->
+				<div class="div_col_1">
+					<div class="type_info">姓名：</div>
+					<input id="txtName" class="txt_col_1" type="text">
+				</div>
+				<!--性别-->
+				<div class="div_col_2">
+					<div class="type_col_2">性别：</div>
+					<div class="txt_col_2 color_gray"></div>
+				</div>
+				<!--年龄-->
+				<div class="div_col_3">
+					<div class="type_col_3">年龄：</div>
+					<div class="txt_col_3 color_gray"></div>
+				</div>
+			</div>
+			<div class="div_line_info">
+				<!--工号-->
+				<div class="div_col_1">
+					<div class="type_info">工号：</div>
+					<input id="txtJobNo" class="txt_col_1" type="text">
+				</div>
+				<!--籍贯-->
+				<div class="div_col_2">
+					<div class="type_col_2">籍贯：</div>
+					<div class="txt_col_2 color_gray"></div>
+				</div>
+				<!--联系方式-->
+				<div class="div_col_3">
+					<div class="type_col_3">联系方式：</div>
+					<input id="txtPhone" class="txt_col_3" type="text">
+				</div>
+			</div>
+			<!--身份证号码-->
+			<div class="div_line_info">
+				<div class="type_info">身份证号码：</div>
+				<input id="txtIdCardNo" class="txt_info" type="text">
+			</div>
+			<!--入驻项目-->
+			<div class="div_line_info">
+				<div class="type_info">入驻项目：</div>
+				<div class="txt_info color_gray"></div>
+			</div>
+			<!--家庭住址-->
+			<div class="div_line_info">
+				<div class="type_info">家庭住址：</div>
+				<input id="txtAddress" class="txt_info" type="text">
+			</div>
+			<div class="div_line_info">
+				<!--入职时间-->
+				<div class="div_time">
+					<div class="type_info">入职时间：</div>
+					<input id="txtEntryDate" class="txt_time" type="text">
+				</div>
+				<!--入职岗位-->
+				<div class="div_position">
+					<div class="type_position">入职岗位：</div>
+					<div class="txt_position color_gray"></div>
+				</div>
+				<!--入职岗位配置按钮-->
+				<button class="btn_position_configure_disable">配置</button>
+			</div>
+			<!--职业经历-->
+			<div class="div_line_high">
+				<div class="type_info">职业经历：</div>
+				<textarea id="txtCareer" class="txt_line_high" type="text"></textarea>
+			</div>
+			<!--个人所有资质及编号-->
+			<div class="div_qualification">
+				<div class="type_info">个人所有资质及编号：</div>
+				<div class="txt_qualification color_gray"></div>
+			</div>
+			<!--备注-->
+			<div class="div_line_high">
+				<div class="type_info">备注：</div>
+				<textarea id="txtMemo" class="txt_line_high" type="text"></textarea>
+			</div>
+		</div>
+		<!--保存取消按钮-->
+		<div class="div_btn">
+			<button class="btn_save" type="button" onclick="btnSave()">保存</button>
+			<button class="btn_cancel" type="button" onclick="gotoBack()">取消</button>
+		</div>
+		<!--返回按钮-->
+		<button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+
+	</div>
+
+	<!--岗位配置弹窗，默认不可见-->
+	<div class="div_mask" style="display: none">
+		<img src="/worker-union-fm/common/image/img_mask.png" width="100%" height="100%"/>
+		<!--弹窗页面容器-->
+		<div class="dialog_container">
+			<!--标题-->
+			<div class="dialog_title">
+				<div>岗<br/>位<br/>配<br/>置</div>
+			</div>
+			<!--岗位信息-->
+			<div class="div_info_dialog">
+				<!--所有岗位-->
+				<div class="div_all_position">
+					<!--所有岗位标题-->
+					<div class="title_all_position">所有岗位</div>
+					<!--所有岗位内容-->
+					<div class="content_all_position">
+						<table>
+							<tr><td></td></tr>
+							<tr><td></td></tr>
+							<tr><td></td></tr>
+							<tr><td></td></tr>
+							<tr><td></td></tr>
+							<tr><td></td></tr>
+							<tr><td></td></tr>
+							<tr><td></td></tr>
+							<tr><td></td></tr>
+						</table>
+					</div>
+				</div>
+				<!--选择箭头-->
+				<div class="btn_arrow"></div>
+				<!--取消箭头-->
+				<div class="btn_arrow_cancel"></div>
+				<!--已授权岗位-->
+				<div class="div_authorized_position">
+					<!--已授权岗位标题-->
+					<div class="title_authorized_position">已授权岗位</div>
+					<!--已授权岗位内容-->
+					<div class="content_authorized_position">
+						<table>
+							<tr><td></td></tr>
+							<tr><td></td></tr>
+							<tr><td></td></tr>
+							<tr><td></td></tr>
+							<tr><td></td></tr>
+							<tr><td></td></tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="div_btn_dialog">
+				<!--保存按钮-->
+				<button class="btn_save_dialog" type="button">保存</button>
+				<!--取消按钮-->
+				<button class="btn_cancel_dialog" type="button">取消</button>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="/worker-union-fm/common/js/util.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/common/js/jquery-ui.min.js"></script>
+	<script type ="text/javascript" src="/worker-union-fm/common/js/datepicker_cn.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/personnel/personnel_add.js"></script>
+</body>
+</html>

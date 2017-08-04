@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="/worker-union-fm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/worker-union-fm/common/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/css/title.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/css/nav_bar_side.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/css/page.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/loading/loading.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/project/implement/css/store_manage.css" rel="stylesheet" type="text/css">
+    <title>仓库管理</title>
+</head>
+<body>
+<!--标题背景-->
+<div class="title_bg"></div>
+<!--页面容器-->
+<div class="container">
+    <iframe id="loading" class="loading" src="/worker-union-fm/common/loading/loading.html" style="display: none;"></iframe>
+    <!--标题-->
+    <div id="txtTitle" class="title">仓库管理</div>
+    <!--用户名及退出系统-->
+    <div class="div_user_name">
+        <div id="txtUserName" class="txt_user_name"></div>
+        <div class="div_divider_name_logout">|</div>
+        <button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+    </div>
+    <!--Home键-->
+    <button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+    <!--材料编码-->
+    <div class="div_material_number">
+        <div class="type_material_number">材料编码：</div>
+        <input id="txtMaterialNum" class="txt_material_number" type="text">
+    </div>
+    <!--材料名称-->
+    <div class="div_material_name">
+        <div class="type_material_number">材料名称：</div>
+        <input id="txtMaterialName" class="txt_material_number" type="text">
+    </div>
+    <!--查询按钮-->
+    <button class="btn_search" type="button" onclick="btnSearchMaterial()">查询</button>
+    <!--出入库按钮-->
+    <div class="div_store_btn">
+        <!--入库按钮-->
+        <button class="btn_in" type="button" disabled="disabled">入库</button>
+        <!--领用按钮-->
+        <button class="btn_in" type="button" disabled="disabled">领用</button>
+        <!--转库按钮-->
+        <button class="btn_in" type="button" disabled="disabled">转库</button>
+    </div>
+    <!--材料信息表格-->
+    <div class="div_list_content">
+        <table id="tableMaterial">
+            <tr>
+                <th width="289px">材料编码</th>
+                <th width="234px">材料品种</th>
+                <th width="190px">规格、型号</th>
+                <th width="130px">计量单位</th>
+                <th width="114px" class="list_last_col">库存数量</th>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col"></td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_last_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    <!--翻页按钮-->
+    <div class="div_page_btn">
+        <!--上一页-->
+        <button class="btn_page_up" type="button" onclick="btnPrevPage()">上一页</button>
+        <!--页码显示-->
+        <div class="txt_page_number">
+            <div id="txtPagination" class="current_page">1</div>
+            <div class="oblique_line">/</div>
+            <div id="txtTotalPage" class="total_page">1</div>
+        </div>
+        <!--下一页-->
+        <button class="btn_page_down" type="button" onclick="btnNextPage()">下一页</button>
+    </div>
+
+    <!--出入库查询编辑框-->
+    <div class="div_btn_search_order">
+        <!--出入库人-->
+        <div class="div_person">
+            <div class="type_info_order">出入库人：</div>
+            <input id="txtStaffName" class="txt_person" type="text">
+        </div>
+        <!--出入库时间-->
+        <div class="div_time">
+            <div class="type_info_order">出入库时间：</div>
+            <input id="txtOrderDate" class="txt_time" type="text">
+        </div>
+        <!--出入库批次-->
+        <div class="div_order">
+            <div class="type_info_order">出入库批次：</div>
+            <input id="txtBatchNo" class="txt_order" type="text">
+        </div>
+        <!--查询按钮-->
+        <button class="btn_search_store" type="button" onclick="btnSearchMaterialOrder()">查询</button>
+    </div>
+
+    <!--材料出入库信息表格-->
+    <div class="div_store_list">
+        <table id="tableMaterialOrder">
+            <tr>
+                <th width="115px">操作</th>
+                <th width="145px">批次</th>
+                <th width="203px">材料编码</th>
+                <th width="185px">材料品种</th>
+                <th width="122px">单价(元)</th>
+                <th width="137px">出入库时间</th>
+                <th width="119px">出入库数量</th>
+                <th width="118px" class="list_last_col">出入库人</th>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_mid_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+            <tr class="list_last_row">
+                <td hidden="true"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+    <!--翻页按钮-->
+    <div class="div_page_btn_store">
+        <!--上一页-->
+        <button class="btn_page_up" type="button" onclick="btnPrevPageOrder()">上一页</button>
+        <!--页码显示-->
+        <div class="txt_page_number">
+            <div id="txtPaginationOrder" class="current_page">1</div>
+            <div class="oblique_line">/</div>
+            <div id="txtTotalPageOrder" class="total_page">1</div>
+        </div>
+        <!--下一页-->
+        <button class="btn_page_down" type="button" onclick="btnNextPageOrder()">下一页</button>
+    </div>
+
+    <!--虚线分割线-->
+    <div class="div_dashed"></div>
+    <!--右侧导航按钮-->
+    <div class="nav_bar_side">
+        <ul class="nav_bar_menu" style="display: block">
+            <li><a href="javascript:void(0)">项目立项</a>
+                <ul>
+                    <li><a id="navBidInfo" class="nav_bar_submenu">中标信息</a></li>
+                    <li><a id="navCostAnalysis" class="nav_bar_submenu">成本分析</a></li>
+                    <li><a id="navObjectiveManage" class="nav_bar_submenu">目标管理</a></li>
+                    <li><a id="navBuildReport" class="nav_bar_submenu">项目报建</a></li>
+                </ul></li>
+            <li><a href="javascript:void(0)">项目准备</a>
+                <ul>
+                    <li><a id="navTeamBuild" class="nav_bar_submenu">团队搭建</a></li>
+                    <li><a id="navPlanDeepen" class="nav_bar_submenu">方案深化</a></li>
+                    <li><a id="navCostDeepen" class="nav_bar_submenu">成本深化</a></li>
+                    <li><a id="navCapitalPlan" class="nav_bar_submenu">资金计划</a></li>
+                </ul></li>
+            <li><a href="javascript:void(0)">项目实施</a>
+                <ul style="display: block">
+                    <li><a id="navOperationManage" class="nav_bar_submenu">经营管理</a></li>
+                    <li><a id="navProductionManage" class="nav_bar_submenu">生产管理</a></li>
+                    <li><a id="navTechnicalManage" class="nav_bar_submenu">技术管理</a></li>
+                    <li><a id="navSecurityManage" class="nav_bar_submenu">安全管理</a></li>
+                    <li><a id="navQualityManage" class="nav_bar_submenu">质量管理</a></li>
+                    <li><a id="navResourceImplement" class="nav_bar_submenu">资源落实</a></li>
+                    <li><a id="navSettlementManage" class="nav_bar_submenu">结算管理</a></li>
+                    <li><a id="navStoreManage" class="nav_bar_submenu_select">仓库管理</a></li>
+                </ul></li>
+            <li><a href="javascript:void(0)">项目竣工</a>
+                <ul>
+                    <li><a id="navCompleteCheck" class="nav_bar_submenu">竣工验收</a></li>
+                    <li><a id="navProjectDisintegrate" class="nav_bar_submenu">项目部解体</a></li>
+                    <li><a id="navProjectSummary" class="nav_bar_submenu">项目总结</a></li>
+                    <li><a id="navInternalSettlement" class="nav_bar_submenu">内部结算</a></li>
+                    <li><a id="navCompleteSettlement" class="nav_bar_submenu">竣工结算</a></li>
+                </ul></li>
+        </ul>
+    </div>
+    <!--返回按钮-->
+    <button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+
+</div>
+<script type="text/javascript" src="/worker-union-fm/common/js/util.js"></script>
+<script type="text/javascript" src="/worker-union-fm/common/js/nav_bar.js"></script>
+<script type="text/javascript" src="/worker-union-fm/common/js/nav_bar_side.js"></script>
+<script type="text/javascript" src="/worker-union-fm/common/js/jquery-ui.min.js"></script>
+<script type ="text/javascript" src="/worker-union-fm/common/js/datepicker_cn.js"></script>
+<script type="text/javascript" src="/worker-union-fm/project/implement/js/store_manage.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>供应商信息详情</title>
+<link href="/worker-union-fm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+<link href="/worker-union-fm/common/css/global.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/css/title.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/loading/loading.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/supplier/supplier_info.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<!--标题背景-->
+	<div class="title_bg"></div>
+	<!--页面容器-->
+	<div class="container">
+		<iframe id="loading" class="loading" src="/worker-union-fm/common/loading/loading.html" style="display: none;"></iframe>
+		<!--标题-->
+		<div class="title">供应商信息详情</div>
+		<!--用户名及退出系统-->
+		<div class="div_user_name">
+			<div id="txtUserName" class="txt_user_name"></div>
+			<div class="div_divider_name_logout">|</div>
+			<button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+		</div>
+		<!--Home键-->
+		<button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+		<!--供应商信息标题-->
+		<div class="title_supplier_info">
+			<div>
+				供<br />应<br />商<br />信<br />息
+			</div>
+		</div>
+		<!--供应商信息编辑框-->
+		<div class="div_info">
+			<!--供应商名称-->
+			<div class="div_line_info">
+				<div class="type_info">供应商名称：</div>
+				<input id="txtSupplierName" class="txt_info" type="text">
+			</div>
+			<!--供应商编号-->
+			<div class="div_line_info">
+				<div class="type_info">供应商编号：</div>
+				<div id="txtSupplierNum" class="txt_info txt_disable"></div>
+			</div>
+			<div class="div_line_info">
+				<!--供应商级别-->
+				<div class="div_col_1">
+					<div class="type_info">供应商级别：</div>
+					<select id="selSupplierGrade" class="select_supplier_rank">
+					</select>
+				</div>
+				<!--合作终止时间-->
+				<div class="div_col_2">
+					<div class="type_col_2">合作终止时间：</div>
+					<input id="txtValidDate" class="txt_col_2" type="text">
+				</div>
+			</div>
+			<!--供应资质-->
+			<div class="div_qualification">
+				<div class="type_info">供应资质：</div>
+				<div id="cboxSupplierQualification" class="txt_qualification"></div>
+			</div>
+			<div class="div_line_info_other">
+				<!--联系人-->
+				<div class="div_col_1">
+					<div class="type_info">联系人：</div>
+					<input id="txtContactPerson" class="txt_col_1" type="text">
+				</div>
+				<!--联系方式-->
+				<div class="div_col_2">
+					<div class="type_col_2">联系方式：</div>
+					<input id="txtContactPhone" class="txt_col_2" type="text">
+				</div>
+			</div>
+			<!--供应商证照-->
+			<div class="div_supplier_certification">
+				<div class="type_info">供应商证照：</div>
+				<div class="txt_supplier_certification">
+					<!--最后的添加文件按钮div-->
+					<button id="btnUpload" class="btn_picture_add"></button>
+				</div>
+			</div>
+		</div>
+		<!--保存取消按钮-->
+		<div class="div_btn">
+			<button class="btn_save" type="button" onclick="btnSave()">保存</button>
+			<button class="btn_cancel" type="button" onclick="gotoBack()">取消</button>
+		</div>
+		<!--返回按钮-->
+		<button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+
+	</div>
+	<script type="text/javascript" src="/worker-union-fm/common/plupload/plupload.full.min.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/common/js/util.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/common/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/common/js/datepicker_cn.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/supplier/supplier_info.js"></script>
+</body>
+</html>

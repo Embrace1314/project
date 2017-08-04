@@ -1,0 +1,165 @@
+/*材料名称编号标题*/
+.material_title{
+    position: absolute;
+    left: 12px;
+    top: 137px;
+    width: 1175px;
+    height: 93px;
+    font-family: PingFang SC;
+    font-size: 36px;
+    color: #FFFFFF;
+    line-height: 93px;
+    text-align: center;
+    background-color: #856C5B;
+}
+/*当前剩余量*/
+.div_overplus{
+    position: absolute;
+    left: 11px;
+    top: 89px;
+    width: 247px;
+    height: 140px;
+    background-color: #FF6633;
+}
+.type_overplus{
+    position: absolute;
+    top: 25px;
+    width: 247px;
+    height: 44px;
+    font-family: Arial;
+    font-size: 36px;
+    color: #FFFFFF;
+    line-height: 44px;
+    text-align: center;
+}
+.txt_overplus{
+    position: absolute;
+    top: 69px;
+    width: 247px;
+    _height: 44px;
+    min-height: 44px;
+    font-family: Arial;
+    font-size: 36px;
+    color: #FFFFFF;
+    line-height: 44px;
+    text-align: center;
+}
+/*入库总量*/
+.div_in{
+    position: absolute;
+    left: 832px;
+    top: 137px;
+    width: 173px;
+    height: 33px;
+    background-color: #00CCFF;
+}
+.type_in{
+    float: left;
+    width: 103px;
+    height: 33px;
+    font-family: Arial;
+    font-size: 18px;
+    line-height: 33px;
+    text-align: right;
+}
+.txt_in{
+    float: left;
+    _width: 37px;
+    min-width: 37px;
+    height: 33px;
+    font-family: Arial;
+    font-size: 18px;
+    line-height: 33px;
+    text-align: left;
+}
+.txt_color_white{
+    color: #FFFFFF;
+}
+.txt_color_black{
+    color: #333333
+}
+/*领用总量*/
+.div_use{
+    position: absolute;
+    left: 1014px;
+    top: 137px;
+    width: 173px;
+    height: 33px;
+    background-color: #FFFF66;
+}
+/*材料出入库信息表格*/
+.div_info_list{
+    position: relative;
+    left: 12px;
+    top: 239px;
+    width: 1159px;
+    _height: 45px;
+    min-height: 45px;
+    border: #8E8B8B 8px solid;
+    border-radius: 5px;
+}
+/*设置表格样式*/
+.div_info_list>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置表头样式*/
+.div_info_list>table th{
+    height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+    font-weight: normal;
+}
+.div_info_list>table tr th.list_last_col{
+    border-right: 0;
+}
+/*设置单元格样式*/
+.div_info_list>table td{
+    height: 44px;
+    _height: 44px;
+    min-height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_info_list>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_info_list>table tr td.list_last_col{
+    border-right: 0;
+}
+/*翻页按钮*/
+.div_page_btn{
+    position: relative;
+    left: 20px;
+    top: 250px;
+    width: 375px;
+    height: 31px;
+}
+/*返回*/
+.btn_back {
+    position: relative;
+    top: 310px;
+    left: 1086px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover {
+    background: url("/worker-union-pm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active {
+    background: url("/worker-union-pm/common/image/img_btn_back_focus.png") no-repeat;
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- TODOPROJECT -->
+	<!-- 服务器系统入口 -->
+	<package name="target" namespace="/target" extends="default">
+
+		<!-- 获取目标协议书-->
+		<action name="getTargetUniqueAttachment" class="top.warmheart.workerunion.fm.server.action.TargetAction" method="getUniqueAttachment">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取目标管理信息-->
+		<action name="getTargetDetail" class="top.warmheart.workerunion.fm.server.action.TargetAction" method="getDetail">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 删除目标协议书-->
+		<action name="removeTargetUniqueAttachment" class="top.warmheart.workerunion.fm.server.action.TargetAction" method="removeUniqueAttachment">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<!-- 新增项目经理-->
+		<action name="addProjectManager" class="top.warmheart.workerunion.fm.server.action.TargetAction" method="addProjectManager">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 删除项目经理-->
+		<action name="removeProjectManager" class="top.warmheart.workerunion.fm.server.action.TargetAction" method="removeProjectManager">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<!-- 保存目标信息-->
+		<action name="saveTarget" class="top.warmheart.workerunion.fm.server.action.TargetAction" method="save">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+	</package>
+</struts>

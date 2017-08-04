@@ -1,0 +1,266 @@
+/*下载生产计划按钮*/
+.btn_download{
+    position: absolute;
+    left: 29px;
+    top: 98px;
+    width: 121px;
+    height: 121px;
+    background: url("/worker-union-fm/common/image/img_upload_objective_protocol.png");
+}
+.btn_download:hover{
+    background: url("/worker-union-fm/common/image/img_upload_objective_protocol_focus.png");
+}
+.btn_download:active{
+    background: url("/worker-union-fm/common/image/img_upload_objective_protocol_focus.png");
+}
+.btn_download>div{
+    position: absolute;
+    top: 83px;
+    width: 121px;
+    height: 38px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 16px;
+    color: #FFFFFF;
+    line-height: 38px;
+    text-align: center;
+}
+.btn_download_disable{
+    position: absolute;
+    left: 29px;
+    top: 98px;
+    width: 121px;
+    height: 121px;
+    background: url("/worker-union-fm/common/image/img_download_file_disable.png");
+}
+.btn_download_disable>div{
+    position: absolute;
+    top: 83px;
+    width: 121px;
+    height: 38px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 16px;
+    color: #FFFFFF;
+    line-height: 38px;
+    text-align: center;
+}
+
+/*生产计划文件表格*/
+.div_production_plan_list{
+    position: absolute;
+    left: 171px;
+    top: 89px;
+    width: 775px;
+    _height: 120px;
+    min-height: 120px;
+    max-height: 125px;
+    border: #8E8B8B 10px solid;
+    border-radius: 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+/*设置表格样式*/
+.div_production_plan_list>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置单元格样式*/
+.div_production_plan_list>table td{
+    height: 58px;
+    _height: 58px;
+    min-height: 58px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_production_plan_list>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_production_plan_list>table tr td.list_last_col{
+    border-right: 0;
+}
+/*查看更多文件*/
+.btn_more{
+    position: absolute;
+    left: 752px;
+    top: 36px;
+    width: 211px;
+    height: 54px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 54px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_more_operation_manage.png");
+}
+.btn_more:hover{
+    background: url("/worker-union-fm/common/image/img_btn_more_operation_manage_focus.png");
+}
+.btn_more:active{
+    background: url("/worker-union-fm/common/image/img_btn_more_operation_manage_focus.png");
+}
+/*生产计划信息表格*/
+.div_production_info_list{
+    position: relative;
+    left: 30px;
+    top: 254px;
+    width: 915px;
+    _height: 46px;
+    min-height: 46px;
+    border: #8E8B8B 10px solid;
+    border-radius: 5px;
+}
+/*设置表格样式*/
+.div_production_info_list>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置表头样式*/
+.div_production_info_list>table th{
+    height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+    font-weight: normal;
+}
+.div_production_info_list>table tr th.list_last_col{
+    border-right: 0;
+}
+/*设置单元格样式*/
+.div_production_info_list>table td{
+    height: 44px;
+    _height: 44px;
+    min-height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_production_info_list>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_production_info_list>table tr td.list_last_col{
+    border-right: 0;
+}
+/*设置行选中样式*/
+.list_tr_selected{
+    background-color: #0066FF;
+    color: #FFFFFF;
+}
+/*翻页按钮*/
+.div_page_btn{
+    position: relative;
+    left: 41px;
+    top: 265px;
+    width: 375px;
+    height: 31px;
+}
+
+/*核定进度*/
+.div_schedule{
+    position: relative;
+    left: 114px;
+    top: 365px;
+    width: 790px;
+    height: 262px;
+    background-color: #8E8B8B;
+    border-radius: 5px;
+}
+.type_schedule{
+    position: absolute;
+    left: 47px;
+    top: 45px;
+    width: 196px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: right;
+}
+/*核定进度输入框*/
+.txt_schedule{
+    position: absolute;
+    left: 250px;
+    top: 45px;
+    width: 435px;
+    height: 110px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    padding-top: 5px;
+    padding-left: 5px;
+    resize: none;
+    text-align: left;
+    border-radius: 5px;
+}
+/*保存按钮*/
+.btn_save{
+    position: absolute;
+    left: 250px;
+    top: 186px;
+    width: 441px;
+    height: 41px;
+    font-family: Arial;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 41px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_save_production_manage.png");
+}
+.btn_save:hover{
+    background: url("/worker-union-fm/common/image/img_btn_save_production_manage_focus.png");
+}
+.btn_save:active{
+    background: url("/worker-union-fm/common/image/img_btn_save_production_manage_focus.png");
+}
+/*虚线分割线*/
+.div_dashed{
+    position: absolute;
+    left: 995px;
+    top: 70px;
+    width: 2px;
+    height: 749px;
+    border-right: 1px dashed #CCCCCC;
+}
+/*右侧导航键*/
+.nav_bar_side{
+    position: absolute;
+    top: 79px;
+    left: 1010px;
+    width: 178px;
+    height: 730px;
+}
+/*返回*/
+.btn_back {
+    position: relative;
+    top: 410px;
+    left: 1076px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>竣工结算</title>
+    <link href="/worker-union-fm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/worker-union-fm/common/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/css/title.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/css/nav_bar_side.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/loading/loading.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/project/complete/css/complete_settlement.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--标题背景-->
+<div class="title_bg"></div>
+<!--页面容器-->
+<div class="container">
+    <iframe id="loading" class="loading" src="/worker-union-fm/common/loading/loading.html" style="display: none;"></iframe>
+    <!--标题-->
+    <div id="txtTitle" class="title">竣工结算</div>
+    <!--用户名及退出系统-->
+    <div class="div_user_name">
+        <div id="txtUserName" class="txt_user_name"></div>
+        <div class="div_divider_name_logout">|</div>
+        <button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+    </div>
+    <!--Home键-->
+    <button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+
+    <!--项目名称-->
+    <div class="div_project_name">
+        <div class="type_project_name">项目名称：</div>
+        <div id="txtProjectName" class="txt_project_name"></div>
+    </div>
+    <!--项目归档按钮-->
+    <button id="btnArchive" class="btn_archived_project" type="button" onclick="btnArchive()" style="display: none">项目归档</button>
+    <!--项目解除归档按钮-->
+    <button id="btnRemoveArchive" class="btn_archived_project" type="button" onclick="btnRemoveArchive()" style="display: none">项目解除归档</button>
+
+    <!--竣工结算信息表格-->
+    <div class="div_info_list">
+        <table id="tableComplete">
+            <tr onclick="clearTableSelectStatus(this)">
+                <th width="68px">序号</th>
+                <th width="178px">单位工程名称</th>
+                <th width="126px">送审金额(元)</th>
+                <th width="126px">审定金额(元)</th>
+                <th width="126px">核减金额(元)</th>
+                <th width="126px">核增金额(元)</th>
+                <th width="167px" class="list_last_col">附件</th>
+            </tr>
+        </table>
+    </div>
+    <div class="div_btn">
+        <!--添加按钮-->
+        <button class="btn_add" type="button" onclick="btnToAddDialog()">添加</button>
+        <!--删除按钮-->
+        <button class="btn_delete" type="button" onclick="btnDeleteItem()">删除</button>
+        <!--修改按钮-->
+        <button class="btn_modify" type="button" onclick="btnToModifyDialog()">修改</button>
+    </div>
+    <!--虚线分割线-->
+    <div class="div_dashed"></div>
+    <!--右侧导航按钮-->
+    <div class="nav_bar_side">
+        <ul class="nav_bar_menu" style="display: block">
+            <li><a href="javascript:void(0)">项目立项</a>
+                <ul>
+                    <li><a id="navBidInfo" class="nav_bar_submenu">中标信息</a></li>
+                    <li><a id="navCostAnalysis" class="nav_bar_submenu">成本分析</a></li>
+                    <li><a id="navObjectiveManage" class="nav_bar_submenu">目标管理</a></li>
+                    <li><a id="navBuildReport" class="nav_bar_submenu">项目报建</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)">项目准备</a>
+                <ul>
+                    <li><a id="navTeamBuild" class="nav_bar_submenu">团队搭建</a></li>
+                    <li><a id="navPlanDeepen" class="nav_bar_submenu">方案深化</a></li>
+                    <li><a id="navCostDeepen" class="nav_bar_submenu">成本深化</a></li>
+                    <li><a id="navCapitalPlan" class="nav_bar_submenu">资金计划</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)">项目实施</a>
+                <ul>
+                    <li><a id="navOperationManage" class="nav_bar_submenu">经营管理</a></li>
+                    <li><a id="navProductionManage" class="nav_bar_submenu">生产管理</a></li>
+                    <li><a id="navTechnicalManage" class="nav_bar_submenu">技术管理</a></li>
+                    <li><a id="navSecurityManage" class="nav_bar_submenu">安全管理</a></li>
+                    <li><a id="navQualityManage" class="nav_bar_submenu">质量管理</a></li>
+                    <li><a id="navResourceImplement" class="nav_bar_submenu">资源落实</a></li>
+                    <li><a id="navSettlementManage" class="nav_bar_submenu">结算管理</a></li>
+                    <li><a id="navStoreManage" class="nav_bar_submenu">仓库管理</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)">项目竣工</a>
+                <ul style="display: block">
+                    <li><a id="navCompleteCheck" class="nav_bar_submenu">竣工验收</a></li>
+                    <li><a id="navProjectDisintegrate" class="nav_bar_submenu">项目部解体</a></li>
+                    <li><a id="navProjectSummary" class="nav_bar_submenu">项目总结</a></li>
+                    <li><a id="navInternalSettlement" class="nav_bar_submenu">内部结算</a></li>
+                    <li><a id="navCompleteSettlement" class="nav_bar_submenu_select">竣工结算</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!--返回按钮-->
+    <button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+
+</div>
+
+<!--结算详细添加弹窗，默认不可见-->
+<div id="dialogAdd" class="div_add_diaolog" style="display: none">
+    <img src="/worker-union-fm/common/image/img_mask.png" width="100%" height="100%"/>
+    <!--弹窗页面容器-->
+    <div class="dialog_container">
+        <!--标题-->
+        <div class="dialog_title">
+            <div>决<br/>算<br/>详<br/>细<br/>条<br/>目</div>
+        </div>
+        <!--条目信息-->
+        <div class="div_info">
+            <!--单位工程名称-->
+            <div class="div_line_info">
+                <div class="type_info">单位工程名称：</div>
+                <input id="nameAdd" class="txt_name" type="text">
+            </div>
+            <div class="div_line_info">
+                <!--送审金额-->
+                <div class="div_verify_money">
+                    <div class="type_info">送审金额(元)：</div>
+                    <input id="submitMoneyAdd" class="txt_info" type="number">
+                </div>
+                <!--核定金额-->
+                <div class="div_check_money">
+                    <div class="type_info">核定金额(元)：</div>
+                    <input id="checkedMoneyAdd" class="txt_info" type="number">
+                </div>
+            </div>
+            <div class="div_line_info">
+                <!--核增金额-->
+                <div class="div_verify_money">
+                    <div class="type_info">核增金额(元)：</div>
+                    <input id="increasedMoneyAdd" class="txt_info" type="number">
+                </div>
+                <!--核减金额-->
+                <div class="div_check_money">
+                    <div class="type_info">核减金额(元)：</div>
+                    <input id="decreasedMoneyAdd" class="txt_info" type="number">
+                </div>
+            </div>
+        </div>
+        <div class="dialog_div_btn">
+            <!--保存按钮-->
+            <button class="btn_save" type="button" onclick="btnSaveItem()">保存</button>
+            <!--取消按钮-->
+            <button class="btn_cancel" type="button" onclick="closeDialog()">取消</button>
+        </div>
+    </div>
+</div>
+
+<!--结算详细修改弹窗，默认不可见-->
+<div id="dialogModify" class="div_modify_diaolog" style="display: none;">
+    <div id="txtSettlementItemId" hidden="hidden"></div>
+    <img src="/worker-union-fm/common/image/img_mask.png" width="100%" height="100%"/>
+    <!--弹窗页面容器-->
+    <div class="dialog_container">
+        <!--标题-->
+        <div class="dialog_title">
+            <div>决<br/>算<br/>详<br/>细<br/>条<br/>目</div>
+        </div>
+        <!--条目信息-->
+        <div class="div_info">
+            <!--单位工程名称-->
+            <div class="div_line_info">
+                <div class="type_info">单位工程名称：</div>
+                <input id="nameModify" class="txt_name" type="text">
+            </div>
+            <div class="div_line_info">
+                <!--送审金额-->
+                <div class="div_verify_money">
+                    <div class="type_info">送审金额(元)：</div>
+                    <input id="submitMoneyModify" class="txt_info" type="number">
+                </div>
+                <!--核定金额-->
+                <div class="div_check_money">
+                    <div class="type_info">核定金额(元)：</div>
+                    <input id="checkedMoneyModify" class="txt_info" type="number">
+                </div>
+            </div>
+            <div class="div_line_info">
+                <!--核增金额-->
+                <div class="div_verify_money">
+                    <div class="type_info">核增金额(元)：</div>
+                    <input id="increasedMoneyModify" class="txt_info" type="number">
+                </div>
+                <!--核减金额-->
+                <div class="div_check_money">
+                    <div class="type_info">核减金额(元)：</div>
+                    <input id="decreasedMoneyModify" class="txt_info" type="number">
+                </div>
+            </div>
+        </div>
+        <div class="dialog_div_btn">
+            <!--保存按钮-->
+            <button class="btn_save" type="button" onclick="btnModifyItem()">保存</button>
+            <!--取消按钮-->
+            <button class="btn_cancel" type="button" onclick="closeDialog()">取消</button>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/worker-union-fm/common/js/util.js"></script>
+<script type="text/javascript" src="/worker-union-fm/common/js/nav_bar.js"></script>
+<script type="text/javascript" src="/worker-union-fm/common/js/nav_bar_side.js"></script>
+<script type="text/javascript" src="/worker-union-fm/common/plupload/plupload.full.min.js"></script>
+<script type="text/javascript" src="/worker-union-fm/project/complete/js/complete_settlement.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+ul,ol{
+    margin:0px;
+    padding:0px;
+    list-style-type:none;
+}
+.nav_bar_side li{
+    float:left;
+    width:100%;
+    margin-top: 11px;
+    font-family: PingFang SC;
+    font-size:28px;
+    color:#FFFFFF;
+    line-height:69px;
+    text-align: center;
+}
+.nav_bar_side li a{
+    display:block;
+    text-decoration:none;
+    color:#FFFFFF;
+    background: url("/worker-union-fm/common/image/img_nav_bar_menu.png") no-repeat;
+}
+.nav_bar_side li a.nav_bar_menu{
+    text-decoration:none;
+    background: url("/worker-union-fm/common/image/img_nav_bar_menu_focus.png");
+}
+.nav_bar_side li ul{display:none;}
+.nav_bar_side li ul li{
+    float:none;
+    margin-top:4px;
+    width: 139px;
+    height:43px;
+    font-family: Arial;
+    font-size:19px;
+    line-height:43px;
+    text-align: center;
+}
+.nav_bar_side li ul li a{display:block;}
+.nav_bar_side li ul li a.nav_bar_submenu{background: url("/worker-union-fm/common/image/img_nav_bar_submenu.png");}
+.nav_bar_side li ul a.nav_bar_submenu:hover{background: url("/worker-union-fm/common/image/img_nav_bar_submenu_focus.png");}
+.nav_bar_side li ul a.nav_bar_submenu:active{background: url("/worker-union-fm/common/image/img_nav_bar_submenu_selected.png");}
+.nav_bar_side li ul li a.nav_bar_submenu_select{background: url("/worker-union-fm/common/image/img_nav_bar_submenu_selected.png");}
+.nav_bar_side li ul a.nav_bar_submenu_select:hover{background: url("/worker-union-fm/common/image/img_nav_bar_submenu_selected_focus.png");}
+.nav_bar_side li ul a.nav_bar_submenu_select:active{background: url("/worker-union-fm/common/image/img_nav_bar_submenu_selected_focus.png");}

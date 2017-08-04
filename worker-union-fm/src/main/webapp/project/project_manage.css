@@ -1,0 +1,463 @@
+/*年份选择*/
+.select_year{
+    position: absolute;
+    left: 60px;
+    top: 119px;
+    width: 835px;
+    height: 44px;
+    padding-left: 10px;
+    font-family: Arial;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/*日历布局*/
+.div_calendar{
+    position: absolute;
+    left: 60px;
+    top: 119px;
+    width: 601px;
+    height: 350px;
+}
+/*日历挂件*/
+.calendar_bar{
+    position: absolute;
+    width: 601px;
+    height: 51px;
+    background: url("/worker-union-fm/common/image/img_calendar_bar.png");
+}
+/*日历展示*/
+.calendar_display{
+    position: absolute;
+    left: 57px;
+    top: 16px;
+    width: 500px;
+    height: 334px;
+    z-index: 1;
+    background: url("/worker-union-fm/common/image/img_calendar.png") no-repeat;
+}
+/*选中年份显示*/
+.div_calendar_year{
+    position: absolute;
+    left: 69px;
+    top: 233px;
+    width: 336px;
+    height: 44px;
+    z-index: 2;
+    background: url("/worker-union-fm/common/image/img_calendar_year_choosen.png") no-repeat;
+}
+.calendar_year_choosen{
+    position: absolute;
+    left: 101px;
+    width: 94px;
+    height: 44px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    line-height: 44px;
+    text-align: right;
+}
+.calendar_year_symbol{
+    position: absolute;
+    left: 193px;
+    width: 45px;
+    height: 44px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    line-height: 44px;
+    text-align: left;
+}
+/*选择立项年份按钮*/
+.choose_project_year{
+    position: absolute;
+    left: 679px;
+    top: 120px;
+    width: 211px;
+    height: 51px;
+    font-family: Arial;
+    font-size: 22px;
+    color: #FFFFFF;
+    line-height: 51px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_choose_project_year.png");
+}
+.choose_project_year:hover{
+    background: url("/worker-union-fm/common/image/img_btn_choose_project_year_focus.png");
+}
+.choose_project_year:active{
+    background: url("/worker-union-fm/common/image/img_btn_choose_project_year_focus.png");
+}
+/*项目列表*/
+.project_list{
+    position: absolute;
+    left: 60px;
+    top: 200px;
+    width: 815px;
+    height: 362px;
+    padding: 10px 9px 10px 9px;
+    background-color: #797979;
+    border-radius: 5px;
+}
+/*项目名称按钮*/
+.btn_project{
+    float: left;
+    margin-left: 5px;
+    margin-top: 11px;
+    width: 198px;
+    height: 109px;
+    font-family: Arial;
+    font-size: 20px;
+    padding: 10px;
+    color: #FFFFFF;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_project.png") no-repeat;
+}
+.btn_project:hover{
+    background: url("/worker-union-fm/common/image/img_btn_project_focus.png") no-repeat;
+}
+.btn_project:active{
+    background: url("/worker-union-fm/common/image/img_btn_project_focus.png") no-repeat;
+}
+/*翻页按钮*/
+.div_page_btn{
+    position: absolute;
+    left: 230px;
+    top: 622px;
+    width: 470px;
+    height: 41px;
+}
+/*上一页*/
+.btn_page_up{
+    position: absolute;
+    width: 151px;
+    height: 41px;
+    font-family: Arial;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 41px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_page.png");
+}
+.btn_page_up:hover{
+    background: url("/worker-union-fm/common/image/img_btn_page_focus.png");
+}
+.btn_page_up:active{
+    background: url("/worker-union-fm/common/image/img_btn_page_focus.png");
+}
+/*页码显示*/
+.txt_page_number{
+    position: absolute;
+    left: 196px;
+    width: 80px;
+    height: 41px;
+}
+/*当前页码*/
+.current_page{
+    float: left;
+    _width: 32px;
+    min-width: 32px;
+    height: 41px;
+    font-family: Arial;
+    font-size: 18px;
+    color: #CCCCCC;
+    line-height: 41px;
+    text-align: right;
+}
+/*斜线*/
+.oblique_line{
+    float: left;
+    _width: 9px;
+    min-width: 9px;
+    height: 41px;
+    font-family: Arial;
+    font-size: 18px;
+    color: #CCCCCC;
+    line-height: 41px;
+    text-align: right;
+}
+/*总页码*/
+.total_page{
+    float: left;
+    _width: 28px;
+    min-width: 28px;
+    height: 41px;
+    font-family: Arial;
+    font-size: 18px;
+    color: #CCCCCC;
+    line-height: 41px;
+    text-align: left;
+}
+/*下一页*/
+.btn_page_down{
+    position: absolute;
+    left: 319px;
+    width: 151px;
+    height: 41px;
+    font-family: Arial;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 41px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_page.png");
+}
+.btn_page_down:hover{
+    background: url("/worker-union-fm/common/image/img_btn_page_focus.png");
+}
+.btn_page_down:active{
+    background: url("/worker-union-fm/common/image/img_btn_page_focus.png");
+}
+/*虚线分割线*/
+.div_dashed{
+    position: absolute;
+    left: 930px;
+    top: 80px;
+    width: 2px;
+    height: 580px;
+    border-right: 1px dashed #CCCCCC;
+}
+/*右侧导航按钮*/
+.nav_btn_side{
+    position: absolute;
+    top: 119px;
+    left: 952px;
+    width: 201px;
+    height: 547px;
+}
+/*创建新项目*/
+.btn_new_project{
+    display: block;
+    position: absolute;
+    width: 201px;
+    height: 101px;
+    font-family: Arial;
+    font-size: 26px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 56px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_new_project.png");
+}
+.btn_new_project:hover{
+    background: url("/worker-union-fm/common/image/img_btn_new_project_focus.png");
+}
+.btn_new_project:active{
+    background: url("/worker-union-fm/common/image/img_btn_new_project_focus.png");
+}
+/*创建新项目选中效果*/
+.btn_new_project_selected{
+    display: none;
+    position: absolute;
+    width: 201px;
+    height: 101px;
+    font-family: Arial;
+    font-size: 26px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 56px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_new_project_select.png");
+}
+/*进行中项目*/
+.btn_ongoing_project{
+    display: block;
+    position: absolute;
+    top: 201px;
+    width: 201px;
+    height: 101px;
+    background: url("/worker-union-fm/common/image/img_btn_ongoing_project.png");
+    font-family: Arial;
+    font-size: 26px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 56px;
+    text-align: center;
+}
+.btn_ongoing_project:hover{
+    background: url("/worker-union-fm/common/image/img_btn_ongoing_project_focus.png");
+}
+.btn_ongoing_project:active{
+    background: url("/worker-union-fm/common/image/img_btn_ongoing_project_focus.png");
+}
+/*进行中项目选中效果*/
+.btn_ongoing_project_selected{
+    position: absolute;
+    top: 201px;
+    width: 201px;
+    height: 101px;
+    font-family: Arial;
+    font-size: 26px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 56px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_ongoing_project_select.png");
+}
+/*已归档项目*/
+.btn_archived_project{
+    display: block;
+    position: absolute;
+    top: 322px;
+    width: 201px;
+    height: 101px;
+    font-family: Arial;
+    font-size: 26px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 56px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_archived_project.png");
+}
+.btn_archived_project:hover{
+    background: url("/worker-union-fm/common/image/img_btn_archived_project_focus.png");
+}
+.btn_archived_project:active{
+    background: url("/worker-union-fm/common/image/img_btn_archived_project_focus.png");
+}
+/*已归档项目选中效果*/
+.btn_archived_project_selected{
+    position: absolute;
+    top: 322px;
+    width: 201px;
+    height: 101px;
+    font-family: Arial;
+    font-size: 26px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 56px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_archived_project_select.png");
+}
+/*所有项目*/
+.btn_all_project{
+    display: block;
+    position: absolute;
+    top: 440px;
+    width: 201px;
+    height: 101px;
+    font-family: Arial;
+    font-size: 26px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 56px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_all_project.png");
+}
+.btn_all_project:hover{
+    background: url("/worker-union-fm/common/image/img_btn_all_project_focus.png");
+}
+.btn_all_project:active{
+    background: url("/worker-union-fm/common/image/img_btn_all_project_focus.png");
+}
+/*所有项目选中效果*/
+.btn_all_project_selected{
+    position: absolute;
+    top: 440px;
+    width: 201px;
+    height: 101px;
+    font-family: Arial;
+    font-size: 26px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 56px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_all_project_select.png");
+}
+/*待办事项标题*/
+.div_schedule_title{
+    position: absolute;
+    left: 16px;
+    top: 767px;
+    width: 1133px;
+    height: 83px;
+    background: url("/worker-union-fm/common/image/img_schedule_title_background.png");
+}
+.schedule_title{
+    position: absolute;
+    left: 474px;
+    width: 200px;
+    height: 83px;
+    line-height: 83px;
+    text-align: center;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+}
+/*待办事项数量提示*/
+.schedule_number{
+    position: absolute;
+    top: 22px;
+    left: 17px;
+    width: 46px;
+    height: 40px;
+    font-family: Arial;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+    color: #FFFFFF;
+}
+/*待办事项列表*/
+.div_schedule_list{
+    position: relative;
+    left: 50px;
+    top: 864px;
+    width: 1079px;
+    _height: 46px;
+    min-height: 46px;
+    border: #8E8B8B 10px solid;
+}
+/*设置表格样式*/
+.div_schedule_list>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: Arial;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置单元格样式*/
+.div_schedule_list>table td{
+    height: 46px;
+    _height: 46px;
+    min-height: 46px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_schedule_list>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_schedule_list>table tr td.list_last_col{
+    border-right: 0;
+}
+/*设置行选中样式*/
+.list_tr_selected{
+    background-color: #0066FF;
+    color: #FFFFFF;
+}
+/*返回*/
+.btn_back{
+    position: relative;
+    top: 900px;
+    left: 1055px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover{
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active{
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}

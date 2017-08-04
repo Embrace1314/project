@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- TODOPROJECT -->
+	<!-- 服务器系统入口 -->
+	<package name="qualityCheck" namespace="/quality_check" extends="default">
+
+		<!-- 分页获取项目质量检查项列表 -->
+		<action name="pageQualityCheckItem" class="top.warmheart.workerunion.pm.server.action.QualityCheckAction"
+			method="pageItem">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+
+		<!-- 获取质量检查记录详情 -->
+		<action name="getQualityCheckItemDetail" class="top.warmheart.workerunion.pm.server.action.QualityCheckAction"
+			method="getItemDetail">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 申请审批质量检查记录 -->
+		<action name="applyQualityCheckItemVerify" class="top.warmheart.workerunion.pm.server.action.QualityCheckAction"
+			method="applyItemVerify">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 删除记录下的附件 -->
+		<action name="removeQualityCheckItemAttachmentById" class="top.warmheart.workerunion.pm.server.action.QualityCheckAction"
+			method="removeAttachmentById">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+	</package>
+</struts>

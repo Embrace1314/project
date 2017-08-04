@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 动态方法调用设置 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<!-- 开发模式设置 -->
+	<constant name="struts.devMode" value="false" />
+	<!-- i18n.encoding相当于HttpServletRequest.setCharacterEncoding() -->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<!-- <include file="example.xml"/> -->
+	<!-- 将Action的转发给spring来创建装配注入，bean创建完成之后，还是由struts容器来管理 -->
+	<constant name="struts.objectFactory" value="spring"></constant>
+	<!-- 设置浏览器是否缓存静态内容,默认值为true(生产环境下使用),开发阶段最好关闭 -->
+	<constant name="struts.serve.static.browserCache" value="false" />
+	<constant name="struts.multipart.maxSize" value="30701096" />
+	<!-- 修改后缀 -->
+	<constant name="struts.action.extension" value="action"/>
+	<!-- TODOPROJECT -->
+	<!-- 服务器系统入口 -->
+	<package name="default" namespace="/" extends="struts-default">
+		<global-results>
+			<result name="exception" type="chain">exception</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="exception" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+		
+		<!-- 异常 -->
+		<action name="exception" class="top.warmheart.workerunion.pm.server.action.ex.ExceptionAction" method="exception">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 未登录 -->
+		<action name="notLogin" class="top.warmheart.workerunion.pm.server.action.ex.SecurityAction" method="notLogin">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 已登录 -->
+		<action name="success" class="top.warmheart.workerunion.pm.server.action.ex.SecurityAction" method="success">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 未授权 -->
+		<action name="unauthorized" class="top.warmheart.workerunion.pm.server.action.ex.SecurityAction" method="unauthorized">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+	</package>
+	<include file="struts/struts-staff.xml"></include>
+	<include file="struts/struts-project.xml"></include>
+	<include file="struts/struts-sts.xml"></include>
+	<include file="struts/struts-cost-analysis.xml"></include>
+	<include file="struts/struts-cost-analysis-deepen.xml"></include>
+	<include file="struts/struts-project-application.xml"></include>
+	<include file="struts/struts-project-team.xml"></include>
+	<include file="struts/struts-scheme-deepen.xml"></include>
+	<include file="struts/struts-fund-plan.xml"></include>
+	<include file="struts/struts-purchase-item.xml"></include>
+	<include file="struts/struts-target.xml"></include>
+	<include file="struts/struts-business-capacity.xml"></include>
+	<include file="struts/struts-product-capacity.xml"></include>
+	<include file="struts/struts-technical-proposal.xml"></include>
+	<include file="struts/struts-safety-check.xml"></include>
+	<include file="struts/struts-quality-check.xml"></include>
+	<include file="struts/struts-resource-implement.xml"></include>
+	<include file="struts/struts-contract.xml"></include>
+	<include file="struts/struts-subcontractor.xml"></include>
+	<include file="struts/struts-settlement.xml"></include>
+	<include file="struts/struts-completion-data.xml"></include>
+	<include file="struts/struts-final-report.xml"></include>
+	<include file="struts/struts-internal-settlement.xml"></include>
+	<include file="struts/struts-final-settlement.xml"></include>
+	<include file="struts/struts-material.xml"></include>
+	<include file="struts/struts-material-type.xml"></include>
+</struts>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>资源落实添加详情</title>
+    <link href="/worker-union-fm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/worker-union-fm/common/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/css/title.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/project/implement/css/resource_implement_detail.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/loading/loading.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--标题背景-->
+<div class="title_bg"></div>
+<!--页面容器-->
+<div class="container">
+    <iframe id="loading" class="loading" src="/worker-union-fm/common/loading/loading.html" style="display: none;"></iframe>
+    <!--标题-->
+    <div id="txtTitle" class="title">资源落实详情</div>
+    <!--Home键-->
+    <button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+    <!--资源落实详细条目标题-->
+    <div class="title_detail">
+        <div>资<br/>源<br/>落<br/>实<br/>详<br/>细<br/>条<br/>目</div>
+    </div>
+    <!--条目信息-->
+    <div class="div_detail">
+        <!--关联资金需求-->
+        <div class="div_line_detail">
+            <div class="type_detail">关联资金需求：</div>
+            <select id="txtRequire" class="btn_select" disabled="disabled">
+                <option value="">未关联</option>
+            </select>
+        </div>
+        <!--资源项目-->
+        <div class="div_line_detail">
+            <div class="type_detail">资源项目：</div>
+            <div id="txtResource" class="txt_detail"></div>
+        </div>
+        <!--资源项目细分-->
+        <div class="div_line_detail">
+            <div class="type_detail">资源项目细分：</div>
+            <div id="txtResourceDetail" class="txt_detail"></div>
+        </div>
+        <!--计量单位-->
+        <div class="div_line_detail">
+            <div class="type_detail">计量单位：</div>
+            <div id="txtUnit" class="txt_measure_unit"></div>
+            <div class="type_price">单价(元)：</div>
+            <div id="txtPrice" class="txt_price"></div>
+        </div>
+        <!--实际发包数量-->
+        <div class="div_line_detail">
+            <div class="type_detail">实际发包数量：</div>
+            <div id="txtAmount" class="txt_detail"></div>
+        </div>
+        <!--选择分包商-->
+        <div class="div_line_detail">
+            <div class="type_detail">选择分包商：</div>
+            <div id="txtSubcontractor" class="txt_detail"></div>
+        </div>
+        <!--实际资金额-->
+        <div class="div_line_detail">
+            <div class="type_detail">实际资金额(元)：</div>
+            <div id="txtMoney" class="txt_detail"></div>
+        </div>
+        <!--关联合同-->
+        <div class="div_line_detail">
+            <div class="type_detail">关联合同：</div>
+            <div id="txtContract" class="txt_detail"></div>
+        </div>
+    </div>
+    <!--返回按钮-->
+    <button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+
+</div>
+<script type="text/javascript" src="/worker-union-fm/common/js/util.js"></script>
+<script type="text/javascript" src="/worker-union-fm/project/implement/js/resource_implement_detail.js"></script>
+</body>
+</html>

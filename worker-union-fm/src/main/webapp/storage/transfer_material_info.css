@@ -1,0 +1,212 @@
+/*转库信息标题*/
+.title_info{
+    position: absolute;
+    left: 13px;
+    top: 70px;
+    width: 94px;
+    height: 727px;
+    font-family: Heiti SC;
+    font-size: 36px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+    background-color: #99CC00;
+    z-index: 1;
+}
+.title_info>div{
+    margin-top: 243px;
+    font-family: Heiti SC;
+    font-size: 36px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+}
+
+/*转库信息编辑框*/
+.div_info{
+    position: absolute;
+    top: 96px;
+    left: 14px;
+    width: 1170px;
+    height: 125px;
+    background-color: #8E8B8B;
+}
+.div_line_info{
+    position: absolute;
+    left: 102px;
+    top: 28px;
+    width: 740px;
+    height: 40px;
+}
+/*材料接收方、转库申请人*/
+.div_col_1{
+    position: absolute;
+    width: 343px;
+    height: 40px;
+}
+.type_col_1{
+    position: absolute;
+    width: 130px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: right;
+}
+.txt_col_1{
+    position: absolute;
+    left: 129px;
+    width: 214px;
+    height: 30px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    padding-top: 10px;
+    text-align: center;
+    border-radius: 5px;
+    overflow: auto;
+    background-color: #FFFFFF;
+}
+/*材料接收方、转库申请人*/
+.div_col_2{
+    position: absolute;
+    left: 370px;
+    width: 370px;
+    height: 40px;
+}
+.type_col_2{
+    position: absolute;
+    width: 146px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: right;
+}
+.txt_col_2{
+    position: absolute;
+    left: 155px;
+    width: 215px;
+    height: 30px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    padding-top: 10px;
+    text-align: center;
+    border-radius: 5px;
+    overflow: auto;
+    background-color: #FFFFFF;
+}
+/*审核状态、转库申请人等行div*/
+.div_line_info_other{
+    position: absolute;
+    left: 102px;
+    top: 85px;
+    width: 740px;
+    height: 40px;
+}
+
+/*审核状态*/
+.div_audit_status{
+    position: absolute;
+    left: 900px;
+    top: 55px;
+    width: 246px;
+    height: 40px;
+}
+.type_audit_status{
+    position: absolute;
+    width: 119px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: right;
+}
+.txt_audit_status{
+    position: absolute;
+    left: 119px;
+    width: 127px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #00CC66;
+}
+
+/*转库信息表格*/
+.div_info_list{
+    position: relative;
+    left: 14px;
+    top: 221px;
+    width: 1056px;
+    _height: 507px;
+    min-height: 507px;
+    padding-top: 28px;
+    padding-left: 102px;
+    padding-bottom: 10px;
+    padding-right: 12px;
+    background-color: #8E8B8B;
+}
+table.table_transfer{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置表头样式*/
+table.table_transfer th{
+    height: 44px;
+    _height: 44px;
+    min-height: 44px;
+    font-weight:normal;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置单元格样式*/
+table.table_transfer td{
+    height: 44px;
+    _height: 44px;
+    min-height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_info_list>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_info_list>table .list_last_col{
+    border-right: 0;
+}
+
+/*返回*/
+.btn_back {
+    position: relative;
+    top: 265px;
+    left: 1078px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}

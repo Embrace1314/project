@@ -1,0 +1,141 @@
+/*人员信息表格*/
+.div_list_content{
+    position: relative;
+    left: 20px;
+    top: 80px;
+    width: 883px;
+    _height: 46px;
+    min-height: 46px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #8E8B8B;
+    border-radius: 5px;
+}
+.div_list_content>table{
+    border-collapse: separate;
+    border-spacing: 0px 13px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+}
+/*设置表头样式*/
+.div_list_content>table th{
+    height: 42px;
+    border: 1px solid #666666;
+    background-color: #FFFFFF;
+    font-weight: normal;
+}
+/*设置单元格样式*/
+.div_list_content>table td{
+    height: 42px;
+    _height: 42px;
+    min-height: 42px;
+    border: 1px solid #666666;
+    background-color: #FFFFFF;
+}
+/*设置删除按钮样式*/
+.btn_delete{
+    width: 91px;
+    height: 38px;
+    font-family: Arial;
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 38px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_delete_build_report.png") no-repeat;
+}
+.btn_delete:hover{
+    background: url("/worker-union-pm/common/image/img_btn_delete_build_report_focus.png") no-repeat;
+}
+.btn_delete:active{
+    background: url("/worker-union-pm/common/image/img_btn_delete_build_report_focus.png") no-repeat;
+}
+.btn_delete_disable{
+    width: 91px;
+    height: 38px;
+    font-family: Arial;
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 38px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_delete_build_report_disable.png") no-repeat;
+}
+
+/*选择人员按钮*/
+.btn_choose_staff{
+    width: 723px;
+    height: 44px;
+    font-family: Arial;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 44px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_choose_leader.png");
+}
+.btn_choose_staff:hover{
+    background: url("/worker-union-pm/common/image/img_btn_choose_leader_focus.png");
+}
+.btn_choose_staff:active{
+    background: url("/worker-union-pm/common/image/img_btn_choose_leader_focus.png");
+}
+
+.btn_upload_attachment{
+    position: relative;
+    left: 20px;
+    top: 100px;
+    width: 270px;
+    height: 40px;
+    font-family: Arial;
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    background: #169BD5;
+}
+.btn_upload_attachment:hover{
+    background: #127CAA;
+}
+.btn_upload_attachment:active{
+    background: #127CAA;
+}
+
+/*虚线分割线*/
+.div_dashed{
+    position: absolute;
+    left: 995px;
+    top: 60px;
+    width: 2px;
+    height: 750px;
+    border-right: 1px dashed #CCCCCC;
+}
+/*右侧导航键*/
+.nav_bar_side{
+    position: absolute;
+    top: 78px;
+    left: 1011px;
+    width: 178px;
+    height: 730px;
+}
+/*返回*/
+.btn_back {
+    position: absolute;
+    top: 800px;
+    left: 1086px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover {
+    background: url("/worker-union-pm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active {
+    background: url("/worker-union-pm/common/image/img_btn_back_focus.png") no-repeat;
+}

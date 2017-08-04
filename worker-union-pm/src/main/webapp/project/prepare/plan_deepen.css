@@ -1,0 +1,183 @@
+/*上传深化后方案按钮*/
+.btn_upload_protocol{
+    position: absolute;
+    left: 31px;
+    top: 97px;
+    width: 121px;
+    height: 121px;
+    background: url("/worker-union-pm/common/image/img_upload_objective_protocol.png");
+}
+.btn_upload_protocol:hover{
+    background: url("/worker-union-pm/common/image/img_upload_objective_protocol_focus.png");
+}
+.btn_upload_protocol:active{
+    background: url("/worker-union-pm/common/image/img_upload_objective_protocol_focus.png");
+}
+.btn_upload_protocol>div{
+    position: absolute;
+    top: 83px;
+    width: 121px;
+    height: 38px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 16px;
+    color: #FFFFFF;
+    line-height: 38px;
+    text-align: center;
+}
+
+/*深化后方案文件列表*/
+.div_plan_file_list{
+    position: absolute;
+    left: 171px;
+    top: 89px;
+    width: 775px;
+    _height: 100px;
+    min-height: 100px;
+    max-height: 125px;
+    border: #8E8B8B 10px solid;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+/*设置表格样式*/
+.div_plan_file_list>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置单元格样式*/
+.div_plan_file_list>table td{
+    height: 58px;
+    _height: 58px;
+    min-height: 58px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_plan_file_list>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_plan_file_list>table tr td.list_last_col{
+    border-right: 0;
+}
+
+/*信息列表*/
+.div_info_list{
+    position: relative;
+    left: 20px;
+    top: 250px;
+    width: 930px;
+    _height: 46px;
+    min-height: 46px;
+    border-left: 10px solid #8E8B8B;
+    border-right: 10px solid #8E8B8B;
+    border-top: 11px solid #8E8B8B;
+    border-bottom: 11px solid #8E8B8B;
+    border-radius: 5px;
+}
+/*设置表格样式*/
+.div_info_list>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置单元格样式*/
+.div_info_list>table td{
+    height: 44px;
+    _height: 44px;
+    min-height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_info_list>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_info_list>table tr td.list_last_col{
+    border-right: 0;
+}
+/*设置最后一行最后一列单元格样式*/
+.div_info_list>table tr td.list_last_col_row{
+    border-bottom: 1px solid #666666;
+    border-right: 1px solid #666666;
+    background-color: #8E8B8B;
+}
+.audit_status{
+    background-color: #FFFF00;
+}
+/*审核状态：审核通过*/
+.audit_status_success{
+    background-color: #00CC66;
+}
+/*审核状态：审核驳回*/
+.audit_status_fail{
+    background-color: #FF3300;
+}
+/*删除按钮*/
+.btn_delete{
+    position: relative;
+    margin-top: -1px;
+    width: 120px;
+    height: 46px;
+    font-family: Arial;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 46px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_delete_pm.png") no-repeat;
+}
+.btn_delete:hover{
+    background: url("/worker-union-pm/common/image/img_btn_delete_pm_focus.png") no-repeat;
+}
+.btn_delete:active{
+    background: url("/worker-union-pm/common/image/img_btn_delete_pm_focus.png") no-repeat;
+}
+
+/*虚线分割线*/
+.div_dashed{
+    position: absolute;
+    left: 995px;
+    top: 70px;
+    width: 2px;
+    height: 522px;
+    border-right: 1px dashed #CCCCCC;
+}
+/*右侧导航键*/
+.nav_bar_side{
+    position: absolute;
+    top: 78px;
+    left: 1012px;
+    width: 178px;
+    height: 730px;
+}
+/*返回*/
+.btn_back {
+    position: relative;
+    margin-top: 720px;
+    left: 1086px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover {
+    background: url("/worker-union-pm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active {
+    background: url("/worker-union-pm/common/image/img_btn_back_focus.png") no-repeat;
+}

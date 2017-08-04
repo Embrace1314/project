@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- TODOPROJECT -->
+	<!-- 服务器系统入口 -->
+	<package name="fundPlan" namespace="/fund_plan" extends="default">
+
+		<!-- 获取资金计划项列表 -->
+		<action name="listFundPlanItem" class="top.warmheart.workerunion.pm.server.action.FundPlanAction"
+			method="listItem">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取简要资金计划项列表 -->
+		<action name="listSimpleFundPlanItem" class="top.warmheart.workerunion.pm.server.action.FundPlanAction"
+			method="listSimpleItem">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取资金计划项 -->
+		<action name="getFundPlanItemById" class="top.warmheart.workerunion.pm.server.action.FundPlanAction"
+			method="getItemById">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 增加资金计划项 -->
+		<action name="addFundPlanItem" class="top.warmheart.workerunion.pm.server.action.FundPlanAction"
+			method="addItem">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 删除资金计划项 -->
+		<action name="removeFundPlanItemById" class="top.warmheart.workerunion.pm.server.action.FundPlanAction"
+			method="removeItemById">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 修改资金计划项 -->
+		<action name="modifyFundPlanItemById" class="top.warmheart.workerunion.pm.server.action.FundPlanAction"
+			method="modifyItemById">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,434 @@
+/*项目名称*/
+.div_project_name{
+    position: absolute;
+    left: 34px;
+    top: 90px;
+    width: 766px;
+    height: 40px;
+}
+.type_project_name{
+    position: absolute;
+    width: 115px;
+    height: 40px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: right;
+}
+.txt_project_name{
+    position: absolute;
+    left: 115px;
+    width: 651px;
+    height: 30px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    padding-top: 10px;
+    text-align: center;
+    background-color: #CCCCCC;
+    border-radius: 5px;
+    overflow: auto;
+}
+/*项目归档按钮*/
+.btn_archived_project{
+    position: absolute;
+    left: 814px;
+    top: 90px;
+    width: 149px;
+    height: 40px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+    background-color: #009DD9;
+    border-radius: 5px;
+}
+.btn_archived_project:hover{
+    background-color: #007EAE;
+}
+.btn_archived_project:active{
+    background-color: #007EAE;
+}
+
+/*竣工结算信息表格*/
+.div_info_list{
+    position: relative;
+    left: 19px;
+    top: 145px;
+    width: 931px;
+    _height: 46px;
+    min-height: 46px;
+    border: #8E8B8B 15px solid;
+    border-radius: 5px;
+}
+/*设置表格样式*/
+.div_info_list>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置表头样式*/
+.div_info_list>table th{
+    height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+    font-weight: normal;
+}
+.div_info_list>table tr th.list_last_col{
+    border-right: 0;
+}
+/*设置单元格样式*/
+.div_info_list>table td{
+    height: 44px;
+    _height: 44px;
+    min-height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_info_list>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_info_list>table tr td.list_last_col{
+    border-right: 0;
+}
+.div_info_list>table tr td.list_last_col_row{
+    border-bottom: 1px solid #666666;
+    border-right: 1px solid #666666;
+    background-color: #8E8B8B;
+}
+.list_col_color_yellow{
+    background-color: #FFCC33
+}
+/*设置行选中样式*/
+.list_tr_selected{
+    background-color: #0066FF;
+    color: #FFFFFF;
+}
+
+.div_verify_btn{
+    position: relative;
+    width: 169px;
+    height: 100%;
+}
+/*通过按钮*/
+.btn_pass{
+    position: absolute;
+    left: 7px;
+    top: 11%;
+    width: 71px;
+    height: 35px;
+    font-family: Arial;
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 35px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_pass.png") no-repeat;
+}
+.btn_pass:hover{
+    background: url("/worker-union-fm/common/image/img_btn_pass_focus.png") no-repeat;
+}
+.btn_pass:active{
+    background: url("/worker-union-fm/common/image/img_btn_pass_focus.png") no-repeat;
+}
+.div_line{
+    position: absolute;
+    left: 85px;
+    width: 1px;
+    height: 100%;
+    background-color: #666666;
+}
+/*驳回按钮*/
+.btn_rebut{
+    position: absolute;
+    left: 92px;
+    top: 11%;
+    width: 71px;
+    height: 35px;
+    font-family: Arial;
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 35px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_rebut.png") no-repeat;
+}
+.btn_rebut:hover{
+    background: url("/worker-union-fm/common/image/img_btn_rebut_focus.png") no-repeat;
+}
+.btn_rebut:active{
+    background: url("/worker-union-fm/common/image/img_btn_rebut_focus.png") no-repeat;
+}
+
+.div_btn{
+    position: relative;
+    left: 492px;
+    top: 160px;
+    width: 488px;
+    height: 46px;
+}
+/*添加按钮*/
+.btn_add{
+    position: absolute;
+    width: 154px;
+    height: 46px;
+    font-family: Heiti SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_add.png");
+}
+.btn_add:hover{
+    background: url("/worker-union-fm/common/image/img_btn_add_focus.png");
+}
+.btn_add:active{
+    background: url("/worker-union-fm/common/image/img_btn_add_focus.png");
+}
+/*删除按钮*/
+.btn_delete{
+    position: absolute;
+    left: 166px;
+    width: 154px;
+    height: 46px;
+    font-family: Heiti SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_delete.png");
+}
+.btn_delete:hover{
+    background: url("/worker-union-fm/common/image/img_btn_delete_focus.png");
+}
+.btn_delete:active{
+    background: url("/worker-union-fm/common/image/img_btn_delete_focus.png");
+}
+/*修改按钮*/
+.btn_modify{
+    position: absolute;
+    left: 333px;
+    width: 154px;
+    height: 46px;
+    font-family: Heiti SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_modify.png");
+}
+.btn_modify:hover{
+    background: url("/worker-union-fm/common/image/img_btn_modify_focus.png");
+}
+.btn_modify:active{
+    background: url("/worker-union-fm/common/image/img_btn_modify_focus.png");
+}
+/*虚线分割线*/
+.div_dashed{
+    position: absolute;
+    left: 995px;
+    top: 70px;
+    width: 2px;
+    height: 564px;
+    border-right: 1px dashed #CCCCCC;
+}
+/*右侧导航键*/
+.nav_bar_side{
+    position: absolute;
+    top: 79px;
+    left: 1010px;
+    width: 178px;
+    height: 730px;
+}
+/*返回*/
+.btn_back {
+    position: absolute;
+    top: 791px;
+    left: 1077px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}
+
+/*决算详细修改弹窗*/
+.div_modify_diaolog{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+}
+/*决算详细添加弹窗*/
+.div_add_diaolog{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+}
+/*弹窗页面容器*/
+.dialog_container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -235px 0 0 -515px;
+    width: 1030px;
+    height: 470px;
+    background-color: #C1AD9F;
+    border: #99CC00 2px solid;
+    border-radius: 5px;
+}
+/*标题*/
+.dialog_title{
+    position: absolute;
+    left: 49px;
+    top: 50px;
+    width: 93px;
+    height: 330px;
+    background-color: #99CC00;
+    z-index: 1;
+}
+.dialog_title>div{
+    margin-top: 45px;
+    font-family: PingFang SC;
+    font-size: 36px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+}
+/*条目信息*/
+.div_info{
+    position: absolute;
+    top: 69px;
+    left: 50px;
+    width: 900px;
+    height: 269px;
+    padding-top: 21px;
+    background-color: #8E8B8B;
+    border-radius: 5px;
+}
+/*一行成本详细条目信息*/
+.div_line_info{
+    position: relative;
+    margin-top: 35px;
+    left: 123px;
+    width: 733px;
+    height: 40px;
+}
+.type_info{
+    position: absolute;
+    width: 159px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: right;
+}
+/*单位工程名称编辑框*/
+.txt_name{
+    position: absolute;
+    left: 175px;
+    width: 557px;
+    height: 36px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 5px;
+}
+/*送审金额div*/
+.div_verify_money{
+    position: absolute;
+    width: 353px;
+    height: 40px;
+}
+.txt_info{
+    position: absolute;
+    left: 176px;
+    width: 180px;
+    height: 36px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 5px;
+}
+/*核定金额div*/
+.div_check_money{
+    position: absolute;
+    left: 377px;
+    width: 353px;
+    height: 40px;
+}
+.dialog_div_btn{
+    position: absolute;
+    left: 299px;
+    top: 374px;
+    width: 474px;
+    height: 46px;
+}
+/*保存按钮*/
+.btn_save{
+    position: absolute;
+    left: 0px;
+    width: 154px;
+    height: 46px;
+    font-family: PingFang SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_save_cost_detail.png");
+}
+.btn_save:hover{
+    background: url("/worker-union-fm/common/image/img_btn_save_cost_detail_focus.png");
+}
+.btn_save:active{
+    background: url("/worker-union-fm/common/image/img_btn_save_cost_detail_focus.png");
+}
+/*取消按钮*/
+.btn_cancel{
+    position: absolute;
+    left: 318px;
+    width: 154px;
+    height: 46px;
+    font-family: PingFang SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_cancel_cost_detail.png");
+}
+.btn_cancel:hover{
+    background: url("/worker-union-fm/common/image/img_btn_cancel_cost_detail_focus.png");
+}
+.btn_cancel:active{
+    background: url("/worker-union-fm/common/image/img_btn_cancel_cost_detail_focus.png");
+}

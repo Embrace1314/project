@@ -1,0 +1,81 @@
+/*上一页*/
+.btn_page_up{
+    position: absolute;
+    width: 121px;
+    height: 31px;
+    font-family: Arial;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 31px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_page_up.png");
+}
+.btn_page_up:hover{
+    background: url("/worker-union-pm/common/image/img_btn_page_up_focus.png");
+}
+.btn_page_up:active{
+    background: url("/worker-union-pm/common/image/img_btn_page_up_focus.png");
+}
+
+/*页码显示*/
+.txt_page_number{
+    position: absolute;
+    left: 147px;
+    width: 88px;
+    height: 31px;
+}
+/*当前页码*/
+.current_page{
+    float: left;
+    _width: 32px;
+    min-width: 32px;
+    height: 31px;
+    font-family: Arial;
+    font-size: 18px;
+    color: #CCCCCC;
+    line-height: 31px;
+    text-align: right;
+}
+/*斜线*/
+.oblique_line{
+    float: left;
+    _width: 9px;
+    min-width: 9px;
+    height: 31px;
+    font-family: Arial;
+    font-size: 18px;
+    color: #CCCCCC;
+    line-height: 31px;
+    text-align: right;
+}
+/*总页码*/
+.total_page{
+    float: left;
+    _width: 28px;
+    min-width: 28px;
+    height: 31px;
+    font-family: Arial;
+    font-size: 18px;
+    color: #CCCCCC;
+    line-height: 31px;
+    text-align: left;
+}
+/*下一页*/
+.btn_page_down{
+    position: absolute;
+    left: 254px;
+    width: 121px;
+    height: 31px;
+    font-family: Arial;
+    font-size: 14px;
+    color: #FFFFFF;
+    line-height: 31px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_page_up.png");
+}
+.btn_page_down:hover{
+    background: url("/worker-union-pm/common/image/img_btn_page_up_focus.png");
+}
+.btn_page_down:active{
+    background: url("/worker-union-pm/common/image/img_btn_page_up_focus.png");
+}

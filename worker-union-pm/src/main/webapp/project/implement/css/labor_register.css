@@ -1,0 +1,138 @@
+/*信息列表*/
+.div_info_list{
+    position: relative;
+    left: 10px;
+    top: 72px;
+    width: 1160px;
+    _height: 46px;
+    min-height: 46px;
+    padding: 10px;
+    background-color: #8E8B8B;
+    border-radius: 5px;
+}
+/*设置表格样式*/
+.div_info_list>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #1E1E1E;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置单元格样式*/
+.div_info_list>table td{
+    height: 44px;
+    _height: 44px;
+    min-height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_info_list>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_info_list>table tr td.list_last_col{
+    border-right: 0;
+}
+/*设置行选中样式*/
+.list_tr_selected{
+    background-color: #0066FF;
+    color: #FFFFFF;
+}
+
+/*翻页按钮*/
+.div_page_btn{
+    position: relative;
+    top: 80px;
+    left: 20px;
+    width: 380px;
+    height: 31px;
+}
+
+.div_btn{
+    position: relative;
+    top: 50px;
+    left: 596px;
+    width: 583px;
+    height: 46px;
+}
+/*添加按钮*/
+.btn_add{
+    position: absolute;
+    width: 186px;
+    height: 46px;
+    font-family: PingFang SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_add_pm.png");
+}
+.btn_add:hover{
+    background: url("/worker-union-pm/common/image/img_btn_add_pm_focus.png");
+}
+.btn_add:active{
+    background: url("/worker-union-pm/common/image/img_btn_add_pm_focus.png");
+}
+/*删除按钮*/
+.btn_delete{
+    position: absolute;
+    left: 198px;
+    width: 186px;
+    height: 46px;
+    font-family: PingFang SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_delete_labor_pm.png");
+}
+.btn_delete:hover{
+    background: url("/worker-union-pm/common/image/img_btn_delete_labor_pm_focus.png");
+}
+.btn_delete:active{
+    background: url("/worker-union-pm/common/image/img_btn_delete_labor_pm_focus.png");
+}
+/*修改按钮*/
+.btn_modify{
+    position: absolute;
+    left: 396px;
+    width: 186px;
+    height: 46px;
+    font-family: PingFang SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_modify_pm.png");
+}
+.btn_modify:hover{
+    background: url("/worker-union-pm/common/image/img_btn_modify_pm_focus.png");
+}
+.btn_modify:active{
+    background: url("/worker-union-pm/common/image/img_btn_modify_pm_focus.png");
+}
+
+/*返回*/
+.btn_back{
+    position: relative;
+    top: 90px;
+    left: 1087px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover{
+    background: url("/worker-union-pm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active{
+    background: url("/worker-union-pm/common/image/img_btn_back_focus.png") no-repeat;
+}

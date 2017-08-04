@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>项目准备-团队搭建</title>
+    <link href="/worker-union-pm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/worker-union-pm/common/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/css/title.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/css/nav_bar_side.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/project/prepare/team_build.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/loading/loading.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--标题背景-->
+<div class="title_bg"></div>
+<!--页面容器-->
+<div class="container">
+    <iframe id="loading" class="loading" src="/worker-union-pm/common/loading/loading.html" style="display: none;"></iframe>
+    <!--标题-->
+    <div id="txtTitle" class="title">团队搭建</div>
+    <!--用户名及退出系统-->
+    <div class="div_user_name">
+        <div id="txtUserName" class="txt_user_name"></div>
+        <div class="div_divider_name_logout">|</div>
+        <button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+    </div>
+    <!--Home键-->
+    <button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+
+    <!--人员信息表格-->
+    <div class="div_list_content">
+        <table id="tableStaff">
+                <tr>
+                    <th width="128px">工号</th>
+                    <th width="128px">姓名</th>
+                    <th width="98px">年龄</th>
+                    <th width="253px">手机</th>
+                    <th width="94px">操作</th>
+                    <th width="185px">岗位角色</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>项目经理</td>
+                </tr>
+                <tr>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td colspan="5" class="btn_staff_info"><input class="btn_choose_staff" type="button" value="指定技术负责人" name="TECHNICAL_DIRECTOR" onclick="btnChooseTeam(this)"></td>
+                    <td>技术负责人</td>
+                </tr>
+                <tr>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td colspan="5" class="btn_staff_info"><input class="btn_choose_staff" type="button" value="指定施工员" name="CONSTRUCTION_WORKER" onclick="btnChooseTeam(this)"></td>
+                    <td>施工员</td>
+                </tr>
+                <tr>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td colspan="5" class="btn_staff_info"><input class="btn_choose_staff" type="button" value="指定质量员" name="QUALITY_WORKER" onclick="btnChooseTeam(this)"></td>
+                    <td>质量员</td>
+                </tr>
+                <tr>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td colspan="5" class="btn_staff_info"><input class="btn_choose_staff" type="button" value="指定安全员" name="SAFETY_WORKER" onclick="btnChooseTeam(this)"></td>
+                    <td>安全员</td>
+                </tr>
+                <tr>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td colspan="5" class="btn_staff_info"><input class="btn_choose_staff" type="button" value="指定预算员" name="BUDGETER" onclick="btnChooseTeam(this)"></td>
+                    <td>预算员</td>
+                </tr>
+                <tr>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td colspan="5" class="btn_staff_info"><input class="btn_choose_staff" type="button" value="指定材料员" name="MATERIALMAN" onclick="btnChooseTeam(this)"></td>
+                    <td>材料员</td>
+                </tr>
+                <tr>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td colspan="5" class="btn_staff_info"><input class="btn_choose_staff" type="button" value="指定机械员" name="MACHINIST" onclick="btnChooseTeam(this)"></td>
+                    <td>机械员</td>
+                </tr>
+                <tr>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td colspan="5" class="btn_staff_info"><input class="btn_choose_staff" type="button" value="指定劳务员" name="LABOR_WORKER" onclick="btnChooseTeam(this)"></td>
+                    <td>劳务员</td>
+                </tr>
+                <tr>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td class="txt_staff_info" hidden="true"></td>
+                    <td colspan="5" class="btn_staff_info"><input class="btn_choose_staff" type="button" value="指定资料员" name="DATA_PROCESSOR" onclick="btnChooseTeam(this)"></td>
+                    <td>资料员</td>
+                </tr>
+            </table>
+    </div>
+
+    <!--上传团队成员附件按钮-->
+    <button class="btn_upload_attachment" onclick="btnToUploadAttachment()" type="button">上传团队成员附件材料</button>
+
+    <!--虚线分割线-->
+    <div class="div_dashed"></div>
+    <!--右侧导航按钮-->
+    <div class="nav_bar_side">
+        <ul class="nav_bar_menu" style="display: block">
+            <li><a href="javascript:void(0)">项目立项</a>
+                <ul>
+                    <li><a id="navBidInfo" class="nav_bar_submenu">中标信息</a></li>
+                    <li><a id="navCostAnalysis" class="nav_bar_submenu">成本分析</a></li>
+                    <li><a id="navObjectiveManage" class="nav_bar_submenu">目标管理</a></li>
+                    <li><a id="navBuildReport" class="nav_bar_submenu">项目报建</a></li>
+                </ul></li>
+            <li><a href="javascript:void(0)">项目准备</a>
+                <ul style="display: block">
+                    <li><a id="navTeamBuild" class="nav_bar_submenu_select">团队搭建</a></li>
+                    <li><a id="navPlanDeepen" class="nav_bar_submenu">方案深化</a></li>
+                    <li><a id="navCostDeepen" class="nav_bar_submenu">成本深化</a></li>
+                    <li><a id="navCapitalPlan" class="nav_bar_submenu">资金计划</a></li>
+                </ul></li>
+            <li><a href="javascript:void(0)">项目实施</a>
+                <ul>
+                    <li><a id="navOperationManage" class="nav_bar_submenu">经营管理</a></li>
+                    <li><a id="navProductionManage" class="nav_bar_submenu">生产管理</a></li>
+                    <li><a id="navTechnicalManage" class="nav_bar_submenu">技术管理</a></li>
+                    <li><a id="navSecurityManage" class="nav_bar_submenu">安全管理</a></li>
+                    <li><a id="navQualityManage" class="nav_bar_submenu">质量管理</a></li>
+                    <li><a id="navResourceImplement" class="nav_bar_submenu">资源落实</a></li>
+                    <li><a id="navSettlementManage" class="nav_bar_submenu">结算管理</a></li>
+                    <li><a id="navStoreManage" class="nav_bar_submenu">仓库管理</a></li>
+                </ul></li>
+            <li><a href="javascript:void(0)">项目竣工</a>
+                <ul>
+                    <li><a id="navCompleteCheck" class="nav_bar_submenu">竣工验收</a></li>
+                    <li class="nav_bar_submenu_disable">项目部解体</li>
+                    <li><a id="navProjectSummary" class="nav_bar_submenu">项目总结</a></li>
+                    <li><a id="navInternalSettlement" class="nav_bar_submenu">内部结算</a></li>
+                    <li><a id="navCompleteSettlement" class="nav_bar_submenu">竣工结算</a></li>
+                </ul></li>
+        </ul>
+    </div>
+    <!--返回按钮-->
+    <button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+
+</div>
+
+<script type="text/javascript" src="/worker-union-pm/common/js/util.js"></script>
+<script type="text/javascript" src="/worker-union-pm/common/js/nav_bar.js"></script>
+<script type="text/javascript" src="/worker-union-pm/common/js/nav_bar_side.js"></script>
+<script type="text/javascript" src="/worker-union-pm/project/prepare/team_build.js"></script>
+</body>
+</html>

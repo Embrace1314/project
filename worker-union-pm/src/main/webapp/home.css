@@ -1,0 +1,482 @@
+*{margin:0;padding:0;}
+body{
+    text-align:center;
+    background-color: #C1AD9F;
+}
+/*公司图标*/
+.img_company_logo{
+    position: absolute;
+    width: 1200px;
+    height: 330px;
+    background: url("/worker-union-pm/common/image/img_company_logo.png") no-repeat;
+}
+.img_company_logo>div{
+    position: absolute;
+    top: 64px;
+    left: 150px;
+    width: 330px;
+    height: 100px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 72px;
+    color: #FFFFFF;
+    text-align: left;
+}
+.txt_company_aim{
+    position: absolute;
+    left: 150px;
+    top: 198px;
+    width: 720px;
+    height: 30px;
+    font-family: PingFang SC;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-align: left;
+}
+/*用户名及退出系统*/
+.div_user_name{
+    position: absolute;
+    left: 29px;
+    top: 288px;
+    width: 156px;
+    height: 33px;
+    text-align: center;
+    border: 1px solid #797979;
+}
+.txt_user_name{
+    float: left;
+    width: 70px;
+    height: 33px;
+    font-family: PingFang SC;
+    font-size: 15px;
+    color: #CCCCCC;
+    line-height: 33px;
+    text-align: center;
+}
+.div_divider_name_logout{
+    float: left;
+    width: 4px;
+    height: 33px;
+    font-family: PingFang SC;
+    font-size: 15px;
+    color: #CCCCCC;
+    line-height: 33px;
+    text-align: center;
+}
+.btn_log_out{
+    float: left;
+    width: 79px;
+    height: 33px;
+    font-family: PingFang SC;
+    font-size: 15px;
+    color: #FF6600;
+    line-height: 33px;
+    text-align: center;
+    text-decoration: underline;
+    background: none;
+}
+.btn_log_out:hover{
+    color: #CD8500;
+}
+.btn_log_out:active{
+    color: #CD8500;
+}
+/*修改密码*/
+.btn_modify_password{
+    position: absolute;
+    left: 1073px;
+    top: 294px;
+    width: 86px;
+    height: 27px;
+    font-family: PingFang SC;
+    font-size: 18px;
+    color: #CCCCCC;
+    line-height: 27px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+/*年份选择*/
+.select_year{
+    position: absolute;
+    left: 54px;
+    top: 355px;
+    width: 879px;
+    height: 44px;
+    padding-left: 10px;
+    font-family: Arial;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+}
+
+.div_date_choose{
+    position: absolute;
+    left: 54px;
+    top: 355px;
+    width: 877px;
+    height: 50px;
+}
+/*日历布局*/
+.div_calendar{
+    position: absolute;
+    top: -1px;
+    width: 601px;
+    height: 350px;
+}
+/*日历挂件*/
+.calendar_bar{
+    position: absolute;
+    width: 601px;
+    height: 52px;
+    background: url("/worker-union-pm/common/image/img_calendar_bar.png");
+}
+/*日历展示*/
+.calendar_display{
+    position: absolute;
+    left: 57px;
+    top: 16px;
+    width: 500px;
+    height: 334px;
+    z-index: 1;
+    background: url("/worker-union-pm/common/image/img_calendar.png") no-repeat;
+}
+/*选中年份显示*/
+.div_calendar_year{
+    position: absolute;
+    left: 69px;
+    top: 233px;
+    width: 336px;
+    height: 44px;
+    z-index: 2;
+    background: url("/worker-union-pm/common/image/img_calendar_year_choosen.png") no-repeat;
+}
+.calendar_year_choosen{
+    position: absolute;
+    left: 101px;
+    width: 94px;
+    height: 44px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    line-height: 44px;
+    text-align: right;
+}
+.calendar_year_symbol{
+    position: absolute;
+    left: 193px;
+    width: 45px;
+    height: 44px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    line-height: 44px;
+    text-align: left;
+}
+/*选择立项年份按钮*/
+.choose_project_year{
+    position: absolute;
+    left: 666px;
+    width: 211px;
+    height: 51px;
+    font-family: Arial;
+    font-size: 22px;
+    color: #FFFFFF;
+    line-height: 51px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_choose_project_year.png");
+}
+.choose_project_year:hover{
+    background: url("/worker-union-pm/common/image/img_btn_choose_project_year_focus.png");
+}
+.choose_project_year:active{
+    background: url("/worker-union-pm/common/image/img_btn_choose_project_year_focus.png");
+}
+/*项目列表*/
+.project_list{
+    position: absolute;
+    left: 54px;
+    top: 429px;
+    width: 879px;
+    height: 331px;
+    background-color: #797979;
+    border-radius: 5px;
+}
+/*项目名称按钮*/
+.btn_project{
+    float: left;
+    margin-top: 40px;
+    margin-left: 16px;
+    width: 199px;
+    height: 109px;
+    font-family: Arial;
+    font-size: 20px;
+    color: #FFFFFF;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_project.png") no-repeat;
+}
+.btn_project:hover{
+    background: url("/worker-union-pm/common/image/img_btn_project_focus.png") no-repeat;
+}
+.btn_project:active{
+    background: url("/worker-union-pm/common/image/img_btn_project_focus.png") no-repeat;
+}
+
+/*翻页按钮*/
+.div_page_btn{
+    position: absolute;
+    left: 257px;
+    top: 790px;
+    width: 470px;
+    height: 41px;
+}
+
+/*虚线分割线*/
+.div_dashed{
+    position: absolute;
+    left: 961px;
+    top: 337px;
+    width: 2px;
+    height: 533px;
+    border-right: 1px dashed #CCCCCC;
+}
+/*右侧导航按钮*/
+.nav_btn_side{
+    position: absolute;
+    top: 355px;
+    left: 979px;
+    width: 201px;
+    height: 350px;
+}
+/*进行中项目*/
+.btn_ongoing_project{
+    display: block;
+    position: absolute;
+    width: 201px;
+    height: 101px;
+    background: url("/worker-union-pm/common/image/img_btn_ongoing_project.png");
+    font-family: Arial;
+    font-size: 26px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 56px;
+    text-align: center;
+}
+.btn_ongoing_project:hover{
+    background: url("/worker-union-pm/common/image/img_btn_ongoing_project_focus.png");
+}
+.btn_ongoing_project:active{
+    background: url("/worker-union-pm/common/image/img_btn_ongoing_project_focus.png");
+}
+/*进行中项目选中效果*/
+.btn_ongoing_project_selected{
+    position: absolute;
+    width: 201px;
+    height: 101px;
+    font-family: Arial;
+    font-size: 26px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 56px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_ongoing_project_select.png");
+}
+/*已归档项目*/
+.btn_archived_project{
+    display: block;
+    position: absolute;
+    top: 121px;
+    width: 201px;
+    height: 101px;
+    font-family: Arial;
+    font-size: 26px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 56px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_archived_project.png");
+}
+.btn_archived_project:hover{
+    background: url("/worker-union-pm/common/image/img_btn_archived_project_focus.png");
+}
+.btn_archived_project:active{
+    background: url("/worker-union-pm/common/image/img_btn_archived_project_focus.png");
+}
+/*已归档项目选中效果*/
+.btn_archived_project_selected{
+    position: absolute;
+    top: 121px;
+    width: 201px;
+    height: 101px;
+    font-family: Arial;
+    font-size: 26px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 56px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_archived_project_select.png");
+}
+/*所有项目*/
+.btn_all_project{
+    display: block;
+    position: absolute;
+    top: 239px;
+    width: 201px;
+    height: 101px;
+    font-family: Arial;
+    font-size: 26px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 56px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_all_project.png");
+}
+.btn_all_project:hover{
+    background: url("/worker-union-pm/common/image/img_btn_all_project_focus.png");
+}
+.btn_all_project:active{
+    background: url("/worker-union-pm/common/image/img_btn_all_project_focus.png");
+}
+/*所有项目选中效果*/
+.btn_all_project_selected{
+    position: absolute;
+    top: 239px;
+    width: 201px;
+    height: 101px;
+    font-family: Arial;
+    font-size: 26px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 56px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_all_project_select.png");
+}
+
+/*页面遮罩层*/
+.div_mask{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+/*弹窗页面容器*/
+.dialog_container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -225px 0 0 -389px;
+    width: 778px;
+    height: 450px;
+    background-color: #C1AD9F;
+    border: #99CC00 2px solid;
+    border-radius: 5px;
+}
+/*标题*/
+.title_dialog{
+    position: absolute;
+    left: 49px;
+    top: 50px;
+    width: 93px;
+    height: 316px;
+    background-color: #99CC00;
+    z-index: 1;
+}
+.title_dialog>div{
+    margin-top: 78px;
+    font-family: PingFang SC;
+    font-size: 36px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+}
+/*详细信息*/
+.div_info_dialog{
+    position: absolute;
+    top: 77px;
+    left: 50px;
+    width: 660px;
+    height: 228px;
+    padding-top: 37px;
+    background-color: #8E8B8B;
+    border-radius: 5px;
+}
+/*一行详细信息*/
+.div_line_info_dialog{
+    position: relative;
+    margin-top: 18px;
+    left: 115px;
+    width: 500px;
+    height: 40px;
+}
+.type_info_dialog{
+    position: absolute;
+    width: 180px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: right;
+}
+.txt_info_dialog{
+    position: absolute;
+    left: 197px;
+    width: 303px;
+    height: 40px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+.dialog_div_btn{
+    position: absolute;
+    left: 213px;
+    top: 368px;
+    width: 474px;
+    height: 46px;
+}
+/*保存按钮*/
+.btn_save{
+    position: absolute;
+    left: 0px;
+    width: 154px;
+    height: 46px;
+    font-family: PingFang SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_save_cost_detail.png");
+}
+.btn_save:hover{
+    background: url("/worker-union-pm/common/image/img_btn_save_cost_detail_focus.png");
+}
+.btn_save:active{
+    background: url("/worker-union-pm/common/image/img_btn_save_cost_detail_focus.png");
+}
+/*取消按钮*/
+.btn_cancel{
+    position: absolute;
+    left: 318px;
+    width: 154px;
+    height: 46px;
+    font-family: PingFang SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_cancel_cost_detail.png");
+}
+.btn_cancel:hover{
+    background: url("/worker-union-pm/common/image/img_btn_cancel_cost_detail_focus.png");
+}
+.btn_cancel:active{
+    background: url("/worker-union-pm/common/image/img_btn_cancel_cost_detail_focus.png");
+}

@@ -1,0 +1,190 @@
+/*上传文件*/
+.div_upload_file{
+    position: absolute;
+    left: 131px;
+    top: 88px;
+    width: 710px;
+    height: 121px;
+}
+.btn_upload_file{
+    float: left;
+    margin-left: 56px;
+    width: 121px;
+    height: 121px;
+    background: url("/worker-union-fm/common/image/img_upload_objective_protocol.png");
+}
+.btn_upload_file:hover{
+    background: url("/worker-union-fm/common/image/img_upload_objective_protocol_focus.png");
+}
+.btn_upload_file:active{
+    background: url("/worker-union-fm/common/image/img_upload_objective_protocol_focus.png");
+}
+.btn_upload_file>div{
+    position: absolute;
+    top: 83px;
+    width: 121px;
+    height: 38px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 16px;
+    color: #FFFFFF;
+    line-height: 38px;
+    text-align: center;
+}
+/*下载删除文件*/
+.div_delete_file{
+    float: left;
+    margin-left: 56px;
+    width: 121px;
+    height: 121px;
+    display: inline;
+}
+.btn_download_protocol{
+    position: absolute;
+    width: 121px;
+    height: 121px;
+    background: url("/worker-union-fm/common/image/img_upload_objective_protocol.png");
+}
+.btn_download_protocol:hover{
+    background: url("/worker-union-fm/common/image/img_upload_objective_protocol_focus.png");
+}
+.btn_download_protocol:active{
+    background: url("/worker-union-fm/common/image/img_upload_objective_protocol_focus.png");
+}
+.btn_download_protocol>div{
+    position: absolute;
+    top: 81px;
+    width: 121px;
+    height: 40px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 16px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+}
+.btn_delete_file{
+    position: relative;
+    left: 80px;
+    width: 42px;
+    height: 43px;
+    background: url("/worker-union-fm/common/image/img_delete_file.png");
+}
+.btn_delete_file:hover{
+    background: url("/worker-union-fm/common/image/img_delete_file_focus.png");
+}
+.btn_delete_file:active{
+    background: url("/worker-union-fm/common/image/img_delete_file_focus.png");
+}
+
+
+/*人员信息表格*/
+.div_list_content{
+    position: relative;
+    left: 26px;
+    top: 235px;
+    width: 904px;
+    _height: 46px;
+    min-height: 46px;
+    padding-left: 26px;
+    padding-right: 26px;
+    background-color: #8E8B8B;
+    border-radius: 5px;
+}
+.div_list_content>table{
+    border-collapse: separate;
+    border-spacing: 0px 13px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+}
+/*设置单元格样式*/
+.div_list_content>table th{
+    height: 42px;
+    border: 1px solid #666666;
+    background-color: #FFFFFF;
+    font-weight: normal;
+}
+/*设置单元格样式*/
+.div_list_content>table td{
+    height: 42px;
+    _height: 42px;
+    min-height: 42px;
+    border: 1px solid #666666;
+    background-color: #FFFFFF;
+}
+/*设置删除按钮样式*/
+.btn_delete{
+    width: 91px;
+    height: 38px;
+    font-family: Arial;
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 38px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_delete_build_report.png") no-repeat;
+}
+.btn_delete:hover{
+    background: url("/worker-union-fm/common/image/img_btn_delete_build_report_focus.png") no-repeat;
+}
+.btn_delete:active{
+    background: url("/worker-union-fm/common/image/img_btn_delete_build_report_focus.png") no-repeat;
+}
+
+/*选择人员按钮*/
+.btn_choose_staff{
+    width: 744px;
+    height: 45px;
+    font-family: Arial;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 45px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_choose_build_report.png");
+}
+.btn_choose_staff:hover{
+    background: url("/worker-union-fm/common/image/img_btn_choose_build_report_focus.png");
+}
+.btn_choose_staff:active{
+    background: url("/worker-union-fm/common/image/img_btn_choose_build_report_focus.png");
+}
+
+/*虚线分割线*/
+.div_dashed{
+    position: absolute;
+    left: 995px;
+    top: 60px;
+    width: 2px;
+    height: 840px;
+    border-right: 1px dashed #CCCCCC;
+}
+/*右侧导航键*/
+.nav_bar_side{
+    position: absolute;
+    top: 78px;
+    left: 1011px;
+    width: 178px;
+    height: 730px;
+}
+/*返回*/
+.btn_back {
+    position: relative;
+    top: 350px;
+    left: 1086px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}

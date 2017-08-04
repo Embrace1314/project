@@ -1,0 +1,167 @@
+/*信息列表*/
+.div_info_list{
+    position: absolute;
+    left: 10px;
+    top: 90px;
+    width: 946px;
+    _height: 46px;
+    min-height: 46px;
+    border-left: 12px solid #8E8B8B;
+    border-right: 12px solid #8E8B8B;
+    border-top: 14px solid #8E8B8B;
+    border-bottom: 14px solid #8E8B8B;
+    border-radius: 5px;
+}
+/*设置表格样式*/
+.div_info_list>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置表头样式*/
+.div_info_list>table th{
+    height: 53px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+    font-weight: normal;
+}
+.div_info_list>table tr th.list_last_col{
+    border-right: 0;
+}
+/*设置单元格样式*/
+.div_info_list>table td{
+    height: 53px;
+    _height: 53px;
+    min-height: 53px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+.div_info_list>table td>input{
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+}
+/*设置最后一行单元格样式*/
+.div_info_list>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_info_list>table tr td.list_last_col{
+    border-right: 0;
+}
+/*设置最后一行最后一列单元格样式*/
+.div_info_list>table tr td.list_last_col_row{
+    border-bottom: 1px solid #666666;
+    border-right: 1px solid #666666;
+    background-color: #8E8B8B;
+}
+
+.audit_status{
+    background-color: #FFFF00;
+}
+/*审核状态：审核通过*/
+.audit_status_success{
+    background-color: #00CC66;
+}
+/*审核状态：审核驳回*/
+.audit_status_fail{
+    background-color: #FF3300;
+}
+
+.div_audit_btn{
+    position: relative;
+    width: 200px;
+    height: 100%;
+    text-align: center;
+}
+/*通过按钮*/
+.btn_pass{
+    position: absolute;
+    left: 15px;
+    top: 11%;
+    width: 71px;
+    height: 35px;
+    font-family: Arial;
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 35px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_pass.png") no-repeat;
+}
+.btn_pass:hover{
+    background: url("/worker-union-fm/common/image/img_btn_pass_focus.png") no-repeat;
+}
+.btn_pass:active{
+    background: url("/worker-union-fm/common/image/img_btn_pass_focus.png") no-repeat;
+}
+.div_line{
+    position: absolute;
+    left: 101px;
+    width: 1px;
+    height: 100%;
+    background-color: #666666;
+}
+/*驳回按钮*/
+.btn_rebut{
+    position: absolute;
+    left: 115px;
+    top: 11%;
+    width: 71px;
+    height: 35px;
+    font-family: Arial;
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 35px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_rebut.png") no-repeat;
+}
+.btn_rebut:hover{
+    background: url("/worker-union-fm/common/image/img_btn_rebut_focus.png") no-repeat;
+}
+.btn_rebut:active{
+    background: url("/worker-union-fm/common/image/img_btn_rebut_focus.png") no-repeat;
+}
+
+/*虚线分割线*/
+.div_dashed{
+    position: absolute;
+    left: 995px;
+    top: 70px;
+    width: 2px;
+    height: 742px;
+    border-right: 1px dashed #CCCCCC;
+}
+/*右侧导航键*/
+.nav_bar_side{
+    position: absolute;
+    top: 80px;
+    left: 1010px;
+    width: 178px;
+    height: 730px;
+}
+/*返回*/
+.btn_back {
+    position: absolute;
+    top: 900px;
+    left: 1076px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}

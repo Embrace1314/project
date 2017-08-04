@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- TODOPROJECT -->
+	<!-- 服务器系统入口 -->
+	<package name="completionData" namespace="/completion_data" extends="default">
+
+
+		<!-- 获取竣工资料审核信息列表 -->
+		<action name="listCompletionDataAttachment" class="top.warmheart.workerunion.fm.server.action.CompletionDataAction"
+			method="listAttachment">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<action name="passCompletionDataAttachment" class="top.warmheart.workerunion.fm.server.action.CompletionDataAction"
+			method="passAttachment">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 驳回项目竣工文件附件审核 -->
+		<action name="failCompletionDataAttachment" class="top.warmheart.workerunion.fm.server.action.CompletionDataAction"
+			method="failAttachment">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+
+	</package>
+</struts>

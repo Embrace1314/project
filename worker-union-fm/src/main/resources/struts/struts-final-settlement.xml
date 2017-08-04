@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- TODOPROJECT -->
+	<!-- 服务器系统入口 -->
+	<package name="finalSettlement" namespace="/final_settlement" extends="default">
+
+		<!-- 获取竣工决算条目列表 -->
+		<action name="listFinalSettlementItem" class="top.warmheart.workerunion.fm.server.action.FinalSettlementAction"
+			method="listItem">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 增加新的竣工决算项-->
+		<action name="addFinalSettlementItem" class="top.warmheart.workerunion.fm.server.action.FinalSettlementAction" method="addItem">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<!-- 修改竣工决算项-->
+		<action name="modifyFinalSettlementItemById" class="top.warmheart.workerunion.fm.server.action.FinalSettlementAction" method="modifyItemById">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<!-- 获取竣工决算项-->
+		<action name="getFinalSettlementItemById" class="top.warmheart.workerunion.fm.server.action.FinalSettlementAction" method="getItemById">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<!-- 删除竣工决算项-->
+		<action name="removeFinalSettlementItemById" class="top.warmheart.workerunion.fm.server.action.FinalSettlementAction" method="removeItemById">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<!-- 删除竣工决算项附件-->
+		<action name="removeFinalSettlementItemAttachmentById" class="top.warmheart.workerunion.fm.server.action.FinalSettlementAction" method="removeAttachmentById">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+	</package>
+</struts>

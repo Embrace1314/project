@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                       http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<display-name>Archetype Created Web Application</display-name>
+
+	<!-- Spring IOC容器监听器 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:beans.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- 创建项目 中标通知书 -->
+	<servlet>
+		<servlet-name>CreateProjectServlet</servlet-name>
+		<servlet-class>top.warmheart.workerunion.callback.servlet.CreateProjectServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateProjectServlet</servlet-name>
+		<url-pattern>/CreateProjectServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 上传项目附件 -->
+	<servlet>
+		<servlet-name>UploadAttachmentServlet</servlet-name>
+		<servlet-class>top.warmheart.workerunion.callback.servlet.UploadAttachmentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadAttachmentServlet</servlet-name>
+		<url-pattern>/UploadAttachmentServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 上传唯一性项目附件 -->
+	<servlet>
+		<servlet-name>UploadUniqueAttachmentServlet</servlet-name>
+		<servlet-class>top.warmheart.workerunion.callback.servlet.UploadUniqueAttachmentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadUniqueAttachmentServlet</servlet-name>
+		<url-pattern>/UploadUniqueAttachmentServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 上传安全检查记录附件 -->
+	<servlet>
+		<servlet-name>UploadSafetyCheckItemAttachmentServlet</servlet-name>
+		<servlet-class>top.warmheart.workerunion.callback.servlet.UploadSafetyCheckItemAttachmentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadSafetyCheckItemAttachmentServlet</servlet-name>
+		<url-pattern>/UploadSafetyCheckItemAttachmentServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 上传质量记录附件 -->
+	<servlet>
+		<servlet-name>UploadQualityCheckItemAttachmentServlet</servlet-name>
+		<servlet-class>top.warmheart.workerunion.callback.servlet.UploadQualityCheckItemAttachmentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadQualityCheckItemAttachmentServlet</servlet-name>
+		<url-pattern>/UploadQualityCheckItemAttachmentServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 上传供应商附件 -->
+	<servlet>
+		<servlet-name>UploadSupplierAttachmentServlet</servlet-name>
+		<servlet-class>top.warmheart.workerunion.callback.servlet.UploadSupplierAttachmentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadSupplierAttachmentServlet</servlet-name>
+		<url-pattern>/UploadSupplierAttachmentServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 上传分包商附件 -->
+	<servlet>
+		<servlet-name>UploadSubcontractorAttachmentServlet</servlet-name>
+		<servlet-class>top.warmheart.workerunion.callback.servlet.UploadSubcontractorAttachmentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadSubcontractorAttachmentServlet</servlet-name>
+		<url-pattern>/UploadSubcontractorAttachmentServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 上传合同附件 -->
+	<servlet>
+		<servlet-name>UploadContractAttachmentServlet</servlet-name>
+		<servlet-class>top.warmheart.workerunion.callback.servlet.UploadContractAttachmentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadContractAttachmentServlet</servlet-name>
+		<url-pattern>/UploadContractAttachmentServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 上传证书附件 -->
+	<servlet>
+		<servlet-name>UploadCertificateAttachmentServlet</servlet-name>
+		<servlet-class>top.warmheart.workerunion.callback.servlet.UploadCertificateAttachmentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadCertificateAttachmentServlet</servlet-name>
+		<url-pattern>/UploadCertificateAttachmentServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 上传材料类型附件 -->
+	<servlet>
+		<servlet-name>UploadMaterialTypeAttachmentServlet</servlet-name>
+		<servlet-class>top.warmheart.workerunion.callback.servlet.UploadMaterialTypeAttachmentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadMaterialTypeAttachmentServlet</servlet-name>
+		<url-pattern>/UploadMaterialTypeAttachmentServlet</url-pattern>
+	</servlet-mapping>
+	<!-- 上传竣工决算项附件 -->
+	<servlet>
+		<servlet-name>UploadFinalSettlementItemAttachmentServlet</servlet-name>
+		<servlet-class>top.warmheart.workerunion.callback.servlet.UploadFinalSettlementItemAttachmentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UploadFinalSettlementItemAttachmentServlet</servlet-name>
+		<url-pattern>/UploadFinalSettlementItemAttachmentServlet</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 主页 -->
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>

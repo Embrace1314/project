@@ -1,0 +1,388 @@
+/*劳务信息标题*/
+.title_labor_info{
+    position: absolute;
+    left: 42px;
+    top: 89px;
+    width: 93px;
+    height: 1041px;
+    font-family: PingFang SC;
+    font-size: 36px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+    background-color: #99CC00;
+    z-index: 1;
+}
+.title_labor_info>div{
+    margin-top: 400px;
+    font-family: PingFang SC;
+    font-size: 36px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+}
+/*劳务信息编辑框*/
+.div_labor_info{
+    position: absolute;
+    top: 112px;
+    left: 43px;
+    width: 1115px;
+    height: 962px;
+    padding-top: 26px;
+    background-color: #8E8B8B;
+}
+.div_line_info{
+    position: relative;
+    margin-top: 22px;
+    width: 1086px;
+    height: 50px;
+}
+/*不可编辑样式*/
+.txt_info_disabled{
+    background-color: #CCCCCC;
+}
+/*姓名、紧急联系人*/
+.div_col_1{
+    position: absolute;
+    width: 467px;
+    height: 50px;
+}
+.type_col_1{
+    position: absolute;
+    left: 154px;
+    width: 100px;
+    height: 50px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 50px;
+    text-align: right;
+}
+.txt_col_1{
+    position: absolute;
+    left: 256px;
+    width: 200px;
+    height: 44px;
+    padding-left: 5px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    border-radius: 5px;
+}
+/*工种*/
+.div_work_type{
+    position: absolute;
+    left: 489px;
+    width: 208px;
+    height: 50px;
+}
+.type_work_type{
+    position: absolute;
+    width: 69px;
+    height: 50px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 50px;
+    text-align: right;
+}
+.txt_work_type{
+    position: absolute;
+    left: 72px;
+    width: 128px;
+    height: 44px;
+    padding-left: 5px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    border-radius: 5px;
+}
+/*本企业合同用工*/
+.div_radio_btn{
+    position: absolute;
+    left: 715px;
+    width: 371px;
+    height: 50px;
+}
+.type_radio_btn{
+    position: absolute;
+    width: 171px;
+    height: 50px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 50px;
+    text-align: right;
+}
+/*单选框*/
+.txt_radio_btn{
+    position: absolute;
+    left: 134px;
+    top: 8px;
+    width: 230px;
+    height: 33px;
+}
+input[type="radio"] {
+    display: none;
+}
+label {
+    display: inline-block;
+    padding-left: 43px;
+    margin-left: 45px;
+    height: 31px;
+    cursor: pointer;
+    background: url("/worker-union-fm/common/image/img_rdbtn.png") no-repeat left bottom;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 31px;
+    text-align: center;
+}
+label.checked {
+    background-position: left top;
+}
+/*联系方式*/
+.div_col_1_long{
+    position: absolute;
+    width: 637px;
+    height: 50px;
+}
+.type_info{
+    position: absolute;
+    left: 102px;
+    width: 151px;
+    height: 50px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 50px;
+    text-align: right;
+}
+.txt_col_1_long{
+    position: absolute;
+    left: 256px;
+    width: 371px;
+    height: 44px;
+    padding-left: 5px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    border-radius: 5px;
+}
+/*性别*/
+.div_col_2{
+    position: absolute;
+    left: 659px;
+    width: 168px;
+    height: 50px;
+}
+.type_col_2{
+    position: absolute;
+    width: 69px;
+    height: 50px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 50px;
+    text-align: right;
+}
+.txt_col_2{
+    position: absolute;
+    left: 70px;
+    width: 88px;
+    height: 44px;
+    padding-left: 5px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    border-radius: 5px;
+}
+/*籍贯*/
+.div_col_3{
+    position: absolute;
+    left: 846px;
+    width: 230px;
+    height: 50px;
+}
+.type_col_3{
+    position: absolute;
+    width: 88px;
+    height: 50px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 50px;
+    text-align: right;
+}
+.txt_col_3{
+    position: absolute;
+    left: 91px;
+    width: 139px;
+    height: 44px;
+    padding-left: 5px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    border-radius: 5px;
+}
+/*个人证书*/
+.div_certificate{
+    position: relative;
+    margin-top: 22px;
+    width: 1086px;
+    height: 120px;
+}
+.txt_certificate{
+    position: absolute;
+    left: 256px;
+    width: 820px;
+    height: 114px;
+    padding-left: 5px;
+    padding-top: 5px;
+    resize: none;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: left;
+    border-radius: 5px;
+}
+/*家庭住址*/
+.div_address{
+    position: relative;
+    margin-top: 22px;
+    width: 1086px;
+    height: 88px;
+}
+.txt_address{
+    position: absolute;
+    left: 256px;
+    width: 820px;
+    height: 82px;
+    padding-left: 5px;
+    padding-top: 5px;
+    resize: none;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: left;
+    border-radius: 5px;
+}
+/*技能评定*/
+.div_line_info_long{
+    position: relative;
+    margin-top: 22px;
+    width: 1086px;
+    height: 98px;
+}
+.txt_info{
+    position: absolute;
+    left: 256px;
+    width: 820px;
+    height: 92px;
+    padding-left: 5px;
+    padding-top: 5px;
+    resize: none;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: left;
+    border-radius: 5px;
+}
+/*紧急联系人联系方式*/
+.div_contact_phone{
+    position: absolute;
+    left: 517px;
+    width: 570px;
+    height: 50px;
+}
+.type_contact_phone{
+    position: absolute;
+    width: 217px;
+    height: 50px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 50px;
+    text-align: right;
+}
+.txt_contact_phone{
+    position: absolute;
+    left: 219px;
+    width: 341px;
+    height: 44px;
+    padding-left: 5px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    border-radius: 5px;
+}
+.div_btn{
+    position: absolute;
+    left: 405px;
+    top: 1135px;
+    width: 472px;
+    height: 46px;
+}
+/*保存按钮*/
+.btn_save{
+    position: absolute;
+    width: 154px;
+    height: 46px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_save_labor_info_detail.png") no-repeat;
+}
+.btn_save:hover{
+    background: url("/worker-union-fm/common/image/img_btn_save_focus_labor_info_detail.png") no-repeat;
+}
+.btn_save:active{
+    background: url("/worker-union-fm/common/image/img_btn_save_focus_labor_info_detail.png") no-repeat;
+}
+/*取消按钮*/
+.btn_cancel{
+    position: absolute;
+    left: 318px;
+    width: 154px;
+    height: 46px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_cancel_labor_info_detail.png") no-repeat;
+}
+.btn_cancel:hover{
+    background: url("/worker-union-fm/common/image/img_btn_cancel_focus_labor_info_detail.png") no-repeat;
+}
+.btn_cancel:active{
+    background: url("/worker-union-fm/common/image/img_btn_cancel_focus_labor_info_detail.png") no-repeat;
+}
+/*返回按钮*/
+.btn_back{
+    position: absolute;
+    top: 1210px;
+    left: 1064px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover{
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active{
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}

@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+	<!-- 配置CacheManager实例：管理Shiro相关缓存操作 -->
+	<bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+		<property name="cacheManagerConfigFile" value="classpath:shiro-ehcache.xml"></property>
+	</bean>
+
+	<!-- 配置 SecurityManager 实例. SecurityManager 是 Shiro 最核心的组件 -->
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="realm" ref="basicRealm" />
+	</bean>
+
+	<!-- 配置bean的后置处理器来自动调用Shiro中的bean的init和destroy方法。 -->
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"></bean>
+
+	<!-- 配置哪些页面需要被拦截，以及访问这些页面所需的权限 。 该bean中的id 属性值必须和 web.xml 文件中配置的 filter 的 filter-name 值一致 -->
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager"></property>
+
+		<!-- 配置登陆页面 -->
+		<property name="loginUrl" value="/notLogin.action"></property>
+		<property name="successUrl" value="/success.action"></property>
+		<property name="unauthorizedUrl" value="/unauthorized.action"></property>
+
+		<!-- 配置需要被拦截的资源 以及访问权限 -->
+		<!-- create,update,delete,view -->
+		<property name="filterChainDefinitions">
+			<value>
+				/ = anon
+				/exception.action = anon
+				/notLogin.action = anon
+				/success.action = authc
+				/unauthorized.action = anon
+				
+				/staff/login.action = anon
+				/staff/logout.action = anon
+				/staff/checkAuthorization.action = authc
+				/staff/changePassword.action = authc
+				/staff/pageStaffByFuzzy.action = authc, perms[staff:view]
+				/staff/getStaffDetailById.action = authc, perms[staff:view]
+				/staff/addStaff.action = authc, perms[staff:create]
+				/staff/modifyStaffById.action = authc, perms[staff:update]
+				/staff/removeStaffById.action = authc, perms[staff:delete]
+				/staff/getLoginedStaffInfo.action = authc, perms[staff:view]
+				
+				/permission/listRoleByCompany.action = authc, perms[permission:list]
+				/permission/listRoleByStaff.action = authc, perms[permission:list]
+				/permission/saveStaffRole.action = authc, perms[permission:update]
+				
+				/project/getPageAllProjects.action = authc, perms[project:view]
+				/project/getPageProjectsByStatus.action = authc, perms[project:view]
+				/project/getPageProjectsByYear.action = authc, perms[project:view]
+				/project/getPageProjectsByStatusAndYear.action = authc, perms[project:view]
+				/project/getProjectDetailById.action = authc, perms[project:view]
+				/project/listSimpleProject.action = authc, perms[project:list]
+				/project/getProjectById.action = authc, perms[project:view]
+				/project/listUnarchivedProject.action = authc, perms[project:list]
+				/project/listSchedule.action = authc, perms[project:list]
+				/project/archiveProjectById.action = authc, perms[project_archive:update]
+				/project/releaseArchiveProjectById.action = authc, perms[project_archive:update]
+				/project/collapseProjectById.action = authc, perms[project_collapse:update]
+				
+				/cost_analysis/getCostAnalysisUniqueAttachment.action = authc, perms[cost_analysis:view]
+				/cost_analysis/removeCostAnalysisUniqueAttachment.action = authc, perms[cost_analysis:delete]
+				/cost_analysis/acquireCostAnalysisDetail.action = authc, perms[cost_analysis:view]
+				/cost_analysis/addCostAnalysisItem.action = authc, perms[cost_analysis:create]
+				/cost_analysis/removeCostAnalysisItem.action = authc, perms[cost_analysis:delete]
+				/cost_analysis/modifyCostAnalysisItem.action = authc, perms[cost_analysis:update]
+				/cost_analysis/getCostAnalysisItemById.action = authc, perms[cost_analysis:view]
+				
+				/target/getTargetUniqueAttachment.action = authc, perms[target:view]
+				/target/getTargetDetail.action = authc, perms[target:view]
+				/target/removeTargetUniqueAttachment.action = authc, perms[target:delete]
+				/target/addProjectManager.action = authc, perms[target:create]
+				/target/removeProjectManager.action = authc, perms[target:delete]
+				/target/saveTarget.action = authc, perms[target:update]
+				
+				/project_application/listProjectApplicationAttachment.action = authc, perms[project_application:list]
+				/project_application/listProjectApplicationStaff.action = authc, perms[project_application:list]
+				/project_application/addStaffToProjectApplication.action = authc, perms[project_application:create]
+				/project_application/removeStaffFromProjectApplication.action = authc, perms[project_application:delete]
+				/project_application/removeContractRecordAttachment.action = authc, perms[project_application:delete]
+				/project_application/removeQualityInspectNoticeAttachmentn.action = authc, perms[project_application:delete]
+				/project_application/removeSafetySupervisionFormAttachment.action = authc, perms[project_application:delete]
+				/project_application/removeConstructionPermitAttachment.action = authc, perms[project_application:delete]
+
+				/project_team/listProjectTeamStaff.action = authc, perms[project_team:list]
+				/project_team/listProjectTeamAttachment.action = authc, perms[project_team:list]
+				
+				/scheme_deepen/listSchemeDeepenAttachment.action = authc, perms[scheme_deepen:list]
+				/scheme_deepen/passSchemeDeepenAttachment.action = authc, perms[scheme_deepen:update]
+				/scheme_deepen/failSchemeDeepenAttachment.action = authc, perms[scheme_deepen:update]
+				
+				/fund_plan/listFundPlanItem.action = authc, perms[fund_plan:list]
+				/fund_plan/listSimpleFundPlanItem.action = authc, perms[fund_plan:list]
+				/fund_plan/getFundPlanItemById.action = authc, perms[fund_plan:view]
+				
+				/cost_analysis_deepen/getCostAnalysisDeepenUniqueAttachment.action = authc, perms[cost_analysis_deepen:view]
+				/cost_analysis_deepen/acquireCostAnalysisDeepenDetail.action = authc, perms[cost_analysis_deepen:view]
+				/cost_analysis_deepen/getCostAnalysisItemDeepenById.action = authc, perms[cost_analysis_deepen:view]
+				/cost_analysis_deepen/listCostAnalysisItemDeepen.action = authc, perms[cost_analysis_deepen:list]
+				
+				/purchase_item/listPurchaseItem.action = authc, perms[purchase_item:list]
+				
+				/business_capacity/getLatestBusinessCapacityAttachment.action = authc, perms[business_capacity:view]
+				/business_capacity/pageBusinessCapacityAttachment.action = authc, perms[business_capacity:view]
+				/business_capacity/pageBusinessCapacityItem.action = authc, perms[business_capacity:view]
+				/business_capacity/pageBusinessCapacityItem.action = authc, perms[business_capacity:view]
+				/business_capacity/checkBusinessCapacityItem.action = authc, perms[business_capacity:update]
+				
+				/product_capacity/getLatestProductCapacityAttachment.action = authc, perms[product_capacity:view]
+				/product_capacity/pageProductCapacityAttachment.action = authc, perms[product_capacity:view]
+				/product_capacity/pageProductCapacityItem.action = authc, perms[product_capacity:view]
+				/product_capacity/checkProductCapacityItem.action = authc, perms[product_capacity:update]
+				
+				/technical_proposal/listTechnicalProposalAttachment.action = authc, perms[technical_proposal:list]
+				/technical_proposal/passTechnicalProposalAttachment.action = authc, perms[technical_proposal:update]
+				/technical_proposal/failTechnicalProposalAttachment.action = authc, perms[technical_proposal:update]
+				
+				/safety_check/pageSafetyCheckItem.action = authc, perms[safety_check:view]
+				/safety_check/getSafetyCheckItemDetail.action = authc, perms[safety_check:view]
+				/safety_check/removeSafetyCheckItemAttachmentById.action = authc, perms[safety_check:delete]
+				/safety_check/addSafetyCheckItem.action = authc, perms[safety_check:create]
+				/safety_check/removeSafetyCheckItemById.action = authc, perms[safety_check:delete]
+				/safety_check/modifySafetyCheckItemById.action = authc, perms[safety_check:update]
+
+				/quality_check/pageQualityCheckItem.action = authc, perms[quality_check:view]
+				/quality_check/getQualityCheckItemDetail.action = authc, perms[quality_check:view]
+				/quality_check/removeQualityCheckItemAttachmentById.action = authc, perms[quality_check:delete]
+				/quality_check/addQualityCheckItem.action = authc, perms[quality_check:create]
+				/quality_check/removeQualityCheckItemById.action = authc, perms[quality_check:delete]
+				/quality_check/modifyQualityCheckItemById.action = authc, perms[quality_check:update]
+				
+				/resource_implement/listResourceImplementItem.action = authc, perms[resource_implement:list]
+				/resource_implement/listSimpleResourceImplementItem.action = authc, perms[resource_implement:list]
+				/resource_implement/getResourceImplementItemById.action = authc, perms[resource_implement:view]
+				
+				
+				/settlement/pageSettlementAttachment.action = authc, perms[settlement:view]
+				/settlement/getLatestSettlementAttachment.action = authc, perms[settlement:view]
+				/settlement/pageSettlementItem.action = authc, perms[settlement:view]
+				/settlement/getSettlementItemById.action = authc, perms[settlement:view]
+				/settlement/getSettlementItemDetailById.action = authc, perms[settlement:view]
+				/settlement/passSettlementAttachment.action = authc, perms[settlement:update]
+				/settlement/failSettlementAttachment.action = authc, perms[settlement:update]
+				
+				/completion_data/listCompletionDataAttachment.action = authc, perms[completion_data:list]
+				/completion_data/passCompletionDataAttachment.action = authc, perms[completion_data:update]
+				/completion_data/failCompletionDataAttachment.action = authc, perms[completion_data:update]
+				
+				/final_report/listFinalReportAttachment.action = authc, perms[final_report:list]
+				/final_report/passFinalReportAttachment.action = authc, perms[final_report:update]
+				/final_report/failFinalReportAttachment.action = authc, perms[final_report:update]
+				
+				/internal_settlement/getLatestInternalSettlementAttachment.action = authc, perms[internal_settlement:view]
+				/internal_settlement/pageInternalSettlementAttachment.action = authc, perms[internal_settlement:view]
+				/internal_settlement/getInternalSettlementDetail.action = authc, perms[internal_settlement:view]
+				/internal_settlement/removeInternalSettlementAttachmentById.action = authc, perms[internal_settlement:remove]
+				/internal_settlement/saveInternalSettlementAssessment.action = authc, perms[internal_settlement:update]
+				
+				
+				/final_settlement/listFinalSettlementItem.action = authc, perms[final_settlement:list]
+				/final_settlement/addFinalSettlementItem.action = authc, perms[final_settlement:create]
+				/final_settlement/modifyFinalSettlementItemById.action = authc, perms[final_settlement:update]
+				/final_settlement/getFinalSettlementItemById.action = authc, perms[final_settlement:view]
+				/final_settlement/removeFinalSettlementItemById.action = authc, perms[final_settlement:delete]
+				/final_settlement/removeFinalSettlementItemAttachmentById.action = authc, perms[final_settlement:delete]
+				
+				/material/pageMaterialByFuzzy.action = authc, perms[material:view]
+				/material/pageMaterialOrderByFuzzy.action = authc, perms[material:view]
+				/material/pageMaterialOrderByMaterialNum.action = authc, perms[material:view]
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				/sts/acquireLetterOfAcceptanceUpToken.action = authc, perms[project:create]
+				/sts/acquireCostAnalysisUpToken.action = authc, perms[cost_analysis:create]
+				/sts/acquireLetterOfAcceptanceDownToken.action = authc, perms[project:view]
+				/sts/acquireCostAnalysisDownToken.action = authc, perms[cost_analysis:view]
+				/sts/acquireContractRecordDownToken.action = authc, perms[project_application:view]
+				/sts/acquireQualityInspectNoticeDownToken.action = authc, perms[project_application:view]
+				/sts/acquireSafetySupervisionFormDownToken.action = authc, perms[project_application:view]
+				/sts/acquireConstructionPermitDownToken.action = authc, perms[project_application:view]
+				/sts/acquireSchemeDeepenUpToken.action = authc, perms[scheme_deepen:create]
+				/sts/acquireSchemeDeepenDownToken.action = authc, perms[scheme_deepen:view]
+				/sts/acquireCostDeepenUpToken.action = authc, perms[cost_deepen:create]
+				/sts/acquireCostDeepenDownToken.action = authc, perms[cost_deepen:view]
+				/sts/acquireAgreementOfTargetDownToken.action = authc, perms[target:view]
+				/sts/acquireAgreementOfTargetUpToken.action = authc, perms[target:create]
+				/sts/acquireBusinessCapacityFileDownToken.action = authc, perms[business_capacity:view]
+				/sts/acquireBusinessCapacityFileUpToken.action = authc, perms[business_capacity:create]
+				/sts/acquireProductCapacityFileDownToken.action = authc, perms[product_capacity:view]
+				/sts/acquireProductCapacityFileUpToken.action = authc, perms[product_capacity:create]
+				/sts/acquireTechnicalProposalUpToken.action = authc, perms[technical_proposal:create]
+				/sts/acquireTechnicalProposalDownToken.action = authc, perms[technical_proposal:view]
+				/sts/acquireSafetyCheckItemAttachmentUpToken.action = authc, perms[safety_check:create]
+				/sts/acquireSafetyCheckItemAttachmentDownToken.action = authc, perms[safety_check:view]
+				/sts/acquireQualityCheckItemAttachmentUpToken.action = authc, perms[quality_check:create]
+				/sts/acquireQualityCheckItemAttachmentDownToken.action = authc, perms[quality_check:view]
+				/sts/acquireSettlementUpToken.action = authc, perms[settlement:create]
+				/sts/acquireSettlementDownToken.action = authc, perms[settlement:view]
+				/sts/acquireCompletionDataUpToken.action = authc, perms[completion_data:create]
+				/sts/acquireCompletionDataDownToken.action = authc, perms[completion_data:view]
+				/sts/acquireFinalReportUpToken.action = authc, perms[final_report:create]
+				/sts/acquireFinalReportDownToken.action = authc, perms[final_report:view]
+				/sts/acquireInternalSettlementDownToken.action = authc, perms[internal_settlement:view]
+				/sts/acquireInternalSettlementUpToken.action = authc, perms[internal_settlement:view]
+				/sts/acquireFinalSettlementAttachmentDownToken.action = authc, perms[final_settlement:view]
+				/sts/acquireFinalSettlementItemAttachmentUpToken.action = authc, perms[final_settlement:create]
+				/sts/acquireSupplierAttachmentUpToken.action = authc, perms[supplier:create]
+				/sts/acquireSupplierAttachmentDownToken.action = authc, perms[supplier:view]
+				/sts/acquireSubcontractorAttachmentUpToken.action = authc, perms[subcontractor:create]
+				/sts/acquireSubcontractorAttachmentDownToken.action = authc, perms[subcontractor:view]
+				/sts/acquireContractAttachmentUpToken.action = authc, perms[contract:create]
+				/sts/acquireContractAttachmentDownToken.action = authc, perms[contract:view]
+				/sts/acquireMaterialTypeAttachmentUpToken.action = authc, perms[material_type:create]
+				/sts/acquireMaterialTypeAttachmentDownToken.action = authc, perms[material_type:view]
+				/sts/acquireContractRecordUpToken.action = authc, perms[project_application:create]
+				/sts/acquireQualityInspectNoticeUpToken.action = authc, perms[project_application:create]
+				/sts/acquireSafetySupervisionFormUpToken.action = authc, perms[project_application:create]
+				/sts/acquireConstructionPermitUpToken.action = authc, perms[project_application:create]
+				/sts/acquireCertificateAttachmentUpToken.action = authc, perms[certificate:create]
+				/sts/acquireCertificateAttachmentDownToken.action = authc, perms[certificate:view]
+				/sts/acquireProjectTeamAttachmentDownToken.action = authc, perms[project_team:view]
+				
+				/certificate/pageCertificateByFuzzy.action = authc, perms[certificate:view]
+				/certificate/addCertificate.action = authc, perms[certificate:create]
+				/certificate/removeCertificateById.action = authc, perms[certificate:delete]
+				/certificate/getCertificateDetailById.action = authc, perms[certificate:view]
+				/certificate/modifyCertificateById.action = authc, perms[certificate:update]
+				/certificate/listCertificateSerie.action = authc, perms[certificate:list]
+				/certificate/listCertificateTypeBySerieId.action = authc, perms[certificate:list]
+				/certificate/removeCertificateAttachmentById.action = authc, perms[certificate:delete]
+				/certificate/getCertificateDetailById.action = authc, perms[certificate:view]
+				
+				/supplier/pageSupplierByFuzzy.action = authc, perms[supplier:view]
+				/supplier/addSupplier.action = authc, perms[supplier:create]
+				/supplier/removeSupplierById.action = authc, perms[supplier:delete]
+				/supplier/getSupplierDetailById.action = authc, perms[supplier:view]
+				/supplier/modifySupplierById.action = authc, perms[supplier:update]
+				/supplier/removeSupplierAttachmentById.action = authc, perms[supplier:delete]
+				/supplier/listSupplierGrade.action = authc, perms[supplier:list]
+				/supplier/listSupplierQualification.action = authc, perms[supplier:list]
+				
+				/subcontractor/pageSubcontractorByFuzzy.action = authc, perms[subcontractor:view]
+				/subcontractor/addSubcontractor.action = authc, perms[subcontractor:create]
+				/subcontractor/removeSubcontractorById.action = authc, perms[subcontractor:delete]
+				/subcontractor/getSubcontractorDetailById.action = authc, perms[subcontractor:view]
+				/subcontractor/modifySubcontractorById.action = authc, perms[subcontractor:update]
+				/subcontractor/removeSubcontractorAttachmentById.action = authc, perms[subcontractor:delete]
+				/subcontractor/listSubcontractorGrade.action = authc, perms[subcontractor:list]
+				/subcontractor/listSubcontractorQualification.action = authc, perms[subcontractor:list]
+				/subcontractor/listSimpleSubcontractorItem.action = authc, perms[subcontractor:list]
+				
+				/material_type/getImportMaterialTypeByNum.action = authc, perms[material_type:view]
+				/material_type/getMaterialTypeDetailById.action = authc, perms[material_type:view]
+				/material_type/addMaterialType.action = authc, perms[material_type:create]
+				/material_type/removeMaterialTypeAttachmentById.action = authc, perms[material_type:delete]
+				/material_type/removeMaterialTypeById.action = authc, perms[material_type:delete]
+				/material_type/pageMaterialTypeByFuzzy.action = authc, perms[material_type:view]
+				
+				/contract/listSimpleContractItemByProjectId.action = authc, perms[contract:list]
+				/contract/addContract.action = authc, perms[contract:create]
+				/contract/removeContractById.action = authc, perms[contract:delete]
+				/contract/getContractDetailById.action = authc, perms[contract:view]
+				/contract/removeContractAttachmentById.action = authc, perms[contract:delete]
+				/contract/modifyContractById.action = authc, perms[contract:update]
+				/contract/pageContractByFuzzy.action = authc, perms[contract:view]
+				
+				/material_headquarters/pageMaterialHeadquartersByFuzzy.action = authc, perms[material_headquarters:view]
+				/material_headquarters/pageMaterialHeadquartersOrderByFuzzy.action = authc, perms[material_headquarters:view]
+				/material_headquarters/pageMaterialHeadquartersOrderByMaterialHeadquartersNum.action = authc, perms[material_headquarters:view]
+				/material_headquarters/importMaterialHeadquarters.action = authc, perms[material_headquarters:create]
+				/material_headquarters/exportMaterialHeadquarters.action = authc, perms[material_headquarters:update]
+				/material_headquarters/applyTransferMaterialHeadquarters.action = authc, perms[material_headquarters:update]
+				/material_headquarters/getExportMaterialHeadquartersByNum.action = authc, perms[material_headquarters:view]
+				/material_headquarters/listUndeterminedMaterialTransferApplication.action = authc, perms[material_headquarters:list]
+				/material_headquarters/pageMaterialTransferApplicationByFuzzy.action = authc, perms[material_headquarters:view]
+				/material_headquarters/getMaterialTransferApplicationDetailById.action = authc, perms[material_headquarters:view]
+				/material_headquarters/passMaterialTransferApplicationById.action = authc, perms[material_headquarters:update]
+				/material_headquarters/failMaterialTransferApplicationById.action = authc, perms[material_headquarters:update]
+
+				/** = authc
+			</value>
+		</property>
+	</bean>
+</beans>

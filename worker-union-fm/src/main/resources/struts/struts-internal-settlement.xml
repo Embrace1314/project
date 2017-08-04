@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- TODOPROJECT -->
+	<!-- 服务器系统入口 -->
+	<package name="internalSettlement" namespace="/internal_settlement" extends="default">
+
+		<!-- 获取最新的内部结算文件信息 -->
+		<action name="getLatestInternalSettlementAttachment" class="top.warmheart.workerunion.fm.server.action.InternalSettlementAction"
+			method="getLatestAttachment">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 分页获取内部结算文件列表信息 -->
+		<action name="pageInternalSettlementAttachment" class="top.warmheart.workerunion.fm.server.action.InternalSettlementAction"
+			method="pageAttachment">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 获取项目完成情况信息 -->
+		<action name="getInternalSettlementDetail" class="top.warmheart.workerunion.fm.server.action.InternalSettlementAction"
+			method="getDetail">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 删除内部结算文件 -->
+		<action name="removeInternalSettlementAttachmentById" class="top.warmheart.workerunion.fm.server.action.InternalSettlementAction"
+			method="removeAttachmentById">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 保存结算评估结果 -->
+		<action name="saveInternalSettlementAssessment" class="top.warmheart.workerunion.fm.server.action.InternalSettlementAction"
+			method="saveAssessment">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+	</package>
+</struts>

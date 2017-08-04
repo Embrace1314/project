@@ -1,0 +1,188 @@
+.div_line_info{
+    position: absolute;
+    left: 5px;
+    top: 93px;
+    width: 965px;
+    height: 40px;
+}
+/*申请编号、审核状态*/
+.div_col_1{
+    position: absolute;
+    width: 297px;
+    height: 40px;
+}
+.type_info{
+    position: absolute;
+    width: 130px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: right;
+}
+.txt_col_1{
+    position: absolute;
+    left: 125px;
+    width: 172px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+/*材料接收方、转库申请人*/
+.div_col_2{
+    position: absolute;
+    left: 307px;
+    width: 303px;
+    height: 40px;
+}
+.txt_col_2{
+    position: absolute;
+    left: 123px;
+    width: 180px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+/*材料转出方、转库申请时间*/
+.div_col_3{
+    position: absolute;
+    left: 629px;
+    width: 336px;
+    height: 40px;
+}
+.type_col_3{
+    position: absolute;
+    width: 146px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: right;
+}
+.txt_col_3{
+    position: absolute;
+    left: 155px;
+    width: 181px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+/*审核状态、转库申请人等行div*/
+.div_line_info_other{
+    position: absolute;
+    left: 5px;
+    top: 150px;
+    width: 965px;
+    height: 40px;
+}
+/*查询按钮*/
+.btn_search{
+    position: absolute;
+    left: 1028px;
+    top: 104px;
+    width: 138px;
+    height: 80px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+    background-color: #009DD9;
+    border-radius: 5px;
+}
+.btn_search:hover{
+    background-color: #007EAE;
+}
+.btn_search:active{
+    background-color: #007EAE;
+}
+
+/*转库信息表格*/
+.div_info_list{
+    position: relative;
+    left: 30px;
+    top: 208px;
+    width: 1116px;
+    _height: 46px;
+    min-height: 46px;
+    padding: 13px;
+    background-color: #8E8B8B;
+    border-radius: 5px;
+}
+table.table_transfer{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置表头样式*/
+table.table_transfer th{
+    height: 44px;
+    font-weight:normal;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置单元格样式*/
+table.table_transfer td{
+    height: 44px;
+    _height: 44px;
+    min-height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_info_list>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_info_list>table .list_last_col{
+    border-right: 0;
+}
+
+/*翻页按钮*/
+.div_page_btn{
+    position: relative;
+    left: 30px;
+    top: 220px;
+    width: 375px;
+    height: 31px;
+}
+
+/*返回*/
+.btn_back {
+    position: relative;
+    top: 278px;
+    left: 1084px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}

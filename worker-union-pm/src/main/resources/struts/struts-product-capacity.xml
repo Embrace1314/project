@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- TODOPROJECT -->
+	<!-- 服务器系统入口 -->
+	<package name="productCapacity" namespace="/product_capacity" extends="default">
+
+		<!-- 获取最新的产值确认文件信息 -->
+		<action name="getLatestProductCapacityAttachment" class="top.warmheart.workerunion.pm.server.action.ProductCapacityAction"
+			method="getLatestAttachment">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 删除产值确认文件 -->
+		<action name="removeProductCapacityAttachment" class="top.warmheart.workerunion.pm.server.action.ProductCapacityAction"
+			method="removeAttachment">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 分页获取产值确认文件列表信息 -->
+		<action name="pageProductCapacityAttachment" class="top.warmheart.workerunion.pm.server.action.ProductCapacityAction"
+			method="pageAttachment">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 分页获取生产产值项列表信息 -->
+		<action name="pageProductCapacityItem" class="top.warmheart.workerunion.pm.server.action.ProductCapacityAction"
+			method="pageItem">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 添加某月生产产值 -->
+		<action name="addProductCapacityItem" class="top.warmheart.workerunion.pm.server.action.ProductCapacityAction"
+			method="addItem">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 修改某月生产产值 -->
+		<action name="modifyProductCapacityItem" class="top.warmheart.workerunion.pm.server.action.ProductCapacityAction"
+			method="modifyItem">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 删除某月生产产值 -->
+		<action name="removeProductCapacityItem" class="top.warmheart.workerunion.pm.server.action.ProductCapacityAction"
+			method="removeItem">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+	</package>
+</struts>

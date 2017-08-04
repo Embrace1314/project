@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- TODOPROJECT -->
+	<!-- 服务器系统入口 -->
+	<package name="staff" namespace="/staff" extends="default">
+		<!-- 登录 -->
+		<action name="login" class="top.warmheart.workerunion.fm.server.action.StaffAction" method="login">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 退出登录 -->
+		<action name="logout" class="top.warmheart.workerunion.fm.server.action.StaffAction" method="logout">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 修改密码 -->
+		<action name="changePassword" class="top.warmheart.workerunion.fm.server.action.StaffAction" method="changePassword">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 增加员工 -->
+		<action name="addStaff" class="top.warmheart.workerunion.fm.server.action.StaffAction" method="add">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<!-- 修改员工 -->
+		<action name="modifyStaffById" class="top.warmheart.workerunion.fm.server.action.StaffAction" method="modifyById">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<!-- 获取用户权限 -->
+		<action name="checkAuthorization" class="top.warmheart.workerunion.fm.server.action.StaffAction" method="checkAuthorization">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<!-- 根据模糊条件查询员工信息，分页 -->
+		<action name="pageStaffByFuzzy" class="top.warmheart.workerunion.fm.server.action.StaffAction" method="pageByFuzzy">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<!-- 删除员工信息 -->
+		<action name="removeStaffById" class="top.warmheart.workerunion.fm.server.action.StaffAction" method="removeById">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<!-- 查询员工详细信息 -->
+		<action name="getStaffDetailById" class="top.warmheart.workerunion.fm.server.action.StaffAction" method="getDetailById">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<action name="getLoginedStaffInfo" class="top.warmheart.workerunion.fm.server.action.StaffAction" method="getLoginedInfo">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+	</package>
+</struts>

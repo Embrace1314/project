@@ -1,0 +1,197 @@
+/*人员信息表格*/
+.div_info_list{
+    position: absolute;
+    left: 20px;
+    top: 80px;
+    width: 930px;
+    height: 538px;
+    background-color: #8E8B8B;
+    border-radius: 5px;
+}
+/*表头*/
+.div_list_title{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 908px;
+    height: 46px;
+    border: 1px solid #666666;
+    background-color: #FFFFFF;
+}
+.list_title{
+    float: left;
+    height: 46px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 46px;
+    text-align: center;
+    border-right: 2px solid #666666;
+}
+/*表格*/
+.div_list_content{
+    position: absolute;
+    left: 10px;
+    top: 66px;
+    width: 908px;
+    height: 460px;
+}
+.div_list_content>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置单元格样式*/
+.div_list_content>table td{
+    height: 44px;
+    _height: 44px;
+    min-height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_list_content>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_list_content>table tr td.list_last_col_row{
+    color: #FFFFFF;
+    border-right:none;
+    background-color: #8E8B8B
+}
+/*确认解体提示框*/
+.div_break_up{
+    position: absolute;
+    left: 120px;
+    top: 217px;
+    width: 730px;
+    height: 265px;
+    background-color: #C9C9C9;
+    border:1px #FFFFFF dashed;
+    border-radius: 5px;
+}
+/*确认解体提示文字*/
+.title_break_up{
+    position: absolute;
+    left: 50px;
+    top: 58px;
+    width: 630px;
+    height: 94px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 94px;
+    text-align: center;
+    background-color: #FFCC33;
+    border:1px #999999 solid;
+    border-radius: 5px;
+}
+/*确定按钮*/
+.btn_confirm{
+    position: absolute;
+    left: 186px;
+    top: 190px;
+    width: 155px;
+    height: 46px;
+    font-family: Arial;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_confirm_break_up.png");
+}
+.btn_confirm:hover{
+    background: url("/worker-union-fm/common/image/img_btn_confirm_break_up_focus.png");
+}
+.btn_confirm:active{
+    background: url("/worker-union-fm/common/image/img_btn_confirm_break_up_focus.png");
+}
+.btn_confirm_disable{
+    position: absolute;
+    left: 186px;
+    top: 190px;
+    width: 155px;
+    height: 46px;
+    font-family: Arial;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_delete_manager_disable.png");
+}
+/*取消按钮*/
+.btn_cancel{
+    position: absolute;
+    left: 366px;
+    top: 190px;
+    width: 155px;
+    height: 46px;
+    font-family: Arial;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_cancel_break_up.png");
+}
+.btn_cancel:hover{
+    background: url("/worker-union-fm/common/image/img_btn_cancel_break_up_focus.png");
+}
+.btn_cancel:active{
+    background: url("/worker-union-fm/common/image/img_btn_cancel_break_up_focus.png");
+}
+.btn_cancel_disable{
+    position: absolute;
+    left: 366px;
+    top: 190px;
+    width: 155px;
+    height: 46px;
+    font-family: Arial;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_delete_manager_disable.png");
+}
+
+/*虚线分割线*/
+.div_dashed{
+    position: absolute;
+    left: 995px;
+    top: 70px;
+    width: 2px;
+    height: 563px;
+    border-right: 1px dashed #CCCCCC;
+}
+/*右侧导航键*/
+.nav_bar_side{
+    position: absolute;
+    top: 79px;
+    left: 1012px;
+    width: 178px;
+    height: 730px;
+}
+/*返回*/
+.btn_back {
+    position: absolute;
+    top: 782px;
+    left: 1081px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}

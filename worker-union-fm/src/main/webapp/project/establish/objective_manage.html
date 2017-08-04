@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>目标管理</title>
+    <link href="/worker-union-fm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/worker-union-fm/common/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/css/title.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/css/nav_bar_side.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/loading/loading.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/project/establish/objective_manage.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--标题背景-->
+<div class="title_bg"></div>
+<!--页面容器-->
+<div class="container">
+    <iframe id="loading" class="loading" src="/worker-union-fm/common/loading/loading.html" style="display: none;"></iframe>
+    <!--标题-->
+    <div id="txtTitle" class="title">目标管理</div>
+    <!--用户名及退出系统-->
+    <div class="div_user_name">
+        <div id="txtUserName" class="txt_user_name"></div>
+        <div class="div_divider_name_logout">|</div>
+        <button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+    </div>
+    <!--Home键-->
+    <button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+    <!--上传目标协议书-->
+    <button id="btnUpload" class="btn_upload_protocol" type="button" style="display: none">
+        <div>上传目标协议书</div>
+    </button>
+    <!--下载删除目标协议书按钮，默认不可见-->
+    <div id="btnDeleteFile" class="div_delete_file" style="display: none">
+        <div class="div_download_protocol">
+            <div>目标协议书</div>
+        </div>
+        <button class="btn_delete_file" type="button" onclick="btnDeleteFile()"></button>
+    </div>
+
+    <!--目标协议书表格-->
+    <input id="txtAttachmentId" type="text" hidden="true">
+    <div class="div_protocol_list">
+        <table>
+            <tr>
+                <td width="406px">文件名称</td>
+                <td width="152px">创建人</td>
+                <td width="219px" class="list_last_col">创建时间</td>
+            </tr>
+            <tr class="list_last_row">
+                <td><a id="txtFileName" href="#" onclick="btnDownloadFile()"></a></td>
+                <td id="txtCreatorName"></td>
+                <td id="txtCreateTime" class="list_last_col"></td>
+            </tr>
+        </table>
+    </div>
+    <!--目标信息-->
+    <div class="div_info">
+        <!--项目经理-->
+        <div class="line_info">
+            <div class="type_info">项目经理：</div>
+            <div id="txtProjectManager" class="txt_choose_manager txt_disable"></div>
+        </div>
+        <!--选择按钮-->
+        <input id="btnChooseManager" class="btn_delete_manager" type="button" onclick="btnToChooseManager()" value="选择">
+        <!--删除按钮-->
+        <input id="btnDeleteManager" class="btn_delete_manager" type="button" onclick="btnDeleteManager()" value="删除">
+        <!--工期目标-->
+        <div class="line_info">
+            <div class="type_info">工期目标(天)：</div>
+            <input id="txtDurationObjective" class="txt_info" type="number">
+        </div>
+        <!--开工日期-->
+        <div class="line_info">
+            <div class="type_info">开工日期：</div>
+            <input id="txtStartDate" class="txt_info" type="text">
+        </div>
+        <!--完工日期-->
+        <div class="line_info">
+            <div class="type_info">完工日期：</div>
+            <input id="txtEndDate" class="txt_info" type="text">
+        </div>
+        <!--质量目标-->
+        <div class="line_info">
+            <div class="type_info">质量目标：</div>
+            <input id="txtQualityObjective" class="txt_info" type="text">
+        </div>
+        <!--安全与文明施工目标-->
+        <div class="line_info">
+            <div class="type_info">安全与文明施工目标：</div>
+            <input id="txtSafeObjective" class="txt_info" type="text">
+        </div>
+        <!--成本目标-->
+        <div class="line_info">
+            <div class="type_info">成本目标(元)：</div>
+            <input id="txtCostObjective" class="txt_info" type="number">
+        </div>
+        <!--保存按钮-->
+        <button class="btn_save" type="button" onclick="btnSave()">保存</button>
+    </div>
+    <!--虚线分割线-->
+    <div class="div_dashed"></div>
+    <!--右侧导航按钮-->
+    <div class="nav_bar_side">
+        <ul class="nav_bar_menu" style="display: block">
+            <li><a href="javascript:void(0)">项目立项</a>
+                <ul style="display: block">
+                    <li><a id="navBidInfo" class="nav_bar_submenu">中标信息</a></li>
+                    <li><a id="navCostAnalysis" class="nav_bar_submenu">成本分析</a></li>
+                    <li><a id="navObjectiveManage" class="nav_bar_submenu_select">目标管理</a></li>
+                    <li><a id="navBuildReport" class="nav_bar_submenu">项目报建</a></li>
+                </ul></li>
+            <li><a href="javascript:void(0)">项目准备</a>
+                <ul>
+                    <li><a id="navTeamBuild" class="nav_bar_submenu">团队搭建</a></li>
+                    <li><a id="navPlanDeepen" class="nav_bar_submenu">方案深化</a></li>
+                    <li><a id="navCostDeepen" class="nav_bar_submenu">成本深化</a></li>
+                    <li><a id="navCapitalPlan" class="nav_bar_submenu">资金计划</a></li>
+                </ul></li>
+            <li><a href="javascript:void(0)">项目实施</a>
+                <ul>
+                    <li><a id="navOperationManage" class="nav_bar_submenu">经营管理</a></li>
+                    <li><a id="navProductionManage" class="nav_bar_submenu">生产管理</a></li>
+                    <li><a id="navTechnicalManage" class="nav_bar_submenu">技术管理</a></li>
+                    <li><a id="navSecurityManage" class="nav_bar_submenu">安全管理</a></li>
+                    <li><a id="navQualityManage" class="nav_bar_submenu">质量管理</a></li>
+                    <li><a id="navResourceImplement" class="nav_bar_submenu">资源落实</a></li>
+                    <li><a id="navSettlementManage" class="nav_bar_submenu">结算管理</a></li>
+                    <li><a id="navStoreManage" class="nav_bar_submenu">仓库管理</a></li>
+                </ul></li>
+            <li><a href="javascript:void(0)">项目竣工</a>
+                <ul>
+                    <li><a id="navCompleteCheck" class="nav_bar_submenu">竣工验收</a></li>
+                    <li><a id="navProjectDisintegrate" class="nav_bar_submenu">项目部解体</a></li>
+                    <li><a id="navProjectSummary" class="nav_bar_submenu">项目总结</a></li>
+                    <li><a id="navInternalSettlement" class="nav_bar_submenu">内部结算</a></li>
+                    <li><a id="navCompleteSettlement" class="nav_bar_submenu">竣工结算</a></li>
+                </ul></li>
+        </ul>
+    </div>
+    <!--返回按钮-->
+    <button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+
+</div>
+<script type="text/javascript" src="/worker-union-fm/common/js/util.js"></script>
+<script type="text/javascript" src="/worker-union-fm/common/js/nav_bar.js"></script>
+<script type="text/javascript" src="/worker-union-fm/common/js/nav_bar_side.js"></script>
+<script type="text/javascript" src="/worker-union-fm/common/js/upload_file.js"></script>
+<script type="text/javascript" src="/worker-union-fm/common/js/jquery-ui.min.js"></script>
+<script type ="text/javascript" src="/worker-union-fm/common/js/datepicker_cn.js"></script>
+<script type="text/javascript" src="/worker-union-fm/common/plupload/plupload.full.min.js"></script>
+<script type="text/javascript" src="/worker-union-fm/project/establish/objective_manage.js"></script>
+</body>
+</html>

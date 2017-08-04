@@ -1,0 +1,262 @@
+.div_info{
+    position: absolute;
+    left: 42px;
+    top: 97px;
+    width: 868px;
+    height: 40px;
+}
+/*分包商名称*/
+.div_name{
+    position: absolute;
+    width: 430px;
+    height: 40px;
+}
+.type_info{
+    position: absolute;
+    width: 130px;
+    height: 40px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: right;
+}
+.txt_info{
+    position: absolute;
+    left: 133px;
+    width: 297px;
+    height: 40px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+/*分包资质*/
+.div_subcontractor_type{
+    position: absolute;
+    left: 458px;
+    width: 410px;
+    height: 40px;
+}
+/*分包资质下拉框*/
+.select_subcontractor_type {
+    position: absolute;
+    left: 133px;
+    width: 277px;
+    height: 40px;
+    font-family: Arial;
+    font-size: 20px;
+    color: #666666;
+    line-height: 40px;
+    text-align: center;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+}
+select option {
+    height: 40px;
+}
+/*分包商编号和合作年限行div*/
+.div_info_other{
+    position: absolute;
+    left: 42px;
+    top: 153px;
+    width: 868px;
+    height: 40px;
+}
+.div_valid_date{
+    position: absolute;
+    left: 440px;
+    width: 428px;
+    height: 40px;
+}
+.type_valid_date{
+    position: absolute;
+    width: 148px;
+    height: 40px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: right;
+}
+.txt_valid_date{
+    position: absolute;
+    left: 151px;
+    width: 277px;
+    height: 40px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+/*查询按钮*/
+.btn_search{
+    position: absolute;
+    left: 975px;
+    top: 105px;
+    width: 138px;
+    height: 80px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+    background-color: #009DD9;
+    border-radius: 5px;
+}
+.btn_search:hover{
+    background-color: #007EAE;
+}
+.btn_search:active{
+    background-color: #007EAE;
+}
+
+/*分包商信息表格*/
+.div_list_content{
+    position: relative;
+    left: 5px;
+    top: 214px;
+    width: 1170px;
+    _height: 46px;
+    min-height: 46px;
+    border: 11px solid #8E8B8B;
+    border-radius: 5px;
+}
+.div_list_content>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置表头样式*/
+.div_list_content>table th{
+    height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+    font-weight: normal;
+}
+.div_list_content>table tr th.list_last_col{
+    border-right:none;
+}
+/*设置单元格样式*/
+.div_list_content>table td{
+    height: 44px;
+    _height: 44px;
+    min-height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_list_content>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_list_content>table tr td.list_last_col{
+    border-right:none;
+}
+/*设置行选中样式*/
+.list_tr_selected{
+    background-color: #0066FF;
+    color: #FFFFFF;
+}
+/*翻页按钮*/
+.div_page_btn{
+    position: relative;
+    left: 16px;
+    top: 227px;
+    width: 375px;
+    height: 31px;
+}
+.div_btn {
+    position: relative;
+    left: 702px;
+    top: 196px;
+    width: 488px;
+    height: 46px;
+}
+/*添加按钮*/
+.btn_add{
+    position: absolute;
+    width: 154px;
+    height: 46px;
+    font-family: Heiti SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_add.png");
+}
+.btn_add:hover{
+    background: url("/worker-union-fm/common/image/img_btn_add_focus.png");
+}
+.btn_add:active{
+    background: url("/worker-union-fm/common/image/img_btn_add_focus.png");
+}
+/*删除按钮*/
+.btn_delete{
+    position: absolute;
+    left: 166px;
+    width: 154px;
+    height: 46px;
+    font-family: Heiti SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_delete.png");
+}
+.btn_delete:hover{
+    background: url("/worker-union-fm/common/image/img_btn_delete_focus.png");
+}
+.btn_delete:active{
+    background: url("/worker-union-fm/common/image/img_btn_delete_focus.png");
+}
+/*修改按钮*/
+.btn_modify{
+    position: absolute;
+    left: 333px;
+    width: 154px;
+    height: 46px;
+    font-family: Heiti SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_modify.png");
+}
+.btn_modify:hover{
+    background: url("/worker-union-fm/common/image/img_btn_modify_focus.png");
+}
+.btn_modify:active{
+    background: url("/worker-union-fm/common/image/img_btn_modify_focus.png");
+}
+
+/*返回*/
+.btn_back {
+    position: relative;
+    top: 295px;
+    left: 1091px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active {
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}

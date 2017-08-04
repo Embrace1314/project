@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-4.1.xsd
+						http://www.springframework.org/schema/tx
+						http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+
+	<!-- TODOPROJECT -->
+	<!-- 设置Component的扫描路径 -->
+	<context:component-scan base-package="top.warmheart.workerunion.fm.server" />
+	<!-- 设置预读配置文件 -->
+	<context:property-placeholder location="classpath:*-config.properties" />
+
+	
+	<!-- RPC-Service -->
+	<bean id="staffService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/StaffService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.StaffService</value>
+		</property>
+	</bean>
+	<bean id="regionalCodeService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/RegionalCodeService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.RegionalCodeService</value>
+		</property>
+	</bean>
+	<bean id="projectService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/ProjectService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.ProjectService</value>
+		</property>
+	</bean>
+	<bean id="attachmentService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/AttachmentService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.AttachmentService</value>
+		</property>
+	</bean>
+	<bean id="costAnalysisItemService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/CostAnalysisItemService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.CostAnalysisItemService</value>
+		</property>
+	</bean>
+	<bean id="costAnalysisItemDeepenService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/CostAnalysisItemDeepenService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.CostAnalysisItemDeepenService</value>
+		</property>
+	</bean>
+	<bean id="projectTeamService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/ProjectTeamService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.ProjectTeamService</value>
+		</property>
+	</bean>
+	<bean id="projectApplicationService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/ProjectApplicationService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.ProjectApplicationService</value>
+		</property>
+	</bean>
+	<bean id="teamRoleService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/TeamRoleService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.TeamRoleService</value>
+		</property>
+	</bean>
+	<bean id="permissionService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/PermissionService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.PermissionService</value>
+		</property>
+	</bean>
+	<bean id="fundPlanItemService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/FundPlanItemService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.FundPlanItemService</value>
+		</property>
+	</bean>
+	<bean id="purchaseItemService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/PurchaseItemService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.PurchaseItemService</value>
+		</property>
+	</bean>
+	<bean id="targetService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/TargetService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.TargetService</value>
+		</property>
+	</bean>
+	<bean id="businessCapacityItemService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/BusinessCapacityItemService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.BusinessCapacityItemService</value>
+		</property>
+	</bean>
+	<bean id="productCapacityItemService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/ProductCapacityItemService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.ProductCapacityItemService</value>
+		</property>
+	</bean>
+	<bean id="safetyCheckItemService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/SafetyCheckItemService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.SafetyCheckItemService</value>
+		</property>
+	</bean>
+	<bean id="qualityCheckItemService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/QualityCheckItemService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.QualityCheckItemService</value>
+		</property>
+	</bean>
+	<bean id="resourceImplementItemService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/ResourceImplementItemService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.ResourceImplementItemService</value>
+		</property>
+	</bean>
+	<bean id="subcontractorService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/SubcontractorService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.SubcontractorService</value>
+		</property>
+	</bean>
+	<bean id="contractService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/ContractService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.ContractService</value>
+		</property>
+	</bean>
+	<bean id="settlementItemService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/SettlementItemService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.SettlementItemService</value>
+		</property>
+	</bean>
+	<bean id="internalSettlementService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/InternalSettlementService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.InternalSettlementService</value>
+		</property>
+	</bean>
+	<bean id="finalSettlementItemService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/FinalSettlementItemService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.FinalSettlementItemService</value>
+		</property>
+	</bean>
+	<bean id="materialService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/MaterialService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.MaterialService</value>
+		</property>
+	</bean>
+	<bean id="materialOrderService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/MaterialOrderService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.MaterialOrderService</value>
+		</property>
+	</bean>
+	<bean id="materialHeadquartersService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/MaterialHeadquartersService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.MaterialHeadquartersService</value>
+		</property>
+	</bean>
+	<bean id="materialHeadquartersOrderService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/MaterialHeadquartersOrderService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.MaterialHeadquartersOrderService</value>
+		</property>
+	</bean>
+	
+	<bean id="materialTypeService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/MaterialTypeService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.MaterialTypeService</value>
+		</property>
+	</bean>
+	<bean id="materialTransferService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/MaterialTransferService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.MaterialTransferService</value>
+		</property>
+	</bean>
+	<bean id="certificateService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/CertificateService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.CertificateService</value>
+		</property>
+	</bean>
+	<bean id="supplierService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/SupplierService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.SupplierService</value>
+		</property>
+	</bean>
+	<bean id="roleService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+		<property name="serviceUrl">
+			<value>${hessian.url}/remoting/RoleService</value>
+		</property>
+		<property name="serviceInterface">
+			<value>top.warmheart.workerunion.server.service.RoleService</value>
+		</property>
+	</bean>
+
+	<!-- STS-Service -->
+	<bean id="stsService" class="top.warmheart.workerunion.fm.server.service.StsService">
+		<property name="accessKeyId" value="${sts.accessKeyId}"></property>
+		<property name="accessKeySecret" value="${sts.accessKeySecret}"></property>
+		<property name="roleArn" value="${sts.roleArn}"></property>
+		<property name="regionId" value="${sts.regionId}"></property>
+		<property name="version" value="${sts.version}"></property>
+		<property name="ossBucketName" value="${sts.ossBucketName}"></property>
+	</bean>
+	
+	<bean class="top.warmheart.workerunion.fm.server.constant.Config">
+		<property name="OSS_BUCKET_NAME" value="${sts.ossBucketName}"></property>
+		<property name="OSS_VALID_DUARATION" value="${sts.ossValidDuration}"></property>
+		<property name="OSS_URL" value="${sts.ossUrl}"></property>
+		<property name="OSS_URL_END_POINT" value="${sts.ossUrlEndPoint}"></property>
+		<property name="OSS_CALLBACK_URL_BASE" value="${sts.ossCallbackUrlBase}"></property>
+	</bean>
+	<!-- 导入shiro配置 -->
+	<import resource="classpath:/beans-shiro.xml" />
+
+</beans>

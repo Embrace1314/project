@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- TODOPROJECT -->
+	<!-- 服务器系统入口 -->
+	<package name="costAnalysis" namespace="/cost_analysis" extends="default">
+		
+		<!-- 获取成本分析表-->
+		<action name="getCostAnalysisUniqueAttachment" class="top.warmheart.workerunion.fm.server.action.CostAnalysisAction" method="getUniqueAttachment">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<!-- 删除成本分析表-->
+		<action name="removeCostAnalysisUniqueAttachment" class="top.warmheart.workerunion.fm.server.action.CostAnalysisAction" method="removeUniqueAttachment">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<!-- 获取成本详情-->
+		<action name="acquireCostAnalysisDetail" class="top.warmheart.workerunion.fm.server.action.CostAnalysisAction" method="acquireDetail">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<!-- 增加新的成本分析项-->
+		<action name="addCostAnalysisItem" class="top.warmheart.workerunion.fm.server.action.CostAnalysisAction" method="addItem">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<!-- 修改成本分析项-->
+		<action name="modifyCostAnalysisItem" class="top.warmheart.workerunion.fm.server.action.CostAnalysisAction" method="modifyItem">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<!-- 获取成本分析项-->
+		<action name="getCostAnalysisItemById" class="top.warmheart.workerunion.fm.server.action.CostAnalysisAction" method="getItemById">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<!-- 删除成本分析项-->
+		<action name="removeCostAnalysisItem" class="top.warmheart.workerunion.fm.server.action.CostAnalysisAction" method="removeItem">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+	</package>
+</struts>

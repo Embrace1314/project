@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- TODOPROJECT -->
+	<!-- 服务器系统入口 -->
+	<package name="contract" namespace="/contract" extends="default">
+
+		<!-- 获取指定项目简要合同列表 -->
+		<action name="listSimpleContractItemByProjectId" class="top.warmheart.workerunion.fm.server.action.ContractAction"
+			method="listSimpleItemByProjectId">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+
+
+		<!-- 添加合同 -->
+		<action name="addContract" class="top.warmheart.workerunion.fm.server.action.ContractAction" method="add">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+
+		<!-- 删除合同 -->
+		<action name="removeContractById" class="top.warmheart.workerunion.fm.server.action.ContractAction" method="removeById">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+
+		<!-- 获取合同详情 -->
+		<action name="getContractDetailById" class="top.warmheart.workerunion.fm.server.action.ContractAction" method="getDetailById">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+
+		<!-- 删除合同附件 -->
+		<action name="removeContractAttachmentById" class="top.warmheart.workerunion.fm.server.action.ContractAction"
+			method="removeAttachmentById">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<!-- 修改合同 -->
+		<action name="modifyContractById" class="top.warmheart.workerunion.fm.server.action.ContractAction" method="modifyById">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- 模糊查询合同列表信息，分页-->
+		<action name="pageContractByFuzzy" class="top.warmheart.workerunion.fm.server.action.ContractAction" method="pageByFuzzy">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+	</package>
+</struts>

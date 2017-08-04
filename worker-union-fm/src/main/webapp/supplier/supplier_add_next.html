@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>供应商信息添加下一步附件上传</title>
+<link href="/worker-union-fm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+<link href="/worker-union-fm/common/css/global.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/css/title.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/loading/loading.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/supplier/supplier_add_next.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<!--标题背景-->
+	<div class="title_bg"></div>
+	<!--页面容器-->
+	<div class="container">
+		<iframe id="loading" class="loading" src="/worker-union-fm/common/loading/loading.html" style="display: none;"></iframe>
+		<!--标题-->
+		<div class="title">供应商信息添加</div>
+		<!--用户名及退出系统-->
+		<div class="div_user_name">
+			<div id="txtUserName" class="txt_user_name"></div>
+			<div class="div_divider_name_logout">|</div>
+			<button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+		</div>
+		<!--Home键-->
+		<button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+		<!--供应商信息标题-->
+		<div class="title_supplier_info">
+			<div>
+				上<br />传<br />供<br />应<br />商<br />证<br />照
+			</div>
+		</div>
+		<!--供应商信息编辑框-->
+		<div class="div_info">
+			<!--供应商信息附件添加框-->
+			<div class="div_add_attachment">
+				<!--最后的添加文件按钮div-->
+				<button id="btnUpload" class="btn_picture_add"></button>
+			</div>
+		</div>
+		<!--确认取消按钮div-->
+		<div class="div_btn">
+			<button class="btn_confirm" type="button" onclick="btnSave()">确定</button>
+			<button class="btn_cancel" type="button" onclick="gotoBack2()">取消</button>
+		</div>
+		<!--返回按钮-->
+		<button class="btn_back" type="button" onclick="gotoBack2()">返回</button>
+
+	</div>
+	<script type="text/javascript" src="/worker-union-fm/common/plupload/plupload.full.min.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/common/js/util.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/common/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/supplier/supplier_add_next.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>转库审核历史记录</title>
+<link href="/worker-union-fm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+<link href="/worker-union-fm/common/css/global.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/css/title.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/css/page.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/loading/loading.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/storage/transfer_history.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<!--标题背景-->
+	<div class="title_bg"></div>
+	<!--页面容器-->
+	<div class="container">
+		<iframe id="loading" class="loading" src="/worker-union-fm/common/loading/loading.html" style="display: none;"></iframe>
+		<!--标题-->
+		<div class="title">转库审核历史记录</div>
+		<!--用户名及退出系统-->
+		<div class="div_user_name">
+			<div id="txtUserName" class="txt_user_name"></div>
+			<div class="div_divider_name_logout">|</div>
+			<button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+		</div>
+		<!--Home键-->
+		<button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+
+		<div class="div_line_info">
+			<!--申请编号-->
+			<div class="div_col_1">
+				<div class="type_info">申请编号：</div>
+				<input id="txtId" class="txt_col_1" type="text">
+			</div>
+			<!--材料接收方-->
+			<div class="div_col_2">
+				<div class="type_info">材料接收方：</div>
+				<input id="txtImportProjectName" class="txt_col_2" type="text">
+			</div>
+			<!--材料转出方-->
+			<div class="div_col_3">
+				<div class="type_col_3">材料转出方：</div>
+				<input id="txtExportProjectName" class="txt_col_3" type="text">
+			</div>
+		</div>
+		<div class="div_line_info_other">
+			<!--审核状态-->
+			<div class="div_col_1">
+				<div class="type_info">审核状态：</div>
+				<select id="selStatus" class="txt_col_1" type="text"></select>
+			</div>
+			<!--转库申请人-->
+			<div class="div_col_2">
+				<div class="type_info">转库申请人：</div>
+				<input id="txtStaffName" class="txt_col_2" type="text">
+			</div>
+			<!--转库申请时间-->
+			<div class="div_col_3">
+				<div class="type_col_3">转库申请时间：</div>
+				<input id="txtCstCreate" class="txt_col_3" type="text">
+			</div>
+		</div>
+		<!--查询按钮-->
+		<button class="btn_search" type="button" onclick="btnSearch()">查询</button>
+
+		<!--转库信息-->
+		<div class="div_info_list">
+			<table id="tableMaterialTransferApplications" class="table_transfer">
+				<tr>
+					<th width="150px">转库申请编号</th>
+					<th width="277px">材料接收方</th>
+					<th width="277px">材料转出方</th>
+					<th width="128px">转库申请人</th>
+					<th width="152px">转库申请时间</th>
+					<th width="119px" class="list_last_col">审核状态</th>
+				</tr>
+				<tr>
+					<td hidden="true"></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td class="list_last_col"></td>
+				</tr>
+				<tr>
+					<td hidden="true"></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td class="list_last_col"></td>
+				</tr>
+				<tr>
+					<td hidden="true"></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td class="list_last_col"></td>
+				</tr>
+				<tr>
+					<td hidden="true"></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td class="list_last_col"></td>
+				</tr>
+				<tr>
+					<td hidden="true"></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td class="list_last_col"></td>
+				</tr>
+				<tr>
+					<td hidden="true"></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td class="list_last_col"></td>
+				</tr>
+				<tr>
+					<td hidden="true"></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td class="list_last_col"></td>
+				</tr>
+				<tr>
+					<td hidden="true"></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td class="list_last_col"></td>
+				</tr>
+				<tr>
+					<td hidden="true"></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td class="list_last_col"></td>
+				</tr>
+				<tr>
+					<td hidden="true"></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td class="list_last_col"></td>
+				</tr>
+				<tr>
+					<td hidden="true"></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td class="list_last_col"></td>
+				</tr>
+				<tr class="list_last_row">
+					<td hidden="true"></td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td class="list_last_col"></td>
+				</tr>
+			</table>
+		</div>
+
+		<!--翻页按钮-->
+		<div class="div_page_btn">
+			<!--上一页-->
+			<button class="btn_page_up" type="button" onclick="btnPrevPage()">上一页</button>
+			<!--页码显示-->
+			<div class="txt_page_number">
+				<div id="txtPagination" class="current_page">1</div>
+				<div class="oblique_line">/</div>
+				<div id="txtTotalPage" class="total_page">1</div>
+			</div>
+			<!--下一页-->
+			<button class="btn_page_down" type="button" onclick="btnNextPage()">下一页</button>
+		</div>
+
+		<!--返回按钮-->
+		<button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+
+	</div>
+	<script type="text/javascript" src="/worker-union-fm/common/js/util.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/common/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/common/js/datepicker_cn.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/storage/transfer_history.js"></script>
+
+</body>
+</html>

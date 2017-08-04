@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结算管理添加详情</title>
+    <link href="/worker-union-pm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/worker-union-pm/common/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/css/title.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/project/implement/css/settlement_manage_modify.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/loading/loading.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--标题背景-->
+<div class="title_bg"></div>
+<!--页面容器-->
+<div class="container">
+    <iframe id="loading" class="loading" src="/worker-union-pm/common/loading/loading.html" style="display: none;"></iframe>
+    <!--标题-->
+    <div id="txtTitle" class="title">结算管理详情</div>
+    <!--用户名及退出系统-->
+    <div class="div_user_name">
+        <div id="txtUserName" class="txt_user_name"></div>
+        <div class="div_divider_name_logout">|</div>
+        <button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+    </div>
+    <!--Home键-->
+    <button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+    <!--结算管理详细条目标题-->
+    <div class="title_detail">
+        <div>结<br/>算<br/>管<br/>理<br/>详<br/>细<br/>条<br/>目</div>
+    </div>
+    <!--条目信息-->
+    <div class="div_detail">
+        <!--时间-->
+        <div class="div_line_detail">
+            <div class="div_col_1">
+                <div class="type_detail">年份：</div>
+                <select id="selectYear" class="txt_select_short"></select>
+            </div>
+            <div class="div_col_2">
+                <div class="type_detail">月份：</div>
+                <select id="selectMonth" class="txt_select_short"></select>
+            </div>
+        </div>
+        <!--资源项目-->
+        <div class="div_line_detail">
+            <div class="div_col_1">
+                <div class="type_detail">资源项目：</div>
+                <select id="txtResource" class="txt_select_short">
+                    <option value="">请选择资源项目</option>
+                </select>
+            </div>
+            <div class="div_col_2">
+                <div class="type_detail">资源项目细分：</div>
+                <select id="txtResourceDetail" class="txt_select_short" onchange="showMoney(this.options[this.options.selectedIndex].value)">
+                    <option value="">请选择资源项目细分</option>
+                </select>
+            </div>
+        </div>
+        <!--资金额-->
+        <div class="div_line_detail">
+            <div class="type_detail">资金额(元)：</div>
+            <select id="txtMoney" class="txt_select_disable" disabled="disabled">
+                <option value=""></option>
+            </select>
+        </div>
+        <!--分包商-->
+        <div class="div_line_detail">
+            <div class="type_detail">分包商：</div>
+            <select id="txtSubcontractor" class="txt_select">
+                <option value="">请选择分包商</option>
+            </select>
+        </div>
+        <!--本月结算值-->
+        <div class="div_line_detail">
+            <div class="type_detail">本月结算值(元)：</div>
+            <input id="txtSettlement" class="txt_detail" type="number">
+        </div>
+    </div>
+    <div class="div_btn">
+        <!--保存按钮-->
+        <button class="btn_save" type="button" onclick="btnAddSettlementItem()">添加</button>
+        <!--取消按钮-->
+        <button class="btn_cancel" type="button" onclick="gotoBack()">取消</button>
+    </div>
+    <!--返回按钮-->
+    <button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+
+</div>
+<script type="text/javascript" src="/worker-union-pm/common/js/util.js"></script>
+<script type="text/javascript" src="/worker-union-pm/project/implement/js/settlement_manage_add.js"></script>
+</body>
+</html>

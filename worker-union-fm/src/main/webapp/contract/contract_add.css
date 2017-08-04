@@ -1,0 +1,201 @@
+/*合同信息标题*/
+.title_info{
+    position: absolute;
+    left: 13px;
+    top: 70px;
+    width: 94px;
+    height: 798px;
+    font-family: Heiti SC;
+    font-size: 36px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+    background-color: #99CC00;
+    z-index: 1;
+}
+.title_info>div{
+    margin-top: 319px;
+    font-family: Heiti SC;
+    font-size: 36px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+}
+/*合同信息编辑框*/
+.div_info{
+    position: absolute;
+    top: 86px;
+    left: 14px;
+    width: 1170px;
+    height: 715px;
+    padding-top: 51px;
+    background-color: #8E8B8B;
+}
+/*合同名称等行div*/
+.div_line_info{
+    position: relative;
+    margin-top: 14px;
+    left: 146px;
+    width: 970px;
+    height: 50px;
+}
+.type_info{
+    position: absolute;
+    width: 142px;
+    height: 50px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 50px;
+    text-align: right;
+}
+.txt_info{
+    position: absolute;
+    left: 152px;
+    width: 818px;
+    height: 50px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    border-radius: 5px;
+}
+/*签订时间与合同金额div*/
+.div_line_short_1{
+    position: absolute;
+    top: 397px;
+    left: 146px;
+    width: 970px;
+    height: 50px;
+}
+/*签订时间*/
+.div_col_1{
+    position: absolute;
+    width: 378px;
+    height: 50px;
+}
+.txt_col_1{
+    position: absolute;
+    left: 152px;
+    width: 226px;
+    height: 50px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    border-radius: 5px;
+}
+/*合同金额*/
+.div_col_2{
+    position: absolute;
+    left: 524px;
+    width: 446px;
+    height: 50px;
+}
+.txt_col_2{
+    position: absolute;
+    left: 150px;
+    width: 296px;
+    height: 50px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    border-radius: 5px;
+}
+/*责任部门与归属项目div*/
+.div_line_short_2{
+    position: absolute;
+    top: 457px;
+    left: 146px;
+    width: 970px;
+    height: 50px;
+}
+/*内容摘要*/
+.div_abstract{
+    position: absolute;
+    top: 529px;
+    left: 146px;
+    width: 970px;
+    height: 180px;
+}
+.txt_abstract{
+    position: absolute;
+    left: 152px;
+    width: 813px;
+    height: 175px;
+    padding-top: 5px;
+    padding-left: 5px;
+    resize: none;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: left;
+    border-radius: 5px;
+}
+
+.div_btn{
+    position: absolute;
+    left: 371px;
+    top: 877px;
+    width: 472px;
+    height: 46px;
+}
+/*下一步按钮*/
+.btn_next{
+    position: absolute;
+    width: 154px;
+    height: 46px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_save_labor_info_detail.png") no-repeat;
+}
+.btn_next:hover{
+    background: url("/worker-union-fm/common/image/img_btn_save_focus_labor_info_detail.png") no-repeat;
+}
+.btn_next:active{
+    background: url("/worker-union-fm/common/image/img_btn_save_focus_labor_info_detail.png") no-repeat;
+}
+/*取消按钮*/
+.btn_cancel{
+    position: absolute;
+    left: 318px;
+    width: 154px;
+    height: 46px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_cancel_labor_info_detail.png") no-repeat;
+}
+.btn_cancel:hover{
+    background: url("/worker-union-fm/common/image/img_btn_cancel_focus_labor_info_detail.png") no-repeat;
+}
+.btn_cancel:active{
+    background: url("/worker-union-fm/common/image/img_btn_cancel_focus_labor_info_detail.png") no-repeat;
+}
+/*返回按钮*/
+.btn_back{
+    position: absolute;
+    top: 948px;
+    left: 1090px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover{
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active{
+    background: url("/worker-union-fm/common/image/img_btn_back_focus.png") no-repeat;
+}

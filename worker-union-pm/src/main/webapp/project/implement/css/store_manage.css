@@ -1,0 +1,348 @@
+/*材料编码*/
+.div_material_number{
+    position: absolute;
+    left: 16px;
+    top: 90px;
+    width: 464px;
+    height: 46px;
+}
+.type_material_number{
+    position: absolute;
+    width: 128px;
+    height: 46px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 46px;
+    text-align: right;
+}
+.txt_material_number{
+    position: absolute;
+    left: 132px;
+    width: 328px;
+    height: 36px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 5px;
+}
+/*材料名称*/
+.div_material_name{
+    position: absolute;
+    left: 16px;
+    top: 146px;
+    width: 464px;
+    height: 46px;
+}
+/*查询按钮*/
+.btn_search{
+    position: absolute;
+    left: 148px;
+    top: 210px;
+    width: 332px;
+    height: 40px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+    background-color: #009DD9;
+    border-radius: 5px;
+}
+.btn_search:hover{
+    background-color: #007EAE;
+}
+.btn_search:active{
+    background-color: #007EAE;
+}
+/*出入库按钮*/
+.div_store_btn{
+    position: absolute;
+    left: 525px;
+    top: 90px;
+    width: 450px;
+    height: 74px;
+}
+/*入库按钮*/
+.btn_in{
+    float: left;
+    margin-left: 19px;
+    width: 130px;
+    height: 74px;
+    font-family: PingFang SC;
+    font-size: 28px;
+    color: #FFFFFF;
+    line-height: 74px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_in_store.png") no-repeat;
+}
+/*入库按钮可点击*/
+.btn_in_clickable{
+    float: left;
+    margin-left: 19px;
+    width: 130px;
+    height: 74px;
+    font-family: PingFang SC;
+    font-size: 28px;
+    color: #FFFFFF;
+    line-height: 74px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_in_storage.png") no-repeat;
+}
+.btn_in_clickable:hover{
+    background: url("/worker-union-pm/common/image/img_btn_in_storage_focus.png") no-repeat;
+}
+.btn_in_clickable:active{
+    background: url("/worker-union-pm/common/image/img_btn_in_storage_focus.png") no-repeat;
+}
+/*材料信息表格*/
+.div_list_content{
+    position: relative;
+    left: 10px;
+    top: 280px;
+    width: 967px;
+    _height: 46px;
+    min-height: 46px;
+    border: 6px solid #8E8B8B;
+    border-radius: 5px;
+}
+.div_list_content>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置表头样式*/
+.div_list_content>table th{
+    height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+    font-weight: normal;
+}
+.div_list_content>table tr th.list_last_col{
+    border-right:none;
+}
+/*设置单元格样式*/
+.div_list_content>table td{
+    height: 44px;
+    _height: 44px;
+    min-height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_list_content>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_list_content>table tr td.list_last_col{
+    border-right:none;
+}
+/*设置行选中样式*/
+.list_tr_selected{
+    background-color: #0066FF;
+    color: #FFFFFF;
+}
+
+/*翻页按钮*/
+.div_page_btn{
+    position: relative;
+    left: 20px;
+    top: 293px;
+    width: 375px;
+    height: 31px;
+}
+
+/*出入库查询编辑框按钮div*/
+.div_btn_search_order{
+    position: relative;
+    left: 20px;
+    top: 382px;
+    width: 1160px;
+    height: 40px;
+}
+/*出入库人*/
+.div_person{
+    position: absolute;
+    width: 287px;
+    height: 40px;
+}
+.type_info_order{
+    position: absolute;
+    width: 128px;
+    height: 40px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: right;
+}
+.txt_person{
+    position: absolute;
+    left: 130px;
+    width: 153px;
+    height: 36px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 5px;
+}
+/*出入库时间*/
+.div_time{
+    position: absolute;
+    left: 307px;
+    width: 319px;
+    height: 40px;
+}
+.txt_time{
+    position: absolute;
+    left: 130px;
+    width: 185px;
+    height: 36px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 5px;
+}
+/*出入库批次*/
+.div_order{
+    position: absolute;
+    left: 652px;
+    width: 330px;
+    height: 40px;
+}
+.txt_order{
+    position: absolute;
+    left: 130px;
+    width: 153px;
+    height: 36px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 5px;
+}
+/*查询按钮*/
+.btn_search_store{
+    position: absolute;
+    left: 1008px;
+    width: 152px;
+    height: 40px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+    background-color: #009DD9;
+    border-radius: 5px;
+}
+.btn_search_store:hover{
+    background-color: #007EAE;
+}
+.btn_search_store:active{
+    background-color: #007EAE;
+}
+/*材料出入库信息表格*/
+.div_store_list{
+    position: relative;
+    left: 10px;
+    top: 395px;
+    width: 1160px;
+    _height: 46px;
+    min-height: 46px;
+    border: #8E8B8B 7px solid;
+    border-radius: 5px;
+}
+/*设置表格样式*/
+.div_store_list>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置表头样式*/
+.div_store_list>table th{
+    height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+    font-weight: normal;
+}
+.div_store_list>table tr th.list_last_col{
+    border-right: 0;
+}
+/*设置单元格样式*/
+.div_store_list>table td{
+    height: 44px;
+    _height: 44px;
+    min-height: 44px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_store_list>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_store_list>table tr td.list_last_col{
+    border-right: 0;
+}
+/*翻页按钮*/
+.div_page_btn_store{
+    position: relative;
+    left: 16px;
+    top: 402px;
+    width: 375px;
+    height: 31px;
+}
+
+/*虚线分割线*/
+.div_dashed{
+    position: absolute;
+    left: 995px;
+    top: 70px;
+    width: 2px;
+    height: 746px;
+    border-right: 1px dashed #CCCCCC;
+}
+/*右侧导航键*/
+.nav_bar_side{
+    position: absolute;
+    top: 79px;
+    left: 1010px;
+    width: 178px;
+    height: 730px;
+}
+/*返回*/
+.btn_back {
+    position: relative;
+    top: 505px;
+    left: 1083px;
+    width: 94px;
+    height: 95px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+    background: url("/worker-union-pm/common/image/img_btn_back.png") no-repeat;
+}
+.btn_back:hover {
+    background: url("/worker-union-pm/common/image/img_btn_back_focus.png") no-repeat;
+}
+.btn_back:active {
+    background: url("/worker-union-pm/common/image/img_btn_back_focus.png") no-repeat;
+}

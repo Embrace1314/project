@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>项目主线-项目管理</title>
+    <link href="/worker-union-pm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/worker-union-pm/common/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/css/page.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/home.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/loading/loading.css" rel="stylesheet" type="text/css">
+
+    <script language="javascript" type="text/javascript">
+        window.onload = function () {
+            //设置年份的选择
+            var myDate = new Date();
+            var startYear = myDate.getFullYear() - 20;//起始年份
+            var endYear = myDate.getFullYear();//结束年份
+            var obj = document.getElementById('selectYear');
+            obj.options.add(new Option("请选择立项年份", ""));
+            for (var i = endYear; i >= startYear; i--) {
+                obj.options.add(new Option(i, i));
+            }
+            obj.options[0].selected = 1;
+
+        }
+    </script>
+</head>
+<body>
+<!--页面容器-->
+<div class="container">
+    <!--缓冲-->
+    <iframe id="loading" class="loading" src="/worker-union-pm/common/loading/loading.html"
+            style="display: none;"></iframe>
+    <!--公司图标-->
+    <div class="img_company_logo">
+        <div>百明建设</div>
+    </div>
+    <div class="txt_company_aim">—路走来，我们举手无悔，不曾犹豫，只是为了告诉世界，有一种建设，叫百明。</div>
+    <!--用户名及退出系统-->
+    <div class="div_user_name">
+        <div id="txtUserName" class="txt_user_name"></div>
+        <div class="div_divider_name_logout">|</div>
+        <button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+    </div>
+    <!--修改密码-->
+    <a class="btn_modify_password" onclick="btnToModifyPasswordDialog()">修改密码</a>
+
+    <!--年份选择-->
+    <select id="selectYear" class="select_year" onchange="getPageProjects()"></select>
+    <div class="div_date_choose" style="display: none">
+        <!--日历-->
+        <div class="div_calendar"  style="display: none">
+            <div class="calendar_bar"></div>
+            <!--日历显示-->
+            <div class="calendar_display">
+                <!--选中年份显示-->
+                <div class="div_calendar_year">
+                    <div class="calendar_year_choosen">2017</div>
+                    <div class="calendar_year_symbol">年</div>
+                </div>
+            </div>
+        </div>
+        <!--选择立项年份按钮-->
+        <button class="choose_project_year" style="display: none">选择立项年份</button>
+    </div>
+    <!--项目列表-->
+    <div id="projectList" class="project_list">
+        <!--项目名称按钮-->
+    </div>
+    <!--翻页按钮-->
+    <div class="div_page_btn">
+        <!--上一页-->
+        <button class="btn_page_up" type="button" onclick="prePage()">上一页</button>
+        <!--页码显示-->
+        <div class="txt_page_number">
+            <div id="pagination" class="current_page">1</div>
+            <div class="oblique_line">/</div>
+            <div id="totalPage" class="total_page">1</div>
+        </div>
+        <!--下一页-->
+        <button class="btn_page_down" type="button" onclick="nextPage()">下一页</button>
+    </div>
+    <!--虚线分割线-->
+    <div class="div_dashed"></div>
+    <!--右侧导航按钮-->
+    <div class="nav_btn_side">
+        <!--保存当前项目状态-->
+        <input id="status" hidden="true" value="">
+        <!--进行中项目按钮-->
+        <button id="btnGoingProject" class="btn_ongoing_project" type="button" onclick="btnGoingProject()">
+            &nbsp;&nbsp;&nbsp;进行中项目
+        </button>
+        <!--已归档项目按钮-->
+        <button id="btnArchivedProject" class="btn_archived_project" type="button" onclick="btnArchivedProject()">
+            &nbsp;&nbsp;&nbsp;已归档项目
+        </button>
+        <!--所有项目按钮-->
+        <button id="btnAllProject" class="btn_all_project" type="button" onclick="btnAllProject()">
+            &nbsp;&nbsp;&nbsp;所有项目
+        </button>
+    </div>
+
+</div>
+
+<!--修改密码弹窗-->
+<div id="dialog" class="div_mask" style="display: none;">
+    <img src="/worker-union-pm/common/image/img_mask.png" width="100%" height="100%"/>
+    <!--弹窗页面容器-->
+    <div class="dialog_container">
+        <!--标题-->
+        <div class="title_dialog">
+            <div>
+                修<br/>改<br/>密<br/>码
+            </div>
+        </div>
+        <!--详细信息-->
+        <div class="div_info_dialog">
+            <!--原始密码-->
+            <div class="div_line_info_dialog">
+                <div class="type_info_dialog">请输入原始密码：</div>
+                <input id="txtOriginal" class="txt_info_dialog" type="text">
+            </div>
+            <!--新密码-->
+            <div class="div_line_info_dialog">
+                <div class="type_info_dialog">请输入新密码：</div>
+                <input id="txtNew" class="txt_info_dialog" onkeyup="value=value.replace(/[^\d.]/g,'')">
+            </div>
+            <!--确认新密码-->
+            <div class="div_line_info_dialog">
+                <div class="type_info_dialog">请确认新密码：</div>
+                <input id="txtConfirm" class="txt_info_dialog" type="text">
+            </div>
+        </div>
+        <div class="dialog_div_btn">
+            <!--保存按钮-->
+            <button class="btn_save" type="button" onclick="btnSavePassword()">保存</button>
+            <!--取消按钮-->
+            <button class="btn_cancel" type="button" onclick="closeDialog()">取消</button>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="/worker-union-pm/common/js/util.js"></script>
+<script type="text/javascript" src="/worker-union-pm/home.js"></script>
+</body>
+</html>

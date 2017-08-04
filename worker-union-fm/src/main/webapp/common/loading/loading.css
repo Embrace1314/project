@@ -1,0 +1,12 @@
+/*在HTML文件中添加
+<link href="/worker-union-fm/common/loading/loading.css" rel="stylesheet" type="text/css">
+<iframe class="loading" src="/worker-union-fm/common/loading/loading.html"></iframe>
+*/
+.loading {
+	position: absolute;
+	width: 1200px;
+	height: 900px;
+    border: none;
+    text-align: center;
+    z-index: 999;
+}

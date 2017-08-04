@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>安全教育</title>
+    <link href="/worker-union-pm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/worker-union-pm/common/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/css/title.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/project/implement/css/safe_education.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-pm/common/loading/loading.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--标题背景-->
+<div class="title_bg"></div>
+<!--页面容器-->
+<div class="container">
+    <iframe id="loading" class="loading" src="/worker-union-pm/common/loading/loading.html" style="display: none;"></iframe>
+    <!--标题-->
+    <div class="title">XX项目-安全教育</div>
+    <!--用户名及退出系统-->
+    <div class="div_user_name">
+        <div id="txtUserName" class="txt_user_name"></div>
+        <div class="div_divider_name_logout">|</div>
+        <button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+    </div>
+    <!--Home键-->
+    <button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+
+    <!--上传安全教育文件按钮-->
+    <button class="btn_upload" type="button">
+        <div>上传安全教育文件</div>
+    </button>
+    <!--删除安全教育文件按钮，默认不可见-->
+    <div class="div_delete_file" style="display: none">
+        <button class="btn_download_protocol" type="button">
+            <div>安全教育文件</div>
+        </button>
+        <button class="btn_delete_file"></button>
+    </div>
+    <!--查看更多文件按钮-->
+    <button class="btn_more" type="button">查看更多文件</button>
+    <!--安全教育文件表格-->
+    <div class="div_safe_file_list">
+        <table>
+            <tr>
+                <td width="478px">最近一次上传文件</td>
+                <td width="239px">创建人</td>
+                <td width="247px" class="list_last_col">创建时间</td>
+            </tr>
+            <tr class="list_last_row">
+                <td><a href="#">安全教育文件</a></td>
+                <td>&nbsp;</td>
+                <td class="list_last_col">&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+
+    <!--安全教育文件列表选择-->
+    <div class="div_file_list">
+        <div class="div_line_info">
+            <div class="div_col_1">
+                <!--文件选择标志-->
+                <div class="div_choose_symbol"></div>
+                <div class="div_file_name_wrap">
+                    <!--文件名称-->
+                    <div class="div_file_name_content"></div>
+                </div>
+            </div>
+            <div class="div_col_2">
+                <!--文件选择标志-->
+                <div class="div_choose_symbol"></div>
+                <div class="div_file_name_wrap">
+                    <!--文件名称-->
+                    <div class="div_file_name_content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="div_line_info">
+            <div class="div_col_1">
+                <!--文件选择标志-->
+                <div class="div_choose_symbol"></div>
+                <div class="div_file_name_wrap">
+                    <!--文件名称-->
+                    <div class="div_file_name_content"></div>
+                </div>
+            </div>
+            <div class="div_col_2">
+                <!--文件选择标志-->
+                <div class="div_choose_symbol"></div>
+                <div class="div_file_name_wrap">
+                    <!--文件名称-->
+                    <div class="div_file_name_content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="div_line_info">
+            <div class="div_col_1">
+                <!--文件选择标志-->
+                <div class="div_choose_symbol"></div>
+                <div class="div_file_name_wrap">
+                    <!--文件名称-->
+                    <div class="div_file_name_content"></div>
+                </div>
+            </div>
+            <div class="div_col_2">
+                <!--文件选择标志-->
+                <div class="div_choose_symbol"></div>
+                <div class="div_file_name_wrap">
+                    <!--文件名称-->
+                    <div class="div_file_name_content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="div_line_info">
+            <div class="div_col_1">
+                <!--文件选择标志-->
+                <div class="div_choose_symbol"></div>
+                <div class="div_file_name_wrap">
+                    <!--文件名称-->
+                    <div class="div_file_name_content"></div>
+                </div>
+            </div>
+            <div class="div_col_2">
+                <!--文件选择标志-->
+                <div class="div_choose_symbol"></div>
+                <div class="div_file_name_wrap">
+                    <!--文件名称-->
+                    <div class="div_file_name_content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="div_line_info">
+            <div class="div_col_1">
+                <!--文件选择标志-->
+                <div class="div_choose_symbol"></div>
+                <div class="div_file_name_wrap">
+                    <!--文件名称-->
+                    <div class="div_file_name_content"></div>
+                </div>
+            </div>
+            <div class="div_col_2">
+                <!--文件选择标志-->
+                <div class="div_choose_symbol"></div>
+                <div class="div_file_name_wrap">
+                    <!--文件名称-->
+                    <div class="div_file_name_content"></div>
+                </div>
+            </div>
+        </div>
+        <div class="div_line_info">
+            <div class="div_col_1">
+                <!--文件选择标志-->
+                <div class="div_choose_symbol"></div>
+                <div class="div_file_name_wrap">
+                    <!--文件名称-->
+                    <div class="div_file_name_content"></div>
+                </div>
+            </div>
+            <div class="div_col_2">
+                <!--文件选择标志-->
+                <div class="div_choose_symbol"></div>
+                <div class="div_file_name_wrap">
+                    <!--文件名称-->
+                    <div class="div_file_name_content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--上传取消按钮-->
+    <div class="div_upload_cancel_btn">
+        <button class="btn_confirm_upload">确定上传</button>
+        <button class="btn_cancel">取消</button>
+    </div>
+
+    <!--返回按钮-->
+    <button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+
+</div>
+<script type="text/javascript" src="/worker-union-pm/common/js/util.js"></script>
+</body>
+</html>

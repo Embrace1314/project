@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>合同信息详情</title>
+<link href="/worker-union-fm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+<link href="/worker-union-fm/common/css/global.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/css/title.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/loading/loading.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/common/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+<link href="/worker-union-fm/contract/contract_info.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<!--标题背景-->
+	<div class="title_bg"></div>
+	<!--页面容器-->
+	<div class="container">
+		<iframe id="loading" class="loading" src="/worker-union-fm/common/loading/loading.html" style="display: none;"></iframe>
+		<!--标题-->
+		<div class="title">合同信息详情</div>
+		<!--用户名及退出系统-->
+		<div class="div_user_name">
+			<div id="txtUserName" class="txt_user_name"></div>
+			<div class="div_divider_name_logout">|</div>
+			<button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+		</div>
+		<!--Home键-->
+		<button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+		<!--合同信息标题-->
+		<div class="title_info">
+			<div>
+				合<br />同<br />信<br />息
+			</div>
+		</div>
+		<!--合同信息编辑框-->
+		<div class="div_info">
+			<!--合同名称-->
+			<div class="div_line_info">
+				<div class="type_info">合同名称：</div>
+				<input id="txtName" class="txt_info" type="text">
+			</div>
+			<!--合同编号-->
+			<div class="div_line_info">
+				<div class="type_info">合同编号：</div>
+				<div id="txtNum" class="txt_num txt_disable"></div>
+			</div>
+			<!--合同类型-->
+			<div class="div_line_info">
+				<div class="type_info">合同类型：</div>
+				<input id="txtType" class="txt_info" type="text">
+			</div>
+			<!--甲方-->
+			<div class="div_line_info">
+				<div class="type_info">甲方：</div>
+				<input id="txtPartA" class="txt_info" type="text">
+			</div>
+			<!--乙方-->
+			<div class="div_line_info">
+				<div class="type_info">乙方：</div>
+				<input id="txtPartB" class="txt_info" type="text">
+			</div>
+
+			<div class="div_line_time_money">
+				<!--签订时间-->
+				<div class="div_col_1">
+					<div class="type_info">签订时间：</div>
+					<input id="txtSignDate" class="txt_col_1" type="text">
+				</div>
+				<!--合同金额-->
+				<div class="div_col_2">
+					<div class="type_info">合同金额(元)：</div>
+					<input id="txtMoney" class="txt_col_2" type="number">
+				</div>
+			</div>
+			<div class="div_line_branch_project">
+				<!--责任部门-->
+				<div class="div_col_1">
+					<div class="type_info">责任部门：</div>
+					<input id="txtDutyDepartment" class="txt_col_1" type="text">
+				</div>
+				<!--归属项目-->
+				<div class="div_col_2">
+					<div class="type_info">归属项目：</div>
+					<div id="txtProjectName" class="txt_project_name txt_disable"></div>
+				</div>
+			</div>
+			<!--内容摘要-->
+			<div class="div_abstract">
+				<div class="type_info">内容摘要：</div>
+				<textarea id="txtContentAbstract" class="txt_abstract" type="text"></textarea>
+			</div>
+			<!--附件上传-->
+			<div class="div_annex">
+				<div class="type_info">附件上传：</div>
+				<div class="txt_annex">
+					<!--最后的添加文件按钮div-->
+					<button id="btnUpload" class="btn_picture_add"></button>
+				</div>
+			</div>
+		</div>
+		<!--保存取消按钮-->
+		<div class="div_btn">
+			<button class="btn_save" type="button" onclick="btnSave()">保存</button>
+			<button class="btn_cancel" type="button" onclick="gotoBack()">取消</button>
+		</div>
+		<!--返回按钮-->
+		<button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+
+	</div>
+	<script type="text/javascript" src="/worker-union-fm/common/plupload/plupload.full.min.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/common/js/util.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/common/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/common/js/datepicker_cn.js"></script>
+	<script type="text/javascript" src="/worker-union-fm/contract/contract_info.js"></script>
+</body>
+</html>

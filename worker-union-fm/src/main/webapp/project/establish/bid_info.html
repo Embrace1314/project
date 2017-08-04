@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>中标信息</title>
+    <link href="/worker-union-fm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/worker-union-fm/common/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/css/title.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/css/nav_bar_side.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/loading/loading.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/project/establish/bid_info.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--标题背景-->
+<div class="title_bg"></div>
+<!--页面容器-->
+<div class="container">
+    <iframe id="loading" class="loading" src="/worker-union-fm/common/loading/loading.html"
+            style="display: none;"></iframe>
+    <!--标题-->
+    <div id="txtTitle" class="title">中标信息</div>
+    <!--用户名及退出系统-->
+    <div class="div_user_name">
+        <div id="txtUserName" class="txt_user_name"></div>
+        <div class="div_divider_name_logout">|</div>
+        <button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+    </div>
+    <!--Home键-->
+    <button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+    <!--项目中标信息标题-->
+    <div class="title_project_bid_info">项目中标信息</div>
+    <!--项目信息-->
+    <div class="div_project_info">
+        <!--项目编号-->
+        <div class="line_project_info">
+            <div class="type_project_info">项目编号：</div>
+            <div id="txtNum" class="txt_project_info"></div>
+        </div>
+        <!--项目名称-->
+        <div class="line_project_info">
+            <div class="type_project_info">项目名称：</div>
+            <div id="txtName" class="txt_project_info"></div>
+        </div>
+        <!--建设单位-->
+        <div class="line_project_info">
+            <div class="type_project_info">建设单位：</div>
+            <div id="txtConstructerName" class="txt_project_info"></div>
+        </div>
+        <!--设计单位-->
+        <div class="line_project_info">
+            <div class="type_project_info">设计单位：</div>
+            <div id="txtDesignerName" class="txt_project_info"></div>
+        </div>
+        <!--监理单位-->
+        <div class="line_project_info">
+            <div class="type_project_info">监理单位：</div>
+            <div id="txtSuperviserName" class="txt_project_info"></div>
+        </div>
+        <!--工程地点-->
+        <div class="line_project_info">
+            <div class="type_project_info">工程地点：</div>
+            <div id="txtAddress" class="txt_project_info"></div>
+        </div>
+        <!--工程类型-->
+        <div class="line_project_info">
+            <div class="type_project_info">工程类型：</div>
+            <div id="txtType" class="txt_project_info"></div>
+        </div>
+        <!--规模-->
+        <div class="line_project_info">
+            <div class="type_project_info">规模：</div>
+            <div id="txtScale" class="txt_project_info"></div>
+        </div>
+        <!--中标价-->
+        <div class="line_project_info">
+            <div class="type_project_info">中标价(元)：</div>
+            <div id="txtBidPrice" class="txt_project_info"></div>
+        </div>
+        <!--中标工期-->
+        <div class="line_project_info">
+            <div class="type_project_info">中标工期(天)：</div>
+            <div id="txtBidDuration" class="txt_project_info"></div>
+        </div>
+        <input id="txtAttachmentId" type="text" hidden="true">
+        <!--下载中标通知书-->
+        <div class="line_project_info">
+            <!--下载成功与否标志-->
+            <div id="imgDownloadMark" class="img_download_mark"></div>
+            <!--下载按钮-->
+            <button id="btnDownload" class="btn_download" type="button" onclick="btnDownload()">下载中标通知书</button>
+        </div>
+    </div>
+    <!--虚线分割线-->
+    <div class="div_dashed"></div>
+    <!--右侧导航按钮-->
+    <div class="nav_bar_side">
+        <ul class="nav_bar_menu" style="display: block">
+            <li><a href="javascript:void(0)">项目立项</a>
+                <ul style="display: block">
+                    <li><a id="navBidInfo" class="nav_bar_submenu_select">中标信息</a></li>
+                    <li><a id="navCostAnalysis" class="nav_bar_submenu">成本分析</a></li>
+                    <li><a id="navObjectiveManage" class="nav_bar_submenu">目标管理</a></li>
+                    <li><a id="navBuildReport" class="nav_bar_submenu">项目报建</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)">项目准备</a>
+                <ul>
+                    <li><a id="navTeamBuild" class="nav_bar_submenu">团队搭建</a></li>
+                    <li><a id="navPlanDeepen" class="nav_bar_submenu">方案深化</a></li>
+                    <li><a id="navCostDeepen" class="nav_bar_submenu">成本深化</a></li>
+                    <li><a id="navCapitalPlan" class="nav_bar_submenu">资金计划</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)">项目实施</a>
+                <ul>
+                    <li><a id="navOperationManage" class="nav_bar_submenu">经营管理</a></li>
+                    <li><a id="navProductionManage" class="nav_bar_submenu">生产管理</a></li>
+                    <li><a id="navTechnicalManage" class="nav_bar_submenu">技术管理</a></li>
+                    <li><a id="navSecurityManage" class="nav_bar_submenu">安全管理</a></li>
+                    <li><a id="navQualityManage" class="nav_bar_submenu">质量管理</a></li>
+                    <li><a id="navResourceImplement" class="nav_bar_submenu">资源落实</a></li>
+                    <li><a id="navSettlementManage" class="nav_bar_submenu">结算管理</a></li>
+                    <li><a id="navStoreManage" class="nav_bar_submenu">仓库管理</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)">项目竣工</a>
+                <ul>
+                    <li><a id="navCompleteCheck" class="nav_bar_submenu">竣工验收</a></li>
+                    <li><a id="navProjectDisintegrate" class="nav_bar_submenu">项目部解体</a></li>
+                    <li><a id="navProjectSummary" class="nav_bar_submenu">项目总结</a></li>
+                    <li><a id="navInternalSettlement" class="nav_bar_submenu">内部结算</a></li>
+                    <li><a id="navCompleteSettlement" class="nav_bar_submenu">竣工结算</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!--返回按钮-->
+    <button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+</div>
+
+<script type="text/javascript" src="/worker-union-fm/common/js/util.js"></script>
+<script type="text/javascript" src="/worker-union-fm/common/js/nav_bar.js"></script>
+<script type="text/javascript" src="/worker-union-fm/common/js/nav_bar_side.js"></script>
+<script type="text/javascript" src="/worker-union-fm/project/establish/bid_info.js"></script>
+</body>
+</html>

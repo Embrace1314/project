@@ -1,0 +1,127 @@
+*{margin:0;padding:0;}
+body{
+    text-align:center;
+    background-color: #C1AD9F;
+}
+/*公司图标*/
+.img_company_logo{
+    position: absolute;
+    width: 1200px;
+    height: 330px;
+    background: url("/worker-union-fm/common/image/img_company_logo.png") no-repeat;
+}
+.img_company_logo>div{
+    position: absolute;
+    top: 64px;
+    left: 150px;
+    width: 330px;
+    height: 100px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 72px;
+    color: #FFFFFF;
+    text-align: left;
+}
+.txt_company_aim{
+    position: absolute;
+    left: 150px;
+    top: 198px;
+    width: 720px;
+    height: 30px;
+    font-family: PingFang SC;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-align: left;
+}
+/*系统通道显示框*/
+.div_system_channel{
+    position: absolute;
+    left: 250px;
+    top: 408px;
+    width: 696px;
+    height: 80px;
+    font-family: "PingFang SC";
+    font-size: 0px;
+    color: #797979;
+    text-align: center;
+    border: 3px #D7D7D7 solid;
+    border-radius: 5px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+label {
+    display: inline-block;
+    width: 348px;
+    height: 80px;
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 80px;
+    font-family: PingFang SC;
+    color: #797979;
+    text-align: center;
+    background: #AEAEAE;
+}
+label.checked {
+    background :#0099FF;
+    color: #FFFFFF;
+    border: none;
+}
+
+/*用户名输入框*/
+.edtxt_user_name{
+    position: absolute;
+    top: 537px;
+    left: 250px;
+    width: 696px;
+    height: 60px;
+    font-family: Arial;
+    font-size: 24px;
+    color: #666666;
+    line-height: 60px;
+    text-align: center;
+    border: 3px #D7D7D7 solid;
+    background-color:transparent;
+    border-radius: 5px;
+}
+input::-webkit-input-placeholder{ color: #CCCCCC; }
+input:-moz-placeholder{ color: #CCCCCC; }
+input::-moz-placeholder{ color: #CCCCCC; }
+input:-ms-input-placeholder{ color: #CCCCCC; }
+
+/*密码输入框*/
+.edtxt_password{
+    position: absolute;
+    top: 628px;
+    left: 250px;
+    width: 696px;
+    height: 60px;
+    font-family: Arial;
+    font-size: 24px;
+    color: #666666;
+    line-height: 60px;
+    text-align: center;
+    border: 3px #D7D7D7 solid;
+    background-color:transparent;
+    border-radius: 5px;
+}
+/*登录按钮*/
+.btn_login{
+    position: absolute;
+    top: 735px;
+    left: 250px;
+    width: 700px;
+    height: 60px;
+    font-family: Arial;
+    font-size: 24px;
+    color: #FFFFFF;
+    line-height: 60px;
+    text-align: center;
+    border: 3px #D7D7D7 solid;
+    background-color: #3DB740;
+    border-radius: 5px;
+}
+.btn_login:hover{
+    background-color: #3C7500;
+}

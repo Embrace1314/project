@@ -1,0 +1,357 @@
+*{margin:0;padding:0;}
+body{
+    text-align:center;
+    background-color: #C1AD9F;
+}
+/*公司图标*/
+.img_company_logo{
+    position: absolute;
+    width: 1200px;
+    height: 330px;
+    background: url("/worker-union-fm/common/image/img_company_logo.png") no-repeat;
+}
+.img_company_logo>div{
+    position: absolute;
+    top: 64px;
+    left: 150px;
+    width: 330px;
+    height: 100px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 72px;
+    color: #FFFFFF;
+    text-align: left;
+}
+.txt_company_aim{
+    position: absolute;
+    left: 150px;
+    top: 198px;
+    width: 720px;
+    height: 30px;
+    font-family: PingFang SC;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-align: left;
+}
+/*用户名及退出系统*/
+.div_user_name{
+    position: absolute;
+    left: 29px;
+    top: 288px;
+    width: 156px;
+    height: 33px;
+    text-align: center;
+    border: 1px solid #797979;
+}
+.txt_user_name{
+    float: left;
+    width: 70px;
+    height: 33px;
+    font-family: PingFang SC;
+    font-size: 15px;
+    color: #CCCCCC;
+    line-height: 33px;
+    text-align: center;
+}
+.div_divider_name_logout{
+    float: left;
+    width: 4px;
+    height: 33px;
+    font-family: PingFang SC;
+    font-size: 15px;
+    color: #CCCCCC;
+    line-height: 33px;
+    text-align: center;
+}
+.btn_log_out{
+    float: left;
+    width: 79px;
+    height: 33px;
+    font-family: PingFang SC;
+    font-size: 15px;
+    color: #FF6600;
+    line-height: 33px;
+    text-align: center;
+    text-decoration: underline;
+    background: none;
+}
+.btn_log_out:hover{
+    color: #CD8500;
+}
+.btn_log_out:active{
+    color: #CD8500;
+}
+/*修改密码*/
+.btn_modify_password{
+    position: absolute;
+    left: 1073px;
+    top: 294px;
+    width: 86px;
+    height: 27px;
+    font-family: PingFang SC;
+    font-size: 18px;
+    color: #CCCCCC;
+    line-height: 27px;
+    text-align: center;
+    text-decoration: underline;
+}
+/*按钮容器*/
+.container_btn{
+    position: absolute;
+    left: 134px;
+    top: 402px;
+    width: 915px;
+    height: 320px;
+}
+/*项目管理按钮*/
+.btn_manage{
+    float: left;
+    margin-left: 31px;
+    margin-top: 58px;
+    width: 190px;
+    height: 100px;
+    font-family: Arial;
+    font-size: 20px;
+    color: #CCCCCC;
+    line-height: 102px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_functional_department.png");
+}
+.btn_manage:hover{
+    background: url("/worker-union-fm/common/image/img_btn_functional_department_focus.png");
+}
+
+.btn_manage:active{
+    background: url("/worker-union-fm/common/image/img_btn_functional_department_focus.png");
+}
+
+.btn_manage_disabled{
+    float: left;
+    margin-left: 31px;
+    margin-top: 58px;
+    width: 190px;
+    height: 100px;
+    font-family: Arial;
+    font-size: 20px;
+    color: #CCCCCC;
+    line-height: 102px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_functional_department_disabled.png");
+}
+
+/*待办事项标题*/
+.div_schedule_title{
+    position: absolute;
+    left: 16px;
+    top: 770px;
+    width: 1133px;
+    height: 83px;
+    background: url("/worker-union-fm/common/image/img_schedule_title_background.png");
+}
+.schedule_title{
+    position: absolute;
+    left: 474px;
+    width: 200px;
+    height: 83px;
+    line-height: 83px;
+    text-align: center;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+}
+/*待办事项数量提示*/
+.schedule_number{
+    position: absolute;
+    top: 22px;
+    left: 17px;
+    width: 46px;
+    height: 40px;
+    font-family: Arial;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+    color: #FFFFFF;
+}
+/*待办事项列表*/
+.div_schedule_list{
+    position: relative;
+    left: 50px;
+    top: 864px;
+    width: 1079px;
+    _height: 46px;
+    min-height: 46px;
+    border: #8E8B8B 10px solid;
+}
+/*设置表格样式*/
+.div_schedule_list>table{
+    border-collapse: collapse;
+    border: 1px solid #666666;
+    font-family: Arial;
+    font-size: 20px;
+    color: #666666;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+/*设置单元格样式*/
+.div_schedule_list>table td{
+    height: 46px;
+    _height: 46px;
+    min-height: 46px;
+    border-right: 2px solid #666666;
+    border-bottom: 2px solid #666666;
+}
+/*设置最后一行单元格样式*/
+.div_schedule_list>table tr.list_last_row td{
+    border-bottom: 0;
+}
+/*设置最后一列单元格样式*/
+.div_schedule_list>table tr td.list_last_col{
+    border-right: 0;
+}
+/*设置行选中样式*/
+.list_tr_selected{
+    background-color: #0066FF;
+    color: #FFFFFF;
+}
+
+.btn_back{
+    position: relative;
+    top: 900px;
+    left: 1055px;
+    width: 1px;
+    height: 1px;
+    font-family: Arial;
+    font-size: 28px;
+    color: #FFFFFF;
+    font-weight: bold;
+    line-height: 95px;
+    text-align: center;
+}
+
+/*页面遮罩层*/
+.div_mask{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+/*弹窗页面容器*/
+.dialog_container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: -225px 0 0 -389px;
+    width: 778px;
+    height: 450px;
+    background-color: #C1AD9F;
+    border: #99CC00 2px solid;
+    border-radius: 5px;
+}
+/*标题*/
+.title_dialog{
+    position: absolute;
+    left: 49px;
+    top: 50px;
+    width: 93px;
+    height: 316px;
+    background-color: #99CC00;
+    z-index: 1;
+}
+.title_dialog>div{
+    margin-top: 78px;
+    font-family: PingFang SC;
+    font-size: 36px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+}
+/*详细信息*/
+.div_info_dialog{
+    position: absolute;
+    top: 77px;
+    left: 50px;
+    width: 660px;
+    height: 228px;
+    padding-top: 37px;
+    background-color: #8E8B8B;
+    border-radius: 5px;
+}
+/*一行详细信息*/
+.div_line_info_dialog{
+    position: relative;
+    margin-top: 18px;
+    left: 115px;
+    width: 500px;
+    height: 40px;
+}
+.type_info_dialog{
+    position: absolute;
+    width: 180px;
+    height: 40px;
+    font-family: Heiti SC;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: right;
+}
+.txt_info_dialog{
+    position: absolute;
+    left: 197px;
+    width: 303px;
+    height: 40px;
+    font-family: PingFang SC;
+    font-size: 20px;
+    color: #666666;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+.dialog_div_btn{
+    position: absolute;
+    left: 213px;
+    top: 368px;
+    width: 474px;
+    height: 46px;
+}
+/*保存按钮*/
+.btn_save{
+    position: absolute;
+    left: 0px;
+    width: 154px;
+    height: 46px;
+    font-family: PingFang SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_save_cost_detail.png");
+}
+.btn_save:hover{
+    background: url("/worker-union-fm/common/image/img_btn_save_cost_detail_focus.png");
+}
+.btn_save:active{
+    background: url("/worker-union-fm/common/image/img_btn_save_cost_detail_focus.png");
+}
+/*取消按钮*/
+.btn_cancel{
+    position: absolute;
+    left: 318px;
+    width: 154px;
+    height: 46px;
+    font-family: PingFang SC;
+    font-size:20px;
+    color:#FFFFFF;
+    line-height:46px;
+    text-align: center;
+    background: url("/worker-union-fm/common/image/img_btn_cancel_cost_detail.png");
+}
+.btn_cancel:hover{
+    background: url("/worker-union-fm/common/image/img_btn_cancel_cost_detail_focus.png");
+}
+.btn_cancel:active{
+    background: url("/worker-union-fm/common/image/img_btn_cancel_cost_detail_focus.png");
+}

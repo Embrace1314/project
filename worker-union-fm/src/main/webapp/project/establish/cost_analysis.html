@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>成本分析</title>
+    <link href="/worker-union-fm/common/image/favicon.ico" rel="icon" type="image/x-icon">
+    <link href="/worker-union-fm/common/css/global.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/css/title.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/css/nav_bar_side.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/common/loading/loading.css" rel="stylesheet" type="text/css">
+    <link href="/worker-union-fm/project/establish/cost_analysis.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--标题背景-->
+<div class="title_bg"></div>
+<!--页面容器-->
+<div class="container">
+    <iframe id="loading" class="loading" src="/worker-union-fm/common/loading/loading.html"
+            style="display: none;"></iframe>
+    <!--标题-->
+    <div id="txtTitle" class="title">成本分析</div>
+    <!--用户名及退出系统-->
+    <div class="div_user_name">
+        <div id="txtUserName" class="txt_user_name"></div>
+        <div class="div_divider_name_logout">|</div>
+        <button class="btn_log_out" onclick="btnLogOut()">退出系统</button>
+    </div>
+    <!--Home键-->
+    <button class="btn_home" type="button" onclick="gotoHtml(HTML_HOME)"></button>
+    <!--上传成本分析表按钮-->
+    <button id="btnUpload" class="btn_upload" type="button" style="display: none;">
+        <div>上传成本分析表</div>
+    </button>
+    <!--下载删除目标协议书按钮，默认不可见-->
+    <div id="btnDeleteFile" class="div_delete_file" style="display: none;">
+        <div class="btn_download_protocol">
+            <div>成本分析表</div>
+        </div>
+        <button class="btn_delete_files" type="button" onclick="btnDeleteFile()"></button>
+    </div>
+
+    <!--成本分析列表-->
+    <input id="txtAttachmentId" type="text" hidden="true">
+    <div class="div_cost_analysis_list">
+        <table>
+            <tr>
+                <td width="408px">文件名称</td>
+                <td width="150px">创建人</td>
+                <td width="219px" class="list_last_col">创建时间</td>
+            </tr>
+            <tr class="list_last_row">
+                <td><a id="txtFileName" href="#" onclick="btnDownloadFile()"></a></td>
+                <td id="txtCreatorName"></td>
+                <td id="txtCreateTime" class="list_last_col"></td>
+            </tr>
+        </table>
+    </div>
+    <!--成本信息-->
+    <div class="div_cost_info">
+        <!--直接成本-->
+        <div class="line_cost_info">
+            <div class="type_cost_info">直接成本(元)：</div>
+            <div id="txtDirectCostSum" class="txt_cost_info"></div>
+        </div>
+        <!--间接成本-->
+        <div class="line_cost_info">
+            <div class="type_cost_info">间接成本(元)：</div>
+            <div id="txtIndirectCostSum" class="txt_cost_info"></div>
+        </div>
+        <!--指定分包成本-->
+        <div class="line_cost_info">
+            <div class="type_cost_info">指定分包成本(元)：</div>
+            <div id="txtSubcontractCostSum" class="txt_cost_info"></div>
+        </div>
+        <!--税前总计-->
+        <div class="line_cost_info">
+            <div class="type_cost_info">税前总计(元)：</div>
+            <div id="txtPretaxSum" class="txt_cost_info"></div>
+        </div>
+        <!--成本总价-->
+        <div class="line_cost_info">
+            <div class="type_cost_info">成本总价(元)：</div>
+            <div id="txtCostSum" class="txt_cost_info"></div>
+        </div>
+        <!--预计利润-->
+        <div class="line_cost_info">
+            <div class="type_cost_info">预计利润(元)：</div>
+            <div id="txtProfitSum" class="txt_cost_info"></div>
+        </div>
+    </div>
+    <!--成本详细信息-->
+    <div class="div_cost_detail_title">
+        <div class="cost_detail_title">成本详细</div>
+        <!--提交按钮-->
+        <div class="btn_submit">提交</div>
+    </div>
+    <!--成本列表-->
+    <div class="div_cost_detail_list">
+        <table id="tableCost">
+            <tr onclick="clearTableSelectStatus(this)">
+                <td width="297px">成本类别</td>
+                <td width="273px">成本项</td>
+                <td width="183px">成本费用(元)</td>
+                <td width="327px" class="list_last_col">备注</td>
+            </tr>
+        </table>
+    </div>
+    <div class="div_btn">
+        <!--添加按钮-->
+        <button class="btn_add" type="button" onclick="btnToAddCostAnalysisItem()">添加</button>
+        <!--修改按钮-->
+        <button class="btn_modify" type="button" onclick="btnToModifyCostAnalysisItem()">修改</button>
+        <!--删除按钮-->
+        <button class="btn_delete" type="button" onclick="btnDeleteCostAnalysisItem()">删除</button>
+    </div>
+    <!--虚线分割线-->
+    <div class="div_dashed"></div>
+    <!--右侧导航按钮-->
+    <div class="nav_bar_side">
+        <ul class="nav_bar_menu" style="display: block">
+            <li><a href="javascript:void(0)">项目立项</a>
+                <ul style="display: block">
+                    <li><a id="navBidInfo" class="nav_bar_submenu">中标信息</a></li>
+                    <li><a id="navCostAnalysis" class="nav_bar_submenu_select">成本分析</a></li>
+                    <li><a id="navObjectiveManage" class="nav_bar_submenu">目标管理</a></li>
+                    <li><a id="navBuildReport" class="nav_bar_submenu">项目报建</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)">项目准备</a>
+                <ul>
+                    <li><a id="navTeamBuild" class="nav_bar_submenu">团队搭建</a></li>
+                    <li><a id="navPlanDeepen" class="nav_bar_submenu">方案深化</a></li>
+                    <li><a id="navCostDeepen" class="nav_bar_submenu">成本深化</a></li>
+                    <li><a id="navCapitalPlan" class="nav_bar_submenu">资金计划</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)">项目实施</a>
+                <ul>
+                    <li><a id="navOperationManage" class="nav_bar_submenu">经营管理</a></li>
+                    <li><a id="navProductionManage" class="nav_bar_submenu">生产管理</a></li>
+                    <li><a id="navTechnicalManage" class="nav_bar_submenu">技术管理</a></li>
+                    <li><a id="navSecurityManage" class="nav_bar_submenu">安全管理</a></li>
+                    <li><a id="navQualityManage" class="nav_bar_submenu">质量管理</a></li>
+                    <li><a id="navResourceImplement" class="nav_bar_submenu">资源落实</a></li>
+                    <li><a id="navSettlementManage" class="nav_bar_submenu">结算管理</a></li>
+                    <li><a id="navStoreManage" class="nav_bar_submenu">仓库管理</a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)">项目竣工</a>
+                <ul>
+                    <li><a id="navCompleteCheck" class="nav_bar_submenu">竣工验收</a></li>
+                    <li><a id="navProjectDisintegrate" class="nav_bar_submenu">项目部解体</a></li>
+                    <li><a id="navProjectSummary" class="nav_bar_submenu">项目总结</a></li>
+                    <li><a id="navInternalSettlement" class="nav_bar_submenu">内部结算</a></li>
+                    <li><a id="navCompleteSettlement" class="nav_bar_submenu">竣工结算</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!--返回按钮-->
+    <button class="btn_back" type="button" onclick="gotoBack()">返回</button>
+</div>
+
+
+<!--页面遮罩层-->
+<div id="dialog" class="div_mask" style="display: none;">
+    <div id="txtCostAnalysisItemId" hidden="true"></div>
+    <img src="/worker-union-fm/common/image/img_mask.png" width="100%" height="100%"/>
+    <!--弹窗页面容器-->
+    <div class="dialog_container">
+        <!--成本详细条目标题-->
+        <div class="title_cost_detail">
+            <div>
+                成<br/>本<br/>详<br/>细<br/>条<br/>目
+            </div>
+        </div>
+        <!--成本详细条目信息-->
+        <div class="div_cost_detail">
+            <!--成本类别-->
+            <div class="div_line_detail">
+                <div class="type_detail">成本类别：</div>
+                <select id="txtType" class="btn_select">
+                    <option selected="selected" value="">请选择成本类别</option>
+                </select>
+            </div>
+            <!--成本项-->
+            <div class="div_line_detail">
+                <div class="type_detail">成本项：</div>
+                <div>
+                    <input id="txtName" class="txt_detail" type="text">
+                </div>
+            </div>
+            <!--成本费用-->
+            <div class="div_line_detail">
+                <div class="type_detail">成本费用(元)：</div>
+                <div>
+                    <input id="txtCost" type="number" class="txt_detail">
+                </div>
+            </div>
+            <!--备注-->
+            <div class="div_line_detail">
+                <div class="type_detail">备注：</div>
+                <div>
+                    <input id="txtMemo" class="txt_detail" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="dialog_div_btn">
+            <!--保存按钮-->
+            <button class="btn_save" type="button" onclick="btnSaveCostAnalysisItem()">保存</button>
+            <!--取消按钮-->
+            <button class="btn_cancel" type="button" onclick="closeDialog()">取消</button>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="/worker-union-fm/common/plupload/plupload.full.min.js"></script>
+<script type="text/javascript" src="/worker-union-fm/common/js/util.js"></script>
+<script type="text/javascript" src="/worker-union-fm/common/js/nav_bar.js"></script>
+<script type="text/javascript" src="/worker-union-fm/common/js/nav_bar_side.js"></script>
+<script type="text/javascript" src="/worker-union-fm/project/establish/cost_analysis.js"></script>
+</body>
+</html>
