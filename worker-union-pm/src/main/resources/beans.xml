@@ -12,7 +12,7 @@
 	<!-- 设置Component的扫描路径 -->
 	<context:component-scan base-package="top.warmheart.workerunion.pm.server" />
 	<!-- 设置预读配置文件 -->
-	<context:property-placeholder location="classpath:*-config.properties" />
+	<context:property-placeholder location="classpath:config/prd/*-config.properties" />
 
 	<!-- RPC-Service -->
 	<bean id="staffService" class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">

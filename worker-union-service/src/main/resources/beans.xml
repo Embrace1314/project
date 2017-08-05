@@ -12,7 +12,7 @@
 	<!-- 设置Component的扫描路径 -->
 	<context:component-scan base-package="top.warmheart.workerunion.server" />
 	<!-- 设置预读配置文件 -->
-	<context:property-placeholder location="classpath:*-config.properties" />
+	<context:property-placeholder location="classpath:jdbc-config.properties" />
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="${jdbc.driverClassName}" />
